@@ -1,8 +1,8 @@
 <?php
-include('authentication.php');
-include('adminclaimAuth.php');
+// include('authentication.php');
+// include('adminclaimAuth.php');
 
-$userProperties = $_SESSION['userProperties'];
+//$userProperties = $_SESSION['userProperties'];
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ $userProperties = $_SESSION['userProperties'];
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
+                           <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
                        
@@ -134,8 +134,7 @@ if(isset($_SESSION['status']))
 					<div class="card hold">
 						<div class="card-header hold">
 							<h2>
-								Admin Panel: 24HRFXTRADINGORG Registerd users information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
+								Top 5 24HRFXTRADINGORG paid users information
 							</h2>
 						</div>
 						<div class="card-body container hold">
@@ -144,12 +143,9 @@ if(isset($_SESSION['status']))
 									<tr>
 										<th>S1.no</th>
 										<th>UserName</th>
-										<th>Email</th>
-										<th>AccountBal</th>
-										<th>EarnedTotal</th>
-										<th>BonusAmt</th>
-										<th>Withdrawal</th>
-										<th>Edit</th>
+										<th>Date</th>
+										<th>Amount</th>
+                                        <th>Edit</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -158,7 +154,7 @@ if(isset($_SESSION['status']))
 									
 									
 									$users=$auth->listUsers();
-									$result=$database->getReference('users/')->getValue();
+									$result=$database->getReference('paidTable/')->getValue();
 									
 									if($result > 0)
 									
@@ -168,21 +164,42 @@ if(isset($_SESSION['status']))
 								?>
 											<tr>
 											<td><?=$i++;?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['userEmail']?></td>
-											<td><?=$row['accBal']?></td>
-											<td><?=$row['earnedTotal']?></td>
-											<td><?=$row['bonus']?></td>
-											<td><?=$row['withdrawal']?></td>
-											
-											<td>
-												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											<td><?=$row['userName']?></td>
+											<td><?=$row['date']?></td>
+											<td><?=$row['Amount']?></td>
+                                            <td>
+												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
 											</td>
 											
+										
 											</tr>
+                                            <tr>
+                                            <td><?=$i++;?></td>
+											<td><?=$row['userName1']?></td>
+											<td><?=$row['date1']?></td>
+											<td><?=$row['Amount1']?></td>  
+                                            </tr>
+                                            <tr>
+                                            <td><?=$i++;?></td>
+											<td><?=$row['username2']?></td>
+											<td><?=$row['date2']?></td>
+											<td><?=$row['Amount2']?></td>
+                                            </tr>
+                                            <tr>
+                                            <td><?=$i++;?></td>
+											<td><?=$row['username3']?></td>
+											<td><?=$row['date3']?></td>
+											<td><?=$row['Amount3']?></td>
+                                            </tr>
+                                            <tr>
+                                            <td><?=$i++;?></td>
+											<td><?=$row['userName4']?></td>
+											<td><?=$row['date4']?></td>
+											<td><?=$row['Amount4']?></td>
+                                            </tr>
 								<?php
 										}
-									 } else{
+									 } else{tr
 								?>
 											<tr>
 											<td colspan="?">No Record Found</td>

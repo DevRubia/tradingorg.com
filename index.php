@@ -49,7 +49,7 @@ if(isset($_SESSION['status']))
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-                <a class="navbar-brand tm" href="logout.php">24hrfx trading org</a>
+                <h3>24hrfx trading org</h3>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -65,10 +65,10 @@ if(isset($_SESSION['status']))
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
+                           <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
-                        <?php if(!isset($SESSION['verifiedUserId'])) : ?>
+                       
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
@@ -77,11 +77,11 @@ if(isset($_SESSION['status']))
                            <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
                         </li>        
                         
-                        <?php else : ?>                                  
+                                                      
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="logout.php">LOGOUT</a>
+                          <a class="nav-link active btn btn-primary btn-sm btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
-                        <?php endif ; ?>
+                        
                         
                     </ul>
                     <form class="d-flex">
@@ -602,7 +602,11 @@ if(isset($_SESSION['status']))
                                 <div class="mt-4 pt-1">
                                     <h5 class="mb-3">Head Office</h5>
                                     <p class="text-muted mb-1">Visit our office</p>
-                                    <p class="text-muted fw-medium">3046, Woodside Circle, Tallahassee, USA.</p>
+                                    <p class="text-muted fw-medium">Main branches -Arusha, TZ
+                  - Nairobi,KE
+                 - Kampala, UG
+               - Lusaka,ZM
+               -Malawi, MWIsouth Africa</p>
                                 </div>
                             </div>
                         </div>
@@ -615,7 +619,7 @@ if(isset($_SESSION['status']))
                                 <div class="mt-4 pt-1">
                                     <h5 class="mb-3">Support</h5>
                                     <p class="text-muted mb-1">Our friendly team is here to help</p>
-                                    <p class="text-muted fw-medium">support@cryptorex.com</p>
+                                    <p class="text-muted fw-medium">24hrfxtradingorg@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -627,8 +631,8 @@ if(isset($_SESSION['status']))
                                 </div>
                                 <div class="mt-4 pt-1">
                                     <h5 class="mb-3">Call Us</h5>
-                                    <p class="text-muted mb-1">Mon-Fri from 9am to 4.30pm</p>
-                                    <p class="text-muted fw-medium mb-0">+012 4521 210</p>
+                                    <p class="text-muted mb-1">Mon-Fri (working hrs 7a.m-10pm)</p>
+                                    <p class="text-muted fw-medium mb-0">+254 5748641027/+254 798741595</p>
                                 </div>
                             </div>
                         </div>

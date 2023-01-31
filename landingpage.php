@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['verifiedUserId'])){
-    $_SESSION['status']="you are already logged in";
+    $_SESSION['status']="you are already logged in..RefreshSession/Logout";
     header('Location: dashboard.php');
     exit();
 }else{
@@ -47,9 +47,14 @@ if(isset($_SESSION['verifiedUserId'])){
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="paid.php">PAID</a>
+                            <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
+
+                        <li class="nav-item">
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
+                        </li>   
                     </ul>
+
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -112,7 +117,7 @@ if(isset($_SESSION['status']))
                                             </div>
                                             <button type="submit" name="loginbtn" class="btn mt-4">SUBMIT</button>
 
-                                            <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                                            <p class="mb-0 mt-4 text-center"><a href="changepassword.php" class="link">Forgot your password?</a></p>
                                             <h6 class="mb-0 mt-4 text-center"><a href="signinform.php" class="link">Sign-up form</a></h6>
                                         </div>
                                     </div>

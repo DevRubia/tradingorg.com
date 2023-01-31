@@ -1,10 +1,8 @@
 <?php
-include('authentication.php');
+include('adminAuth.php');
 include('adminclaimAuth.php');
-
-$userProperties = $_SESSION['userProperties'];
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,21 +29,9 @@ $userProperties = $_SESSION['userProperties'];
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
-                          </li> 
                         
-                       
-                           <li class="nav-item">
+                                           
+                       <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
@@ -115,103 +101,109 @@ $userProperties = $_SESSION['userProperties'];
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
+                            <?php
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                }
+
+                                ?>
 			</div>
+            <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                    <h2>User Claims</h2>
+                                    <a href="claims.php" class="btn btn-danger float-end">Back</a>
+                            </div>
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+                                <div class="card-body">
+                                    
+                                  <form action="claimsbend.php" method="POST">
+                                    <?php
+                                    if(isset($_GET['id']))
+                                    {
+                                        $uid =$_GET['id'];
+                                        ?>
+                                        <input type="hidden" name="claimUid" value="<?=$uid?>">
+                                        <div class="form-group mb-3">
+                                        <select name="role" class="form-control" required>
+                                            <option value="">Select Roles</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="superAdmin">SuperAdmin</option>
+                                            <option value="no-Role">user</option>
+                                        </select>
+                                        </div>
+                                        <label>Current user role is:</label>
+                                        <h4>
+                                            <?php
+                                            $claims = $auth->getUser($uid)->customClaims;
 
-?>
-   
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Admin Panel: 24HRFXTRADINGORG Registerd users information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Email</th>
-										<th>AccountBal</th>
-										<th>EarnedTotal</th>
-										<th>BonusAmt</th>
-										<th>Withdrawal</th>
-										<th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('users/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['userEmail']?></td>
-											<td><?=$row['accBal']?></td>
-											<td><?=$row['earnedTotal']?></td>
-											<td><?=$row['bonus']?></td>
-											<td><?=$row['withdrawal']?></td>
-											
-											<td>
-												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-											</tr>
-								<?php
-										}
-									 } else{
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
-
-								<?php
-
-									 }
-
-									?>
-
-								</tbody>
-									
+                                            if(isset($claims['admin']) == true){
+                                                echo"Role is admin";
+                                            }if(isset($claims['superAdmin']) == true){
+                                                echo"Role is Superadmin";
+                                            }if($claims== null){
+                                                echo"No Role";
+                                            }
+                                            
+                                            ?>
+                                        </h4>
 
 
 
+                                        <div class="form-group mb-3">
+                                            <button type="submit" name="userClaim" class="btn btn-primary">ReviewRole</button>
+                                        </div>
+                                        <?php
 
-							</table>
+                                    }
+                                    
+                                
+                                    ?>
+                                    
+                                  </form>  
 
-						</div>
-					</div>
-
-				</div>
-		</div>
-
-	</div>
+                                </div>
+                            </div>
+                        </div>
+                             
+                            <?php    
 
 
-								
+                            // }else{
+                            //     $_SESSION['status']="No Found";
+                            //     header('Location: paid.php');
+                            //     exit();
+
+                            // }
+                            
+                            // }else{
+                            //      $_SESSION['status']="Invalid Id";
+                            //     header('Location: paid.php');
+                            //     exit();  
+                            // }
+                            
+                            ?>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+                       
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+          						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

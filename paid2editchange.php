@@ -1,10 +1,9 @@
 <?php
-include('authentication.php');
-include('adminclaimAuth.php');
+include('conndb.php');
 
-$userProperties = $_SESSION['userProperties'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,18 +30,10 @@ $userProperties = $_SESSION['userProperties'];
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
-                          </li> 
+                        
+                        
+                        
+
                         
                        
                            <li class="nav-item">
@@ -115,103 +106,100 @@ $userProperties = $_SESSION['userProperties'];
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
+                            <?php
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                }
+
+                                ?>
 			</div>
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+		<div class="container p-2 bd-highlight">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                Admin PaidPost Panel
+                                <a href="paid.php" class="btn btn-danger float-end">Back</a>
+                            </h2>
 
-?>
+                            <div class="card-body">
+
+                            <?php
+                            include('conndb.php');
+
+                            if(isset($_GET['id'])){
+                                $keychild= $_GET['id'];
+
+                                $getdata =$database->getReference('paidTable/')->getchild($keychild)->getvalue();
+                            if($getdata > 0)
+                            {
+                             ?>
+                             
+                             
+                             <form  action="AccountUpdate.php" method="POST">
+
+                             <input type="hidden" name="key" value="<?=$keychild?>">
+                                <div class="form-group mb-3">
+                                    <label for="">UserName:</label>
+                                    <input type="text" name="accountBal" value="<?=$getdata['userName']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date:</label>
+                                    <input type="text" name="earnedTotal" value="<?=$getdata['date']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount:</label>
+                                    <input type="text" name="bonusAmt" value="<?=$getdata['Amount']?>" class="form-control">
+                                </div>
+
+                               
+                                <div class="forWithdrawalm-group mb-3">
+                                    <button type="submit" name="updateAccount"  class="btn btn-primary">updatePaidPost</button>
+                                </div>
+
+                                </form>
    
+                            <?php    
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Admin Panel: 24HRFXTRADINGORG Registerd users information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Email</th>
-										<th>AccountBal</th>
-										<th>EarnedTotal</th>
-										<th>BonusAmt</th>
-										<th>Withdrawal</th>
-										<th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('users/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['userEmail']?></td>
-											<td><?=$row['accBal']?></td>
-											<td><?=$row['earnedTotal']?></td>
-											<td><?=$row['bonus']?></td>
-											<td><?=$row['withdrawal']?></td>
-											
-											<td>
-												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-											</tr>
-								<?php
-										}
-									 } else{
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
 
-								<?php
+                            }else{
+                                $_SESSION['status']="No Found";
+                                header('Location: paid.php');
+                                exit();
 
-									 }
-
-									?>
-
-								</tbody>
-									
+                            }
+                            
+                            }else{
+                                 $_SESSION['status']="Invalid Id";
+                                header('Location: paid.php');
+                                exit();  
+                            }
+                            
+                            ?>
 
 
 
-
-							</table>
-
-						</div>
-					</div>
-
-				</div>
-		</div>
-
-	</div>
+                            </div>
+                        </div>
+                    </div>
 
 
-								
+                       
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+          						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

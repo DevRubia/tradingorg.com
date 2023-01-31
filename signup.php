@@ -26,11 +26,10 @@ if($createdUser){
 $additionalProperties=[
     'accBal'=> 0,
     'earnedTotal'=>0,
-    'investedAmount'=>0,
-    'widthdrawal'=>0,
+    'withdrawal'=>0,
     'bonus'=>0,
-    'email' => $email,
-    'displayName' => $fullname,
+    'userEmail' => $email,
+    'name' => $fullname,
 ];
 
 

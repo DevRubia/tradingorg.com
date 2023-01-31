@@ -35,7 +35,7 @@
                             <a class="nav-link active" href="packages.php">PACKAGES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="paid.php">PAID</a>
+                            <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
                         <?php if(!isset($SESSION['verifiedUserId'])) : ?>
                            <li class="nav-item">

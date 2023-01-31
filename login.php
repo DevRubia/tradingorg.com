@@ -1,4 +1,4 @@
-<?php
+   <?php
 session_start();
 include('conndb.php');
 
@@ -22,11 +22,26 @@ if(isset($_POST['loginbtn'])){
                             $userProperties = $database->getReference('users/'. $user->uid)->getValue();
                             
 
-                                $_SESSION['verifiedUserId'] = $uid;
-                                $_SESSION['idTokenString'] = $idTokenString;
                             $_SESSION['userProperties'] = $userProperties;
                                 
-            
+                            
+                            $claims = $auth->getUser($uid)->customClaims;
+
+                            if(isset($claims['admin']) == true){
+                                
+                                $_SESSION['verifiedAdmin'] = true;
+                                $_SESSION['verifiedUserId'] = $uid;
+                                $_SESSION['idTokenString'] = $idTokenString;
+                            }elseif(isset($claims['superAdmin']) == true ){
+                               
+                                $_SESSION['verifiedSuperAdmin'] = true;
+                                $_SESSION['verifiedUserId'] = $uid;
+                                $_SESSION['idTokenString'] = $idTokenString;
+                            }elseif($claims == null){
+                               
+                                $_SESSION['verifiedUserId'] = $uid;
+                                $_SESSION['idTokenString'] = $idTokenString;
+                            }
 
                                 $_SESSION['status']="welcome to your Dashboard";
                                 header('Location: dashboard.php');
@@ -34,7 +49,7 @@ if(isset($_POST['loginbtn'])){
 
                         } catch (FailedToVerifyToken $e) {
 
-                            $_SESSION['status']="sign in";
+                            $_SESSION['status']="sign in error";
                             header('Location: signinform.php');
                             exit();
 

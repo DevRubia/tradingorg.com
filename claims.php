@@ -1,8 +1,6 @@
 <?php
-include('authentication.php');
+include('adminAuth.php');
 include('adminclaimAuth.php');
-
-$userProperties = $_SESSION['userProperties'];
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +39,7 @@ $userProperties = $_SESSION['userProperties'];
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
+                           <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
                        
@@ -55,7 +53,7 @@ $userProperties = $_SESSION['userProperties'];
                         
                                                       
                         <li class="nav-item">
-                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                          <a class="nav-link active btn btn- btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
                         
                         
@@ -134,7 +132,7 @@ if(isset($_SESSION['status']))
 					<div class="card hold">
 						<div class="card-header hold">
 							<h2>
-								Admin Panel: 24HRFXTRADINGORG Registerd users information
+								Admin Claims Panel: 24HRFXTRADINGORG Registerd users claims information
 								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
 							</h2>
 						</div>
@@ -145,53 +143,51 @@ if(isset($_SESSION['status']))
 										<th>S1.no</th>
 										<th>UserName</th>
 										<th>Email</th>
-										<th>AccountBal</th>
-										<th>EarnedTotal</th>
-										<th>BonusAmt</th>
-										<th>Withdrawal</th>
+										<th>Role</th>
 										<th>Edit</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php
 									include('conndb.php');
-									
-									
 									$users=$auth->listUsers();
-									$result=$database->getReference('users/')->getValue();
 									
-									if($result > 0)
 									
-									{
 										$i=1;
-										foreach($result as $key => $row){
+										foreach($users as $row){
 								?>
 											<tr>
 											<td><?=$i++;?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['userEmail']?></td>
-											<td><?=$row['accBal']?></td>
-											<td><?=$row['earnedTotal']?></td>
-											<td><?=$row['bonus']?></td>
-											<td><?=$row['withdrawal']?></td>
+											<td><?=$row->displayName?></td>
+											<td><?=$row->email?></td>
+											<td>
+
+                                            <span>
+                                                    <?php
+                                                    $claims = $auth->getUser($row->uid)->customClaims;
+
+                                                    if(isset($claims['admin']) == true){
+                                                        echo"Admin";
+                                                    }if(isset($claims['superAdmin']) == true) {
+                                                        echo"SuperAdmin";
+                                                    }if($claims== null){
+                                                        echo"User";
+                                                    }
+                                                    
+                                                    ?>
+                                            </span>
+                                            </td>
 											
 											<td>
-												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+												<a href="claimsedit.php?id=<?=$row->uid;?>" class="btn btn-primary btn-sm">Edit</a>
 											</td>
 											
 											</tr>
 								<?php
 										}
-									 } else{
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
+									 
 
-								<?php
-
-									 }
-
+									
 									?>
 
 								</tbody>

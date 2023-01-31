@@ -1,10 +1,3 @@
-<?php
-include('authentication.php');
-include('adminclaimAuth.php');
-
-$userProperties = $_SESSION['userProperties'];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +34,7 @@ $userProperties = $_SESSION['userProperties'];
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid.php">PAID</a>
+                           <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
                        
@@ -55,7 +48,7 @@ $userProperties = $_SESSION['userProperties'];
                         
                                                       
                         <li class="nav-item">
-                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                          <a class="nav-link active btn btn- btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
                         
                         
@@ -117,101 +110,72 @@ $userProperties = $_SESSION['userProperties'];
 							<!-- TradingView Widget END -->
 			</div>
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+		<div class="container">
+            <div class="row justify-content-center">
+               <div class="col-md-6">
+                 <div class="card mt-2">
+                    <div class="card-header">
+                        <h4>Change password</h4>
+                    </div>
+                        <div class="card-body">
+                            <form action="update.php" method="POST">
 
-?>
-   
+                                <?php
+                                // if(isset($_GET['id'])){
+                                //     $uid =$Get['id'];
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Admin Panel: 24HRFXTRADINGORG Registerd users information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Email</th>
-										<th>AccountBal</th>
-										<th>EarnedTotal</th>
-										<th>BonusAmt</th>
-										<th>Withdrawal</th>
-										<th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('users/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['userEmail']?></td>
-											<td><?=$row['accBal']?></td>
-											<td><?=$row['earnedTotal']?></td>
-											<td><?=$row['bonus']?></td>
-											<td><?=$row['withdrawal']?></td>
-											
-											<td>
-												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-											</tr>
-								<?php
-										}
-									 } else{
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
+                                //     try {
+                                //         $user = $auth->getUser($uid);
+                                       ?>
+                                       <input type="hidden" name="changePassId" value="<?=$uid;?>">
 
-								<?php
+                                       <div class="formn-group mb3">
+                                            <label for="">Your Email</label>
+                                            <input type="text" name="emailPass" required class="form-control">
+                                            </div>
 
-									 }
 
-									?>
+                                            <div class="formn-group mb3">
+                                            <label for="">New password</label>
+                                            <input type="text" name="newPass" required class="form-control">
+                                            </div>
 
-								</tbody>
-									
+
+                                            <div class="formn-group mb3">
+                                            <label for="">Retype password</label>
+                                            <input type="text" name="retyPass" required class="form-control">
+                                            </div>
+
+
+                                            <div class="formn-group mb3">
+                                            <p></p>
+                                            <button type="submit" name="changePass" class="btn btn-primary float-end">submit</button>
+                                            </div>
+
+                                       <?php
+                                //     } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+                                //         echo $e->getMessage();
+                                //     }
+
+                                // }else{
+                                //     echo "No Id Found";
+                                // }
+                                ?>
+
+                            </form>
+                        </div>
+            
+                    </div>
+                </div>	
 
 
 
 
-							</table>
 
-						</div>
-					</div>
+            </div>
+        </div>
 
-				</div>
-		</div>
-
-	</div>
-
-
-								
+           						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

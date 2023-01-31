@@ -17,6 +17,10 @@ if(isset($_SESSION['verifiedUserId'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+    <link rel="stylesheet" href="css/intlTelInput.css">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/stylesignin.css">
 </head>
@@ -45,7 +49,7 @@ if(isset($_SESSION['verifiedUserId'])){
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="paid.php">PAID</a>
+                            <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
@@ -87,26 +91,61 @@ if(isset($_SESSION['status']))
 ?>
 
 
-<form action="signup.php" method="POST">
-<div class="section">
-        <div class="container">
-            <div class="row full-height justify-content-center">
-                <div class="col-12 text-center align-self-center py-5">
-                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                        <h6 class="mb-0 pb-3"><span> </span><span>Sign Up</span></h6>
-                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-                        <label for="reg-log"></label>
-                        <div class="card-3d-wrap mx-auto">
-                            <div class="card-3d-wrapper">
-                            
-                               
-                          
-                            <div class="card-back">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
+                                        <form action="signup.php" method="POST">
+                                        <div class="section">
+                                                <div class="container">
+                                                    <div class="row full-height justify-content-center">
+                                                        <div class="col-12 text-center align-self-center py-5">
+                                                            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                                                                <h6 class="mb-0 pb-3"><span> </span><span>Sign Up</span></h6>
+                                                                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                                                                <label for="reg-log"></label>
+                                                                <div class="card-3d-wrap mx-auto">
+                                                                    <div class="card-3d-wrapper">
+                                                                             
+                              <div class="container">
+                                        <div class="row">
+                                                    <form class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Name">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" placeholder="Subject">
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                                        </div>
+                                                            <div class="col-12">
+                                                                <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                                <label class="form-check-label" for="gridCheck">
+                                                                    Check me out
+                                                                </label>
+                                                                </div>
+                                                            </div>
+                                                                    <div class="col-12">
+                                                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                                                </div>
+                                                            </form>
+                                                                    </div>
+                                                 </div>
+                                        <div class="card-back">
+                                                                            <div class="center-wrap">
+                                                                                <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Sign Up</h4>
+
                                             <div class="form-group">
-                                                <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                                                <input type="text" name="logUserName" class="form-style" placeholder="UserName" id="logname" autocomplete="off">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="logname" class="form-style" placeholder="UserName" id="logname" autocomplete="off">
                                                 <i class="input-icon uil uil-user"></i>
                                             </div>
                                             <div class="form-group mt-2">
@@ -120,12 +159,15 @@ if(isset($_SESSION['status']))
                                             <div >
                                                 <button type="submit" name="save-contact" class="btn mt-4">submit</button>
                                                 <h6 class="mb-0 mt-4 text-center"><a href="landingpage.php" class="link">Log-in form</a></h6>
+     
+                                       </div>
+
+
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                            
-                           
+
                             </div>
                         </div>
                     </div>
@@ -149,4 +191,46 @@ if(isset($_SESSION['status']))
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
+<script src="js/intlTelInput.js"></script>
+
+<script>
+var input = document.querySelector("#phone"),
+    errorMsg = document.querySelector("#error-msg"),
+    validMsg = document.querySelector("#valid-msg");
+
+// Error messages based on the code returned from getValidationError
+var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+// Initialise plugin
+var intl = window.intlTelInput(input, {
+    utilsScript: "js/utils.js"
+});
+
+var reset = function() {
+    input.classList.remove("error");
+    errorMsg.innerHTML = "";
+    errorMsg.classList.add("hide");
+    validMsg.classList.add("hide");
+};
+
+// Validate on blur event
+input.addEventListener('blur', function() {
+    reset();
+    if(input.value.trim()){
+        if(intl.isValidNumber()){
+            validMsg.classList.remove("hide");
+        }else{
+            input.classList.add("error");
+            var errorCode = intl.getValidationError();
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide");
+        }
+    }
+});
+
+// Reset on keyup/change event
+input.addEventListener('change', reset);
+input.addEventListener('keyup', reset);
+
+</script>
 </html>
