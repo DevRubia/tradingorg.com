@@ -12,9 +12,7 @@ $emailPass=$_POST['emailPass'];
 
 
 //$uid = $_POST['changePassId'];
-$verifyemail=$auth->sendPasswordResetLink($emailPass);
 
-if($verifyemail){
                          if($newPass==$retyPass){
                                     try {
                                         $user = $auth->getUserByEmail($emailPass);
@@ -55,12 +53,7 @@ if($verifyemail){
                             exit(); 
                         }   
 
-                }else{
-                      $_SESSION['status']="password Update not Accessed Properly";
-                      header("Location: landingpage.php");
-                   exit();
-               }
-
+    
 
 
 

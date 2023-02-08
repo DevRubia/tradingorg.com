@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['verifiedUserId'])){
     $_SESSION['status']="you are already logged in..RefreshSession/Logout";
-    header('Location: dashboard.php');
+    header('Location: newDashboard.php');
     exit();
 }else{
      

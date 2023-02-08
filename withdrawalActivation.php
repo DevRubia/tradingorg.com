@@ -1,17 +1,16 @@
-<?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
 
-//$userProperties = $_SESSION['userProperties'];
+<?php
+include('authentication.php');
+$userProperties = $_SESSION['userProperties'];
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -32,19 +31,9 @@
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
+                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
-                          </li> 
-                        
-						  <?php
+                        <?php
                           if(!isset($_SESSION['verifiedUserId'])){
 
                           
@@ -69,6 +58,7 @@
                           
                           ?>
                         
+                        
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -80,7 +70,7 @@
     </header>
 
 
-<body class="container">
+<body class="container bg-dark">
 		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
@@ -125,120 +115,76 @@
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
+                            
 			</div>
-
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
-
-?>
+<form action="SendWithdrawalRequest.php" method="post">
    
+		<div class="container p-2 bd-highlight">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1> 
+                                <?php
+                                if(isset($_SESSION['status']))
+                                
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Top 5 24HRFXTRADINGORG paid users information
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Date</th>
-										<th>Amount</th>
-                                        <th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('paidTable/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
-											<td><?=$row['date']?></td>
-											<td><?=$row['Amount']?></td>
-                                            <td>
-												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-										
-											</tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
-											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username2']?></td>
-											<td><?=$row['date2']?></td>
-											<td><?=$row['Amount2']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username3']?></td>
-											<td><?=$row['date3']?></td>
-											<td><?=$row['Amount3']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
-											<td><?=$row['date4']?></td>
-											<td><?=$row['Amount4']?></td>
-                                            </tr>
-								<?php
-										}
-									 } else{tr
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
+                                ?>
+                                All time Withdrawal Fee Fund
+                                <a href="insuarance.php" class="btn btn-danger float-end">Back</a>
+                            </h1>
 
-								<?php
+                            <div class="card-body">
 
-									 }
+                                    <div class="col-md-12">
+                                    <div class="notice">
+                                        <h3>*Pay $100 to Unlock all time withdrawals<label>#This pop-up will never show once fee is cleared</label></h3>
+                                    </div>
+                                        <div class="form-group">
+                                            <label for="amount">Click Payment method:</label>
+                                            <div class="row" required>
+                                                                                                                <div class="cnt_min col-md-2">
+                                                    <input type="radio" name="mpesaW" value="mpesa" ><img src="./mpesa_files/2560px-M-PESA_LOGO-01_svg.png" alt="Select payment method" class="selected_img">
+                                                </div>
+                                                                                                                <div class="cnt_min col-md-2">
+                                                    <input type="radio" name="airtelW" value="Airtel" ><img src="./mpesa_files/airtel-money.png" alt="Select payment method" class="selected_img">
+                                                </div>
+                                                                                                                <div class="cnt_min col-md-2">
+                                                    <input type="radio" name="mtnW" value="MtnMoney"><img src="./mpesa_files/69-691715_mtn-mm-logo-generic-mtn-mobile-money-logo.png" alt="Select payment method" class="selected_img">
+                                                </div>
+                                                                                                                <div class="cnt_min col-md-2">
+                                                    <input type="radio" name="bitcoinW" value="Bitcoin"><img src="./mpesa_files/IMG_20230201_152931_(2000_x_1050_pixel)7.jpg" alt="Select payment method" class="selected_img">
+                                                </div>
+                                            
+                                            </div>
+                                    </div>
 
-									?>
 
-								</tbody>
-									
+                                    <div class="form-group">
+                                        <label for="AccountNo">Transaction Code/Info:</label>
+                                            <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="insuaranceTransactionIdW" required>
+                                    </div>
+
+                                    <button type="submit" name="withdraw" class="btn btn-warning btn-sm display-i ft-right">Process Withdrawal</button>
+
+                             </div>
+                        </div>
+                    </div>
+
+
+                       
+
+
+                </div>
 
 
 
-
-							</table>
-
-						</div>
-					</div>
-
-				</div>
-		</div>
-
-	</div>
-
-
-								
+            </div>
+        </div>
+    </form>  						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

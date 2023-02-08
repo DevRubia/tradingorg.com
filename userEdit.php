@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    session_start();
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +11,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<!-- <link rel="stylesheet" href="./CSS/stylepaid.css"> -->
 	
 </head>
 
@@ -25,24 +28,30 @@
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         
-                        
-                        
+                        <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
 
-                        
-                       
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        
-                                                      
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
+                          <?php
+                          }else{
+                          ?>
+                                                              
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        <?php
                         
+                       }
+                          
+                          ?>
                         
                     </ul>
                     <form class="d-flex">
@@ -56,7 +65,7 @@
 
 
 <body class="container">
-		<div class="col-xl-12 col-12 col-md-12">
+		<div class="">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
 			<div class="tradingview-widget-container mb-1-5m" style="width: 100%; height: 46px;">
@@ -142,22 +151,37 @@
                                     <input type="text" name="accountBal" value="<?=$getdata['accBal']?>" class="form-control">
                                 </div>
 
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-1">
                                     <label for="">EarnedTotal:</label>
                                     <input type="text" name="earnedTotal" value="<?=$getdata['earnedTotal']?>" class="form-control">
                                 </div>
 
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-1">
                                     <label for="">BonusAmt:</label>
                                     <input type="text" name="bonusAmt" value="<?=$getdata['bonus']?>" class="form-control">
                                 </div>
 
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-1">
                                     <label for="">Withdrawal:</label>
                                     <input type="text" name="withdrawable" value="<?=$getdata['withdrawal']?>" class="form-control">
                                 </div>
 
-                                <div class="forWithdrawalm-group mb-3">
+                                <div class="form-group mb-1">
+                                    <label for="">InsuaranceFee(start with $):</label>
+                                    <input type="text" name="insuarance" value="<?=$getdata['insuarance']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-1">
+                                    <label for="">WithdrawalFundActivation:</label>
+                                    <input type="text" name="withdrawalFund" value="<?=$getdata['withdrawalFund']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-1">
+                                    <label for="">Status:</label>
+                                    <input type="text" name="status" value="<?=$getdata['status']?>" class="form-control">
+                                </div>
+
+                                <div class="forWithdrawalm-group mb-1">
                                     <button type="submit" name="updateAccount"  class="btn btn-primary">updateUserDetail</button>
                                 </div>
 

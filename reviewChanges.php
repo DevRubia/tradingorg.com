@@ -1,9 +1,3 @@
-<?php
-include('adminAuth.php');
-include('adminclaimAuth.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +8,7 @@ include('adminclaimAuth.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<!-- <link rel="stylesheet" href="./CSS/stylepaid.css"> -->
 	
 </head>
 
@@ -31,9 +25,6 @@ include('adminclaimAuth.php');
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
-                        </li>                 
                         <?php
                           if(!isset($_SESSION['verifiedUserId'])){
 
@@ -58,8 +49,6 @@ include('adminclaimAuth.php');
                        }
                           
                           ?>
-                        
-                        
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -125,80 +114,130 @@ include('adminclaimAuth.php');
 
                                 ?>
 			</div>
+
+		<div class="container p-2 bd-highlight">
             <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                    <h2>User Claims</h2>
-                                    <a href="newDashboard.php" class="btn btn-danger float-end">Back</a>
-                            </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                AdminpaidPageEdit Panel
+                                <a href="adminpaidReview.php" class="btn btn-danger float-end">Back</a>
+                            </h2>
 
-                                <div class="card-body">
-                                    
-                                  <form action="claimsbend.php" method="POST">
-                                    <?php
-                                    if(isset($_GET['id']))
-                                    {
-                                        $uid =$_GET['id'];
-                                        ?>
-                                        <input type="hidden" name="claimUid" value="<?=$uid?>">
-                                        <div class="form-group mb-3">
-                                        <select name="role" class="form-control" required>
-                                            <option value="">Select Roles</option>
-                                            <option value="admin">Admin</option>
-                                            <option value="superAdmin">SuperAdmin</option>
-                                            <option value="no-Role">user</option>
-                                        </select>
-                                        </div>
-                                        <label>Current user role is:</label>
-                                        <h4>
-                                            <?php
-                                            $claims = $auth->getUser($uid)->customClaims;
+                            <div class="card-body container">
 
-                                            if(isset($claims['admin']) == true){
-                                                echo"Role is admin";
-                                            }if(isset($claims['superAdmin']) == true){
-                                                echo"Role is Superadmin";
-                                            }if($claims== null){
-                                                echo"No Role";
-                                            }
-                                            
-                                            ?>
-                                        </h4>
+                            <?php
+                            include('conndb.php');
 
+                            if(isset($_GET['id'])){
+                                // $keychild= $_GET['id'];
 
-
-                                        <div class="form-group mb-3">
-                                            <button type="submit" name="userClaim" class="btn btn-primary">ReviewRole</button>
-                                        </div>
-                                        <?php
-
-                                    }
-                                    
-                                
-                                    ?>
-                                    
-                                  </form>  
-
-                                </div>
-                            </div>
-                        </div>
+                                $getdata =$database->getReference('paidTable/')->getChild('Table/')->getValue();
+                            if($getdata > 0)
+                            {
+                             ?>
                              
+                             
+                             <form  action="AccountpaidUpdate.php" method="POST">
+
+                             <!-- <input type="hidden" name="key" value="<?=$keychild?>"> -->
+                                <div class="form-group mb-3">
+                                    <label for="">UserName:</label>
+                                    <input type="text" name="username" value="<?=$getdata['username']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date:</label>
+                                    <input type="text" name="date" value="<?=$getdata['date']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount:</label>
+                                    <input type="text" name="Amount" value="<?=$getdata['Amount']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">UserName1:</label>
+                                    <input type="text" name="username1" value="<?=$getdata['username1']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date1:</label>
+                                    <input type="text" name="date1" value="<?=$getdata['date1']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount1:</label>
+                                    <input type="text" name="Amount1" value="<?=$getdata['Amount1']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">UserName2:</label>
+                                    <input type="text" name="username2" value="<?=$getdata['username2']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date2:</label>
+                                    <input type="text" name="date2" value="<?=$getdata['date2']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount2:</label>
+                                    <input type="text" name="Amount2" value="<?=$getdata['Amount2']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">UserName3:</label>
+                                    <input type="text" name="username3" value="<?=$getdata['username3']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date3:</label>
+                                    <input type="text" name="date3" value="<?=$getdata['date3']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount3:</label>
+                                    <input type="text" name="Amount3" value="<?=$getdata['Amount3']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">UserName4:</label>
+                                    <input type="text" name="username4" value="<?=$getdata['username4']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Date4:</label>
+                                    <input type="text" name="date4" value="<?=$getdata['date4']?>" class="form-control">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="">Amount4:</label>
+                                    <input type="text" name="Amount4" value="<?=$getdata['Amount4']?>" class="form-control">
+                                </div>
+      
+                                <div class="forWithdrawalm-group mb-3">
+                                    <button type="submit" name="updateAccount"  class="btn btn-primary">updateUserDetail</button>
+                                </div> 
+
+                                </form>
+   
                             <?php    
 
 
-                            // }else{
-                            //     $_SESSION['status']="No Found";
-                            //     header('Location: paid.php');
-                            //     exit();
+                            }else{
+                                $_SESSION['status']="No Found";
+                                header('Location: paid.php');
+                                exit();
 
-                            // }
+                            }
                             
-                            // }else{
-                            //      $_SESSION['status']="Invalid Id";
-                            //     header('Location: paid.php');
-                            //     exit();  
-                            // }
+                            }else{
+                                 $_SESSION['status']="Invalid Id";
+                                header('Location: paid.php');
+                                exit();  
+                            }
                             
                             ?>
 
@@ -207,7 +246,7 @@ include('adminclaimAuth.php');
                             </div>
                         </div>
                     </div>
-                 </div>
+
 
                        
 

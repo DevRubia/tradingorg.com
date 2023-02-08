@@ -1,8 +1,8 @@
 <?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
+include('authentication.php');
+include('adminclaimAuth.php');
 
-//$userProperties = $_SESSION['userProperties'];
+$userProperties = $_SESSION['userProperties'];
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<link rel="stylesheet" href="./CSS/styleAdmin.css">
 	
 </head>
 
@@ -41,7 +41,7 @@
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
+                           <a class="nav-link" href="paid.php">PAID</a>
                           </li> 
                         
 						  <?php
@@ -144,7 +144,8 @@ if(isset($_SESSION['status']))
 					<div class="card hold">
 						<div class="card-header hold">
 							<h2>
-								Top 5 24HRFXTRADINGORG paid users information
+								Admin Panel:[users payment information]
+								<a href="newDashboard.php" class="btn btn-primary float-end">dashboard</a>
 							</h2>
 						</div>
 						<div class="card-body container hold">
@@ -153,9 +154,16 @@ if(isset($_SESSION['status']))
 									<tr>
 										<th>S1.no</th>
 										<th>UserName</th>
-										<th>Date</th>
-										<th>Amount</th>
-                                        <th>Edit</th>
+										<th>AccountNumber</th>
+										<th>PayAccountName</th>
+										<th>AccountType</th>
+                                        <th>WithdrawableAmount</th>
+										<th>InsuranceFee</th>
+										<th>WithdrawalActivation</th>
+										
+										
+										
+										
 									</tr>
 								</thead>
 								<tbody>
@@ -164,7 +172,7 @@ if(isset($_SESSION['status']))
 									
 									
 									$users=$auth->listUsers();
-									$result=$database->getReference('paidTable/')->getValue();
+									$result=$database->getReference('users/')->getValue();
 									
 									if($result > 0)
 									
@@ -174,42 +182,18 @@ if(isset($_SESSION['status']))
 								?>
 											<tr>
 											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
-											<td><?=$row['date']?></td>
-											<td><?=$row['Amount']?></td>
-                                            <td>
-												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
+											<td><?=$row['name']?></td>
+											<td><?=$row['accountNumber']?></td>
+											<td><?=$row['accName']?></td>
+											<td><?=$row['accountType']?></td>
+                                            <td><?=$row['withdrawal']?></td>
+											<td><?=$row['insuarance']?></td>
+											<td><?=$row['withdrawalFund']?></td>
 										
 											</tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
-											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username2']?></td>
-											<td><?=$row['date2']?></td>
-											<td><?=$row['Amount2']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username3']?></td>
-											<td><?=$row['date3']?></td>
-											<td><?=$row['Amount3']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
-											<td><?=$row['date4']?></td>
-											<td><?=$row['Amount4']?></td>
-                                            </tr>
 								<?php
 										}
-									 } else{tr
+									 } else{
 								?>
 											<tr>
 											<td colspan="?">No Record Found</td>

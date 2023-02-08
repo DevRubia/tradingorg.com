@@ -1,6 +1,6 @@
 <?php
-include('adminAuth.php');
-include('adminclaimAuth.php');
+ include('adminAuth.php');
+ include('adminclaimAuth.php');
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include('adminclaimAuth.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<link rel="stylesheet" href="./CSS/claims.css">
 	
 </head>
 
@@ -29,32 +29,35 @@ include('adminclaimAuth.php');
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
+						<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
-                          </li> 
                         
-                       
+                      
+						  <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        
-                                                      
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn- btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
+                          <?php
+                          }else{
+                          ?>
+                                                              
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        <?php
+                        
+                       }
+                          
+                          ?>
                         
                         
                     </ul>
@@ -68,7 +71,7 @@ include('adminclaimAuth.php');
     </header>
 
 
-<body class="container">
+<body >
 		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
@@ -125,7 +128,7 @@ if(isset($_SESSION['status']))
 ?>
    
 
-		<div class="container-fluid">
+		<div class="container hold2">
 			<div class="row">
 				<div class="col-md-12">
 					

@@ -15,7 +15,7 @@ $userProperties = $_SESSION['userProperties'];
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<link rel="stylesheet" href="./CSS/styleAdmin.css">
 	
 </head>
 
@@ -44,20 +44,30 @@ $userProperties = $_SESSION['userProperties'];
                            <a class="nav-link" href="paid.php">PAID</a>
                           </li> 
                         
-                       
+						  <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        
-                                                      
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
+                          <?php
+                          }else{
+                          ?>
+                                                              
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        <?php
                         
+                       }
+                          
+                          ?>
                         
                     </ul>
                     <form class="d-flex">
@@ -135,7 +145,7 @@ if(isset($_SESSION['status']))
 						<div class="card-header hold">
 							<h2>
 								Admin Panel: 24HRFXTRADINGORG Registerd users information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
+								<a href="newDashboard.php" class="btn btn-primary float-end">dashboard</a>
 							</h2>
 						</div>
 						<div class="card-body container hold">
@@ -149,6 +159,9 @@ if(isset($_SESSION['status']))
 										<th>EarnedTotal</th>
 										<th>BonusAmt</th>
 										<th>Withdrawal</th>
+										<th>Insuarance</th>
+										<th>FeeWithdrawal</th>
+										<th>Status</th>
 										<th>Edit</th>
 									</tr>
 								</thead>
@@ -174,6 +187,9 @@ if(isset($_SESSION['status']))
 											<td><?=$row['earnedTotal']?></td>
 											<td><?=$row['bonus']?></td>
 											<td><?=$row['withdrawal']?></td>
+											<td><?=$row['insuarance']?></td>
+											<td><?=$row['withdrawalFund']?></td>
+											<td><?=$row['status']?></td>
 											
 											<td>
 												<a href="userEdit.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>

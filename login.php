@@ -44,7 +44,7 @@ if(isset($_POST['loginbtn'])){
                             }
 
                                 $_SESSION['status']="welcome to your Dashboard";
-                                header('Location: dashboard.php');
+                                header('Location: newDashboard.php');
                                 exit();
 
                         } catch (FailedToVerifyToken $e) {

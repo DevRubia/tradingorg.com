@@ -11,12 +11,18 @@ if(isset($_POST['updateAccount']))
     $accountBal=$_POST['accountBal'];
     $bonusAmt=$_POST['bonusAmt'];
     $withdrawable=$_POST['withdrawable'];
+    $insuarance=$_POST['insuarance'];
+    $withdrawalFund=$_POST['withdrawalFund'];
+    $status=$_POST['status'];
     
     $newData = [
         'earnedTotal' => $earnedTotal,
         'accBal' => $accountBal,
         'bonus' => $bonusAmt,
-        'withdrawal'=> $withdrawable
+        'withdrawal'=> $withdrawable,
+        'insuarance'=>  $insuarance,
+        'withdrawalFund'=> $withdrawalFund,
+        'status'=> $status
     ];   
 
     $updateResult = $database->getReference('users/'.$key)->update($newData);

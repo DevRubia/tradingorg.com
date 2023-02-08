@@ -1,9 +1,5 @@
 <?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
-
-//$userProperties = $_SESSION['userProperties'];
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,20 +40,30 @@
                            <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
-                       
+						  <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        
-                                                      
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
+                          <?php
+                          }else{
+                          ?>
+                                                              
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        <?php
                         
+                       }
+                          
+                          ?>
                         
                     </ul>
                     <form class="d-flex">
@@ -164,14 +170,14 @@ if(isset($_SESSION['status']))
 								?>
 											<tr>
 											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
+											<td><?=$row['username']?></td>
 											<td><?=$row['date']?></td>
 											<td><?=$row['Amount']?></td>
 										
 											</tr>
                                             <tr>
                                             <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
+											<td><?=$row['username1']?></td>
 											<td><?=$row['date1']?></td>
 											<td><?=$row['Amount1']?></td>  
                                             </tr>
@@ -189,13 +195,13 @@ if(isset($_SESSION['status']))
                                             </tr>
                                             <tr>
                                             <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
+											<td><?=$row['username4']?></td>
 											<td><?=$row['date4']?></td>
 											<td><?=$row['Amount4']?></td>
                                             </tr>
 								<?php
 										}
-									 } else{tr
+									 } else{
 								?>
 											<tr>
 											<td colspan="?">No Record Found</td>

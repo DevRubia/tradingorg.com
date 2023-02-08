@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,20 +56,30 @@
                             <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
                         
-                        <?php if(!isset($SESSION['verifiedUserId'])) : ?>
+                        <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        <?php else : ?>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
+                        </li>
+                          <?php
+                          }else{
+                          ?>
                                                               
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="logout.php">LOGOUT</a>
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
-                        <?php endif;?>
+                        <?php
+                        
+                       }
+                          
+                          ?>
 
                     </ul>
                     <form class="d-flex">

@@ -1,8 +1,6 @@
 <?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
-
-//$userProperties = $_SESSION['userProperties'];
+include('authentication.php');
+include('adminclaimAuth.php');
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +13,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<!-- <link rel="stylesheet" href="./CSS/stylepaid.css"> -->
 	
 </head>
 
@@ -44,30 +42,20 @@
                            <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
-						  <?php
-                          if(!isset($_SESSION['verifiedUserId'])){
-
-                          
-                          ?>
+                       
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
-                        </li>
-                          <?php
-                          }else{
-                          ?>
-                                                              
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
-                        </li>
-                        <?php
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
+                        </li>        
                         
-                       }
-                          
-                          ?>
+                                                      
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn-primary btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        
                         
                     </ul>
                     <form class="d-flex">
@@ -128,13 +116,13 @@
 			</div>
 
 			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+                if(isset($_SESSION['status']))
+                {
+                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                    unset($_SESSION['status']);
+                }
 
-?>
+              ?>
    
 
 		<div class="container-fluid">
@@ -156,6 +144,7 @@ if(isset($_SESSION['status']))
 										<th>Date</th>
 										<th>Amount</th>
                                         <th>Edit</th>
+					
 									</tr>
 								</thead>
 								<tbody>
@@ -163,7 +152,7 @@ if(isset($_SESSION['status']))
 									include('conndb.php');
 									
 									
-									$users=$auth->listUsers();
+									
 									$result=$database->getReference('paidTable/')->getValue();
 									
 									if($result > 0)
@@ -174,38 +163,58 @@ if(isset($_SESSION['status']))
 								?>
 											<tr>
 											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
+											<td><?=$row['username']?></td>
 											<td><?=$row['date']?></td>
 											<td><?=$row['Amount']?></td>
-                                            <td>
-												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
 										
-											</tr>
+                                            <td>
+												<a href="reviewChanges.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											</td>
+
+                                           </tr>
                                             <tr>
                                             <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
+											<td><?=$row['username1']?></td>
 											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
+											<td><?=$row['Amount1']?></td>
+                                            
+                                            <td>
+												<a href="reviewChanges.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											</td>
+                                            
                                             </tr>
                                             <tr>
                                             <td><?=$i++;?></td>
 											<td><?=$row['username2']?></td>
 											<td><?=$row['date2']?></td>
 											<td><?=$row['Amount2']?></td>
+
+                                            <td>
+												<a href="reviewChanges.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											</td>
+
                                             </tr>
                                             <tr>
                                             <td><?=$i++;?></td>
 											<td><?=$row['username3']?></td>
 											<td><?=$row['date3']?></td>
 											<td><?=$row['Amount3']?></td>
+
+                                            <td>
+												<a href="reviewChanges.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											</td>
                                             </tr>
                                             <tr>
                                             <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
+											<td><?=$row['username4']?></td>
 											<td><?=$row['date4']?></td>
 											<td><?=$row['Amount4']?></td>
+
+                                            <td>
+												<a href="reviewChanges.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
+											</td> 
+											
+
                                             </tr>
 								<?php
 										}

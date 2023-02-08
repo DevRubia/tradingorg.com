@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    session_start();
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,19 +40,30 @@
                            <a class="nav-link" href="paid2.php">PAID</a>
                           </li> 
                         
-                       
+                          <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        
-                                                      
-                        <li class="nav-item">
-                          <a class="nav-link active btn btn- btn-hover" aria-current="page" href="logout.php">RefreshSession</a>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
+                          <?php
+                          }else{
+                          ?>
+                                                              
+                        <li class="nav-item">
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
+                        </li>
+                        <?php
+                        
+                       }
+                          
+                          ?>
                         
                         
                     </ul>

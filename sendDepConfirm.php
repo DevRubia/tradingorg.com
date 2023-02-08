@@ -1,8 +1,7 @@
-<?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
 
-//$userProperties = $_SESSION['userProperties'];
+<?php
+include('authentication.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -32,19 +31,9 @@
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
+                            <a class="nav-link active" aria-current="page" href="newDashboard.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
-                          </li> 
-                        
-						  <?php
+                        <?php
                           if(!isset($_SESSION['verifiedUserId'])){
 
                           
@@ -80,7 +69,7 @@
     </header>
 
 
-<body class="container">
+<body class="container bg-dark">
 		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
@@ -125,120 +114,83 @@
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
-			</div>
+                            <?php
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                }
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+                                ?>
+			</div>
+            
+           
+
+<form action="depositEmail.php" method="post">
+
+ <?php
+            
+    
+$accName=$_POST['accName'];
+$accNumber=$_POST['accNumber'];
+$depoAmt=$_POST['depoAmt'];
+$transactionId=$_POST['transactionId'];
 
 ?>
-   
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Top 5 24HRFXTRADINGORG paid users information
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Date</th>
-										<th>Amount</th>
-                                        <th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('paidTable/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
-											<td><?=$row['date']?></td>
-											<td><?=$row['Amount']?></td>
-                                            <td>
-												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-										
-											</tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
-											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username2']?></td>
-											<td><?=$row['date2']?></td>
-											<td><?=$row['Amount2']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username3']?></td>
-											<td><?=$row['date3']?></td>
-											<td><?=$row['Amount3']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
-											<td><?=$row['date4']?></td>
-											<td><?=$row['Amount4']?></td>
-                                            </tr>
-								<?php
-										}
-									 } else{tr
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
-
-								<?php
-
-									 }
-
-									?>
-
-								</tbody>
-									
 
 
 
+		<div class="container p-2 bd-highlight">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                           
 
-							</table>
+                            <div class="card-body">
 
-						</div>
-					</div>
+                           <h1>
 
-				</div>
-		</div>
+                          Confirm your deposit details 
 
-	</div>
+                           </h1>
+                               
+                         
+                           <div class="form-group">
+                               <label for="depAccname">Deposit Account Name:</label>
+                               <h4 for="depAccname"><?=$accName?></h4>
+                                </div>
+                                <div class="form-group">
+                               <label for="depAccname">Deposit Account Number:</label>
+                               <h4 for="depAccname"><?=$accNumber?></h4>
+                                </div>
+
+                                <div class="form-group">
+                               <label for="deptrans">Amount Deposit:</label>
+                               <h4 for="depAccname"><?=$depoAmt?></h4>
+                                </div>
+                                <div class="form-group">
+                               <label for="deptrans">Deposit Transaction code:</label>
+                               <h4 for="depAccname"><?=$transactionId?></h4>
+                                </div>
+
+                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right">SEND</button>
+                    </form>
+                             </div>
+                        </div>
+                    </div>
 
 
-								
+                       
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+          						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

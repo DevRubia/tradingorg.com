@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,20 +37,30 @@
                         <li class="nav-item">
                             <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
-                        <?php if(!isset($SESSION['verifiedUserId'])) : ?>
+                        <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        <?php else : ?>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
+                        </li>
+                          <?php
+                          }else{
+                          ?>
                                                               
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="logout.php">LOGOUT</a>
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
-                        <?php endif;?>
+                        <?php
+                        
+                       }
+                          
+                          ?>
 
                     </ul>
                     <form class="d-flex">
@@ -88,7 +101,9 @@ forextradesacco.com LTD investment project is a product of careful preparation a
 
 Your deposit is working on an ongoing basis, and makes profit every hour with the ability to withdraw profit. Your deposit is for life and irretrievable. This proposal would be interesting not only for beginners of cryptocurrency operation, but also for experienced online investors. 
 forextradesacco.com LTD Business uses only modern mining equipment and trades at the most stable markets, which minimizes the risk of financial loss to customers and guarantees them a stable income accrued every 60 minutes. Join our company today and start making high profits!
-</p></div>
+</p>
+</div>
+</div>
 
 
 

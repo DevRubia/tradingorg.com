@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,20 +39,30 @@
                         <li class="nav-item">
                             <a class="nav-link" href="paid2.php">PAID</a>
                         </li>
-                        <?php if(!isset($SESSION['verifiedUserId'])) : ?>
+                        <?php
+                          if(!isset($_SESSION['verifiedUserId'])){
+
+                          
+                          ?>
                            <li class="nav-item">
                            <a class="nav-link active" aria-current="page" href="landingpage.php">LOGIN</a>
                         </li>
                            
                         <li class="nav-item">
-                           <a  class="nav-link active" aria-current="page" href="signinform.php" id="btnlog">Sign Up</a>
-                        </li>        
-                        <?php else : ?>
+                           <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
+                        </li>
+                          <?php
+                          }else{
+                          ?>
                                                               
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="logout.php">LOGOUT</a>
+                          <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
-                        <?php endif;?>
+                        <?php
+                        
+                       }
+                          
+                          ?>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -84,30 +96,38 @@
                     <div class="front">
                         <p>Deposit: $30</p>
                         <p>Income: $120</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
-                <div class="flip-card-back">
+                <div class="flip-card-back "> 
+                   
                     <p class="title">Convert</p>
+                
+
                     <div class="deposit">
                         <h3>Deposit</h3>
                         <p>70,000.00 Tzs</p>
                         <p>3,700.00 KES</p>
                         <p>113,560.00 UGX</p>
                         <p>490.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
-
+            
                     <div class="income">
                         <h3>Income</h3>
                         <p>280,000.00 Tzs</p>
                         <p>14,562.00 KES</p>
                         <p>454,200.00 UGX</p>
                         <p>1,945.00 ZMW</p>
-
-
+                       
+                        
                     </div>
+                  
                 </div>
+
             </div>
+
         </div>
 
         <div class="flip-card">
@@ -117,6 +137,7 @@
                     <div class="front">
                         <p>Deposit: $40</p>
                         <p>Income: $160</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -150,6 +171,7 @@
                     <div class="front">
                         <p>Deposit: $50</p>
                         <p>Income: $200</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -183,6 +205,7 @@
                     <div class="front">
                         <p>Deposit: $60</p>
                         <p>Income: $240</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -216,6 +239,7 @@
                     <div class="front">
                         <p>Deposit: $80</p>
                         <p>Income: $320</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -249,6 +273,7 @@
                     <div class="front">
                         <p>Deposit: $90</p>
                         <p>Income: $360</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -282,6 +307,7 @@
                     <div class="front">
                         <p>Deposit: $100</p>
                         <p>Income: $300</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -315,6 +341,7 @@
                     <div class="front">
                         <p>Deposit: $150</p>
                         <p>Income: $400</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -348,6 +375,7 @@
                     <div class="front">
                         <p>Deposit: $200</p>
                         <p>Income: $500</p>
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>

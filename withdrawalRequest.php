@@ -1,8 +1,7 @@
-<?php
-// include('authentication.php');
-// include('adminclaimAuth.php');
 
-//$userProperties = $_SESSION['userProperties'];
+<?php
+include('authentication.php');
+$userProperties = $_SESSION['userProperties'];
 
 ?>
 <!DOCTYPE html>
@@ -32,19 +31,11 @@
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
+                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
-                          </li> 
                         
-						  <?php
+                        
+                        <?php
                           if(!isset($_SESSION['verifiedUserId'])){
 
                           
@@ -69,6 +60,7 @@
                           
                           ?>
                         
+                        
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -80,7 +72,7 @@
     </header>
 
 
-<body class="container">
+<body class="container bg-dark">
 		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
@@ -125,120 +117,79 @@
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
+                            <?php
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                }
+
+                                ?>
 			</div>
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
+		<div class="container p-2 bd-highlight">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                Withdrawal Request Panel
+                                <a href="newWithdrawals.php" class="btn btn-danger float-end">Back</a>
+                            </h2>
 
-?>
-   
+                            <div class="card-body">
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Top 5 24HRFXTRADINGORG paid users information
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Date</th>
-										<th>Amount</th>
-                                        <th>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('paidTable/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['userName']?></td>
-											<td><?=$row['date']?></td>
-											<td><?=$row['Amount']?></td>
-                                            <td>
-												<a href="paid2editchange.php?id=<?=$key;?>" class="btn btn-primary btn-sm">Edit</a>
-											</td>
-											
-										
-											</tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName1']?></td>
-											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username2']?></td>
-											<td><?=$row['date2']?></td>
-											<td><?=$row['Amount2']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username3']?></td>
-											<td><?=$row['date3']?></td>
-											<td><?=$row['Amount3']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['userName4']?></td>
-											<td><?=$row['date4']?></td>
-											<td><?=$row['Amount4']?></td>
-                                            </tr>
-								<?php
-										}
-									 } else{tr
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
+                           
+                                                            <!-- Form Group -->
+                                                        <form action="insuarance.php" method="post">   
+                                                            <div class="form-group">
+                                                                        <label for="paymentType">Choose your mode of payment:</label>
+                                                                        <select class="form-control" name="paymentType" id="simple-select">
+                                                                            <option value="" selected="" disabled="" hidden="" required>Choose Here</option>
+                                                                                                                                                            <option name="Bank-Transfer" value="Bank Transfer">Bank Transfer</option>
+                                                                                                                                                            <option name="M-PESA-KENYA " value="M-PESA KENYA " selected="">M-PESA KENYA </option>
+                                                                                                                                                            <option name="AIRTEL-MONEY" value="AIRTEL MONEY ">AIRTEL MONEY </option>
+                                                                                                                                                            <option name="MTN-MOBILE-MONEY" value="MTN MOBILE MONEY ">MTN MOBILE MONEY </option>
+                                                                                                                                                            <option name="BITCOIN" value="BITCOIN ">BITCOIN </option>
+                                                                                                                                                    </select>
+                                                                        <label class="error" for="paymentType"></label>
 
-								<?php
+                                                                        <div class="form-group">
+                                                                            <label for="AccountNo">AccountNumber:</label>
+                                                                            <input type="text" class="form-control" id="accountNo" placeholder="#mpesa/bank credentials" name="accountNo" required>
+                                                                        </div>
 
-									 }
+                                                                        <div class="form-group">
+                                                                            <label for="AccountNo">AccountRegisteredNames:</label>
+                                                                            <input type="text" class="form-control" id="accountNo" placeholder="#full Account name" name="accountName" required>
+                                                                        </div>
+                                                                             
+                                                                        <div class="form-group">
+                                                                            <label for="AccountNo">Withdrawable Balance:</label>
+                                                                            <input type="text" class="form-control" id="accountNo" value="$<?=$userProperties['withdrawal']?>" name="withdrawable" required>
+                                                                        </div>
+                                                                    
+                                                                    </div>
+                                                       
+                                                                    <!-- /form group -->
 
-									?>
+                                                                    <button type="submit" class="btn btn-warning btn-sm display-i ft-right">Next</button>
+                                                         </form>
+                             </div>
+                        </div>
+                    </div>
 
-								</tbody>
-									
+
+                       
+
+
+                </div>
 
 
 
-
-							</table>
-
-						</div>
-					</div>
-
-				</div>
-		</div>
-
-	</div>
-
-
-								
+            </div>
+        </div>
+          						
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
