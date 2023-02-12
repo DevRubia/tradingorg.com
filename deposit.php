@@ -2,6 +2,7 @@
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
+$getdata =$database->getReference('paidTable/')->getChild('Table/')->getValue();
 
 ?>
 <!DOCTYPE html>
@@ -10,11 +11,12 @@ $userProperties = $_SESSION['userProperties'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Deposit</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
 	
 </head>
 
@@ -139,10 +141,10 @@ $userProperties = $_SESSION['userProperties'];
 
 SEND YOUR DEPOSIT TO OUR M-PESA  AGENT NUMBER BELOW
 <h5>
-M-PESA NAME: TULIAMUK NGURAMUK<h5>
-M-PESA NUMBER: 254701247902
+M-PESA ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
+M-PESA NUMBER/PAYBILL: <?=$getdata['PayBill'] ?>
 </h5>
-Your Forex investment trading will begin once we've verified your M-PESA Deposit Payments from our Agent
+Your Forex/BTC investment trading will begin once we've verified your M-PESA Deposit Payments from our Agent
 
 NOTE:All payments should be made directly here on our website
 
@@ -158,9 +160,21 @@ Sending money to any other NUMBER other than our M-PESA AGENT NUMBER may result 
                                <label for="depAccname">Deposit Account Number:</label>
                             <input type="text" class="form-control" id="accountNo" value="<?=$userProperties['accountNumber']?>" name="accNumber" required>
                                 </div>
+                                <div class="form-group">
+                                <label for="depAccname">Deposit Via::</label>          
+                                <select class="form-control" name="selectPaymentType" id="simple-select">
+                                                                            <option value="" selected="" disabled="" hidden="" required>Choose Here</option>
+                                                                                                                                                            <option name="Bank-Transfer" value="Bank Transfer">Bank Transfer</option>
+                                                                                                                                                            <option name="M-PESA-KENYA " value="M-PESA KENYA " selected="">M-PESA KENYA </option>
+                                                                                                                                                            <option name="AIRTEL-MONEY" value="AIRTEL MONEY ">AIRTEL MONEY </option>
+                                                                                                                                                            <option name="MTN-MOBILE-MONEY" value="MTN MOBILE MONEY ">MTN MOBILE MONEY </option>
+                                                                                                                                                            <option name="BITCOIN" value="BITCOIN ">BITCOIN </option>
+                                                                                                                                                            <option name="CARD" value="CARD">CARD </option>
+                                                                                                                                                    </select>
+                                </div>
 
                                 <div class="form-group">
-                               <label for="deptrans">Amount Deposit:</label>
+                               <label for="deptrans">Amount Deposit:[$USD].Convert i.e {126ksh->1usd}</label>
                             <input type="text" class="form-control"  value="" name="depoAmt" required>
                                 </div>
                                 <div class="form-group">
@@ -168,7 +182,7 @@ Sending money to any other NUMBER other than our M-PESA AGENT NUMBER may result 
                             <input type="text" class="form-control" value="" name="transactionId" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name="confirmDeposit">Confirm Deposit</button>
+                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name="proceed">Confirm Deposit</button>
                     </form>
                              </div>
                         </div>
@@ -184,9 +198,11 @@ Sending money to any other NUMBER other than our M-PESA AGENT NUMBER may result 
 
             </div>
         </div>
-          						
+        <div id="loader">
+  <div class="spinner"></div>
+</div> 						
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

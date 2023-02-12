@@ -3,6 +3,16 @@
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
+if($userProperties['withdrawalFund']=='$100'){
+    $_SESSION['status']="Withdrawal Activation set Paid";
+    $_SESSION['insuaranceTransactionId']=isset($_POST['insuaranceTransactionId']);
+    header('Location: SendWithdrawalPage.php');
+    
+}else{
+  
+     $_SESSION['insuaranceTransactionId']=isset($_POST['insuaranceTransactionId']);
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +20,12 @@ $userProperties = $_SESSION['userProperties'];
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>withdrawalActivate</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
 	
 </head>
 
@@ -117,7 +128,7 @@ $userProperties = $_SESSION['userProperties'];
 							<!-- TradingView Widget END -->
                             
 			</div>
-<form action="SendWithdrawalRequest.php" method="post">
+<form action="SendWithdrawalPage.php" method="post">
    
 		<div class="container p-2 bd-highlight">
             <div class="row justify-content-center">
@@ -141,24 +152,28 @@ $userProperties = $_SESSION['userProperties'];
 
                                     <div class="col-md-12">
                                     <div class="notice">
-                                        <h3>*Pay $100 to Unlock all time withdrawals<label>#This pop-up will never show once fee is cleared</label></h3>
+                                        <h3>*Pay $100 to Unlock all time withdrawals<label>*This pop-up will never show once fee is cleared</label></h3>
+                                        <h4>Note:Select/Use Accounts saved in profile </h4>
                                     </div>
                                         <div class="form-group">
                                             <label for="amount">Click Payment method:</label>
                                             <div class="row" required>
-                                                                                                                <div class="cnt_min col-md-2">
-                                                    <input type="radio" name="mpesaW" value="mpesa" ><img src="./mpesa_files/2560px-M-PESA_LOGO-01_svg.png" alt="Select payment method" class="selected_img">
+                                            <div class="cnt_min col-md-2">
+                                                    <input type="checkbox" name="mpesaW" value="mpesa"><img src="./mpesa_files/2560px-M-PESA_LOGO-01_svg.png" alt="Select payment method" class="selected_img">
                                                 </div>
                                                                                                                 <div class="cnt_min col-md-2">
-                                                    <input type="radio" name="airtelW" value="Airtel" ><img src="./mpesa_files/airtel-money.png" alt="Select payment method" class="selected_img">
+                                                    <input type="checkbox" name="airtelW" value="Airtel"><img src="./mpesa_files/airtel-money.png" alt="Select payment method" class="selected_img">
                                                 </div>
                                                                                                                 <div class="cnt_min col-md-2">
-                                                    <input type="radio" name="mtnW" value="MtnMoney"><img src="./mpesa_files/69-691715_mtn-mm-logo-generic-mtn-mobile-money-logo.png" alt="Select payment method" class="selected_img">
+                                                    <input type="checkbox" name="mtnW" value="MtnMoney"><img src="./mpesa_files/69-691715_mtn-mm-logo-generic-mtn-mobile-money-logo.png" alt="Select payment method" class="selected_img">
                                                 </div>
                                                                                                                 <div class="cnt_min col-md-2">
-                                                    <input type="radio" name="bitcoinW" value="Bitcoin"><img src="./mpesa_files/IMG_20230201_152931_(2000_x_1050_pixel)7.jpg" alt="Select payment method" class="selected_img">
+                                                    <input type="checkbox" name="bitcoinW" value="Bitcoin"><img src="./mpesa_files/IMG_20230201_152931_(2000_x_1050_pixel)7.jpg" alt="Select payment method" class="selected_img">
                                                 </div>
                                             
+                                            </div>
+                                            
+                                                
                                             </div>
                                     </div>
 
@@ -168,7 +183,7 @@ $userProperties = $_SESSION['userProperties'];
                                             <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="insuaranceTransactionIdW" required>
                                     </div>
 
-                                    <button type="submit" name="withdraw" class="btn btn-warning btn-sm display-i ft-right">Process Withdrawal</button>
+                                    <button type="submit" name="withdraw" class="btn btn-warning btn-sm display-i ft-right" name="finalize">next</button>
 
                              </div>
                         </div>
@@ -184,9 +199,12 @@ $userProperties = $_SESSION['userProperties'];
 
             </div>
         </div>
-    </form>  						
+    </form>
+    <div id="loader">
+  <div class="spinner"></div>
+</div>    						
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

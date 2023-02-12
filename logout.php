@@ -4,6 +4,21 @@ session_start();
 unset($_SESSION['verifiedUserId']);
 unset($_SESSION['idTokenString']);
 
+//witjdrawal
+unset($_SESSION['paymentType']);
+unset($_SESSION['accountNo']);
+unset($_SESSION['accountName']);
+unset($_SESSION['withdrawable']);
+unset($_SESSION['insuaranceTransactionId']);
+unset($_SESSION['insuaranceTransactionIdW']);
+
+//deposit
+unset($_SESSION['accname']);
+unset($_SESSION['accnumber']);
+unset($_SESSION['depoAmt']); 
+unset($_SESSION['transactionId']);
+unset($_SESSION['paymentMeans']);
+
 
 
 if(isset($_SESSION['verifiedSuperAdmin'])){

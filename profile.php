@@ -439,7 +439,7 @@ display: none !important;
                                                                 <div class="col-md-6">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label  for="fname">UserName</label>
+                                                                        <label  for="fname">UserName:</label>
                                                                         <input type="text" value="<?=$userProperties['name']?>"  class="form-control " id="fname" aria-describedby="fname" placeholder="userName">
                                                                         <label class="error" for="fname"></label>
                                                                     </div>
@@ -448,7 +448,7 @@ display: none !important;
                                                                 <div class="col-md-6">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label for="lname">fullName</label>
+                                                                        <label for="lname">AccountName:</label>
                                                                         <input type="text" value="<?=$userProperties['accName']?>" name="lname" class="form-control "  aria-describedby="lname" placeholder="fullName">
                                                                         <label class="error" for="fname"></label>
                                                                     </div>
@@ -461,7 +461,7 @@ display: none !important;
                                                                 <div class="col-md-12">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label for="email">Email</label>
+                                                                        <label for="email">Email:</label>
                                                                         <input type="email" value="<?=$userProperties['userEmail']?>" class="form-control "  aria-describedby="email" placeholder="Email">
                                                                         <label class="error" for="fname"></label>
                                                                     </div>
@@ -470,7 +470,7 @@ display: none !important;
                                                                 <div class="col-md-12">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label for="email">phone Number:</label>
+                                                                        <label for="email">Account Number:</label>
                                                                         <input type="email" value="<?=$userProperties['accountNumber']?>" class="form-control " name="email" id="email" aria-describedby="email" placeholder="PhoneNumber">
                                                                         <label class="error" for="fname"></label>
                                                                     </div>

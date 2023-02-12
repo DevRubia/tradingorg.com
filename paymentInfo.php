@@ -203,7 +203,7 @@ display: none !important;
                             <!-- Sidebar Navigation -->
                             <ul class="dt-side-nav">
                                                                 <li class="dt-side-nav__item ">
-                                    <a href="" class="dt-side-nav__link " title="Dashboard">
+                                    <a href="newDashboard.php" class="dt-side-nav__link " title="Dashboard">
                                         <i class="icon icon-dashboard icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Dashboard</span>
                                     </a>
@@ -443,7 +443,7 @@ display: none !important;
                                                                 <div class="col-md-6">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label for="paymentType">Type</label>
+                                                                        <label for="paymentType">Deposit/Withdrawal E-wallet</label>
                                                                         <select class="form-control" name="accountType" id="simple-select" >
                                                                             <option value="" selected="" disabled="" hidden="">Choose Here</option>
                                                                                                                                                             <option value="Bank Transfer">Bank Transfer</option>
@@ -453,21 +453,23 @@ display: none !important;
                                                                                                                                                             <option value="BITCOIN ">BITCOIN </option>
                                                                                                                                                             <option value="CARD ">Card</option>
                                                                                                                                                     </select>
-                                                                        <label class="error" for="paymentType"></label>
+                                                                                                                                                    <p></p>
+                                                                        <label class="" for="">Account Insurance Paid:<?=$userProperties['insuarance']?></label><p></p>
+                                                                        <label class="" for="">Account Withdrawal Activation:<?=$userProperties['withdrawalFund']?></label>
                                                                     </div>
                                                                     <!-- /form group -->
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <!-- Form Group -->
                                                                     <div class="form-group">
-                                                                        <label for="bitcoinAd">AccountNumber</label>
+                                                                        <label for="bitcoinAd">E-wallet AccountNumber</label>
                                                                         <input type="text" value="<?=$userProperties['accountNumber']?>" class="form-control" name="accountNumber" aria-describedby="bitcoinAd" placeholder="Payment Account">
                                                                         <label class="error" for="paymentAccount"></label>
                                                                     </div>
                                                                     <!-- /form group -->
                                                                      <!-- Form Group -->
                                                                      <div class="form-group">
-                                                                        <label for="bitcoinAd">AccountName</label>
+                                                                        <label for="bitcoinAd">E-wallet AccountName</label>
                                                                         <input type="text" value="<?=$userProperties['accName']?>" class="form-control" name="accName" aria-describedby="bitcoinAd" placeholder="Payment Account Name">
                                                                         <label class="error" for="paymentAccount"></label>
                                                                     </div>

@@ -1,6 +1,6 @@
 <?php
 include('authentication.php');
-include('adminclaimAuth.php');
+include('adminAuth.php');
 
 $userProperties = $_SESSION['userProperties'];
 

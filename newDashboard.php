@@ -33,7 +33,8 @@ $userProperties = $_SESSION['userProperties'];
     <link href="./newDashboard_files/summernote-bs4.css" rel="stylesheet">
     <link rel="stylesheet" href="./newDashboard_files/intlTelInput.css">
     <link rel="stylesheet" href="./CSS/newdash.css">
-
+  
+    <script src="loader.js"></script>
     <script src="./newDashboard_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./newDashboard_files/default" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/jquery.min.js.download"></script>
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style><style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style><script charset="utf-8" src="./newDashboard_files/twk-chunk-2c78ba82.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-696bc286.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f1596d96.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-48f46bef.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-4fe9d5dd.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-2d0b9454.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f163fcd0.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-32507910.js.download"></script><style type="text/css">#mulaecv547eg1675262278346 {outline:none !important;
@@ -227,23 +228,24 @@ display: none !important;
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="index.php" class="dt-side-nav__link" title="Support">
+                                    <a href="index.php" class="dt-side-nav__link" title="Home">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">HOME</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="packages.php" class="dt-side-nav__link" title="Support">
+                                    <a href="depositPackages.php" class="dt-side-nav__link" title="Deposits">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Deposits</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="NewWithdrawals.php" class="dt-side-nav__link" title="Support">
+                                    <a href="NewWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Withdrawable Funds</span>
                                     </a>
                                 </li>
+                                
                                 <?php
                                 
                                 if(isset($_SESSION['verifiedSuperAdmin'])){
@@ -251,27 +253,27 @@ display: none !important;
 
                                     ?>
                                     <li class="dt-side-nav__item ">
-                                    <a href="claims.php" class="dt-side-nav__link" title="Support">
+                                    <a href="claims.php" class="dt-side-nav__link" title="Revoke claims">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Claims</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="paid.php" class="dt-side-nav__link" title="Support">
+                                    <a href="paid.php" class="dt-side-nav__link" title="Admin Operations">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Admin</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
-                                    <a href="adminpaidReview.php" class="dt-side-nav__link" title="Support">
+                                    <a href="adminpaidReview.php" class="dt-side-nav__link" title="Paid users list">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">PaidUsersList</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
-                                    <a href="userPayinfo.php" class="dt-side-nav__link" title="Support">
+                                    <a href="userPayinfo.php" class="dt-side-nav__link" title="userPay Information">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">UserPayInfo</span>
                                     </a>
@@ -284,21 +286,21 @@ display: none !important;
 
                                     ?>
                                 <li class="dt-side-nav__item ">
-                                    <a href="paid.php" class="dt-side-nav__link" title="Support">
+                                    <a href="paid.php" class="dt-side-nav__link" title="Admin">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Admin</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
-                                    <a href="adminpaidReview.php" class="dt-side-nav__link" title="Support">
+                                    <a href="adminpaidReview.php" class="dt-side-nav__link" title="PaidUsersList">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">PaidUsersList</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
-                                    <a href="userPayinfo.php" class="dt-side-nav__link" title="Support">
+                                    <a href="userPayinfo.php" class="dt-side-nav__link" title="user payment Information">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">UserPayInfo</span>
                                     </a>
@@ -308,9 +310,9 @@ display: none !important;
 
                                 }else{
 
-                                    ?>s
+                                    ?>
                                     <li class="dt-side-nav__item ">
-                                    <a href="profile.php" class="dt-side-nav__link" title="Support">
+                                    <a href="profile.php" class="dt-side-nav__link" title="UserProfile">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">User</span>
                                     </a>
@@ -326,16 +328,22 @@ display: none !important;
 
                                
                                 <li class="dt-side-nav__item ">
-                                    <a href="changepassword.php" class="dt-side-nav__link " title="Earnings">
+                                    <a href="changepassword.php" class="dt-side-nav__link " title="Security">
                                         <i class="icon icon-dashboard icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Security</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
-                                    <a href="" class="dt-side-nav__link" title="Support">
+                                    <a href="helpDesk.php" class="dt-side-nav__link" title="help desk">
                                         <i class="icon icon-mail icon-fw icon-lg"></i>
                                         <span class="dt-side-nav__text">Help Desk</span>
+                                    </a>
+                                </li>
+                                <li class="dt-side-nav__item ">
+                                    <a href="logout.php" class="dt-side-nav__link" title="Logout">
+                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                        <span class="dt-side-nav__text">Logout</span>
                                     </a>
                                 </li>
                                 <!-- Menu Header -->
@@ -638,6 +646,8 @@ display: none !important;
     Copyright 24hrfx Trading Org © 2023  Version :3.7
 </footer>
 <!-- /footer -->
+ 
+                                        </body>
 
 </div>
 <!-- /site content wrapper -->
@@ -884,4 +894,8 @@ display: none !important;
 		function insert(str, index, value) {
 			return str.substr(0, index) + value + str.substr(index)
 		}
-	</script><script async="" charset="UTF-8" src="./newDashboard_files/en.js.download"></script><div id="mulaecv547eg1675262278346" class="widget-visible"><iframe src="./newDashboard_files/saved_resource(1).html" frameborder="0" scrolling="no" width="64px" height="60px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:20px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:60px !important; min-width:64px !important; max-height:60px !important; max-width:64px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:64px !important; height:60px !important; display:block !important; z-index:1000001 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="binr8i8kvtk1675262278425" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(2).html" frameborder="0" scrolling="no" width="350px" height="520px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:10px !important; bottom:90px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:520px !important; min-width:350px !important; max-height:520px !important; max-width:350px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:350px !important; height:520px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:5px !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="cseqjjnubdng1675262278662" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(3).html" frameborder="0" scrolling="no" width="360px" height="145px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:100px; left:auto !important; position:fixed !important; border:0 !important; min-height:145px !important; min-width:360px !important; max-height:145px !important; max-width:360px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:360px !important; height:145px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="h38bpj263n181675262278455" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(4).html" frameborder="0" scrolling="no" width="124px" height="95px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:0px !important; bottom:30px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:95px !important; min-width:124px !important; max-height:95px !important; max-width:124px !important; padding:0 !important; margin:0px 0 0 0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:rotate(0deg) translateZ(0); -webkit-transform:rotate(0deg) translateZ(0); -ms-transform:rotate(0deg) translateZ(0); width:124px !important; height:95px !important; display:block !important; z-index:1000002 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important; -moz-transform:rotate(0deg) translateZ(0); -o-transform:rotate(0deg) translateZ(0); transform-origin:0; -moz-transform-origin:0; -webkit-transform-origin:0; -o-transform-origin:0; -ms-transform-origin:0;" id="s1o4ct6mlq81675262278396" class="" title="chat widget"></iframe></div></body></html>
+	</script>
+    
+    <script async="" charset="UTF-8" src="./newDashboard_files/en.js.download"></script><div id="mulaecv547eg1675262278346" class="widget-visible"><iframe src="./newDashboard_files/saved_resource(1).html" frameborder="0" scrolling="no" width="64px" height="60px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:20px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:60px !important; min-width:64px !important; max-height:60px !important; max-width:64px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:64px !important; height:60px !important; display:block !important; z-index:1000001 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="binr8i8kvtk1675262278425" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(2).html" frameborder="0" scrolling="no" width="350px" height="520px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:10px !important; bottom:90px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:520px !important; min-width:350px !important; max-height:520px !important; max-width:350px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:350px !important; height:520px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:5px !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="cseqjjnubdng1675262278662" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(3).html" frameborder="0" scrolling="no" width="360px" height="145px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:100px; left:auto !important; position:fixed !important; border:0 !important; min-height:145px !important; min-width:360px !important; max-height:145px !important; max-width:360px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:360px !important; height:145px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="h38bpj263n181675262278455" class="" title="chat widget"></iframe><iframe src="./newDashboard_files/saved_resource(4).html" frameborder="0" scrolling="no" width="124px" height="95px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:0px !important; bottom:30px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:95px !important; min-width:124px !important; max-height:95px !important; max-width:124px !important; padding:0 !important; margin:0px 0 0 0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:rotate(0deg) translateZ(0); -webkit-transform:rotate(0deg) translateZ(0); -ms-transform:rotate(0deg) translateZ(0); width:124px !important; height:95px !important; display:block !important; z-index:1000002 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important; -moz-transform:rotate(0deg) translateZ(0); -o-transform:rotate(0deg) translateZ(0); transform-origin:0; -moz-transform-origin:0; -webkit-transform-origin:0; -o-transform-origin:0; -ms-transform-origin:0;" id="s1o4ct6mlq81675262278396" class="" title="chat widget"></iframe></div><div id="loader">
+  <div class="spinner"></div>
+</div> </body></html>

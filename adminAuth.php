@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include('conndb.php');
 
  if(isset($_SESSION['verifiedUserId']))
@@ -17,7 +17,7 @@ try {
 
     $claims = $auth->getUser($uid)->customClaims;
 
-    if(isset($claims['admin']) || isset($claims['superAdmin']) == true){
+    if(isset($claims['admin']) == true || isset($claims['superAdmin']) == true){
         
        
     }else{

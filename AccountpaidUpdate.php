@@ -26,6 +26,9 @@ if(isset($_POST['updateAccount']))
     $username4=$_POST['username4'];
     $Amount4=$_POST['Amount4'];
     $date4=$_POST['date4'];
+
+    $paybill=$_POST['paybill'];
+    $paybillName=$_POST['paybillname'];
     
     $newData = [
         'username' => $username,
@@ -48,6 +51,8 @@ if(isset($_POST['updateAccount']))
         'Amount4' => $Amount4,
         'date4' => $date4,
         
+        'PayBillname'=>$paybillName,
+        'PayBill'=>$paybill,
 
     ];   
 

@@ -32,6 +32,7 @@ $userProperties = $_SESSION['userProperties'];
     <!-- include summernote css/js -->
     <link href="./newWithdrawals_files/summernote-bs4.css" rel="stylesheet">
     <link rel="stylesheet" href="./newWithdrawals_files/intlTelInput.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
 
     <script src="./newWithdrawals_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./newWithdrawals_files/default" charset="UTF-8" crossorigin="*"></script><script src="./newWithdrawals_files/jquery.min.js.download"></script>
     <style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-2c78ba82.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-696bc286.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-48f46bef.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-4fe9d5dd.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-2d0b9454.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-f163fcd0.js.download"></script><script charset="utf-8" src="./newWithdrawals_files/twk-chunk-32507910.js.download"></script><style type="text/css">#t51d4oqsdij1675262126256 {outline:none !important;
@@ -80,7 +81,9 @@ color-scheme:light !important;}#t51d4oqsdij1675262126256.widget-hidden {display:
 display: none !important;
  }
 }</style><script src="./newWithdrawals_files/emojione.min.js.download" type="text/javascript" async="" defer=""></script><script src="./newWithdrawals_files/emojione.min.js.download" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#pjdatai52vb81675262126564.open{animation : tawkMaxOpen .25s ease!important;}</style></head>
+    
     <body class="bg-dark dt-header--fixed theme-dark dt-layout--full-width o-auto"><style></style>
+      
         <!-- Root -->
         <div class="dt-root op-1">
             <div class="dt-root__inner">
@@ -180,7 +183,7 @@ display: none !important;
                                         <a href="profile.php" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img class="dt-avatar size-30" src="./newWithdrawals_files/avatar.png" alt="fadhili rubia">
                                             <span class="dt-avatar-info d-none d-sm-block">
-                                                <span class="dt-avatar-name text-white">fadhili rubia</span>
+                                                <span class="dt-avatar-name text-white"><?=$userProperties['name']?></span>
                                                                                                         <span class="text-white" >Verified</span>
                                                                                                 </span> </a>
                                         <!-- /dropdown link -->
@@ -340,7 +343,7 @@ display: none !important;
                                             <!-- Media Body -->
                                             <div class="media-body">
                                                 <div class="display-3 font-weight-600 mb-1 init-counter">
-                                                    USD <?=$userProperties['withdrawal']?>                                                </div>
+                                                    USD $<?=$userProperties['withdrawal']?>                                                </div>
                                                 <span class="d-block">
                                                     Pending withdrawals                                                </span>
                                             </div>
@@ -375,7 +378,7 @@ display: none !important;
                                             <!-- Media Body -->
                                             <div class="media-body">
                                                 <div class="display-3 font-weight-600 mb-1 init-counter">
-                                                    USD <?=$userProperties['earnedTotal']?>                                                </div>
+                                                    USD $<?=$userProperties['earnedTotal']?>                                                </div>
                                                 <span class="d-block">
                                                     Total earnings                                                </span>
                                             </div>
@@ -402,83 +405,7 @@ display: none !important;
 
            
         <script src="./newWithdrawals_files/trans.js.download"></script>
-    <script>
-        $("#pfm").click(function(e){
-            e.preventDefault();
-
-            var amount = $(this).attr('data-amount');
-            var fees = $(this).attr('data-fees');
-            var final = $(this).attr('data-amountlessfee');
-
-            $('#fullamount').html(amount);
-            $('#fullamountfees').html(fees);
-            $('#fullamountlessfees').html(final);
-        })
-        $('.accountsButton').click(function(e){
-            e.preventDefault();
-            var user = $(this).attr('data-id');
-            var actionurl = $(this).attr('data-url');
-
-            //Clear list
-            $('#paymentList').html('');
-
-            $.ajax({
-                url: actionurl,
-                type: 'get',
-                success: function(res) {
-                    var content = JSON.parse(res);
-                    console.log(content);
-                    if(content.success == true)
-                    {
-                            var div = document.getElementById('paymentList');
-
-                            if(content.data.withdrawal_account == null){
-                                var divOpen = '<div class="row col-md-12">'
-                                var div1 = '<div class="col-md-6">Bank Name: </div>'
-                                var div2 = '<div class="col-md-6 text-uppercase">'+content.data.bank_name+'</div>'
-                                var div3 = '<div class="col-md-6">Account Name: </div>'
-                                var div4 = '<div class="col-md-6 text-uppercase">'+content.data.account_name+'</div>'
-                                var div5 = '<div class="col-md-6">Account Number: </div>'
-                                var div6 = '<div class="col-md-6">'+content.data.account_number+'</div>'
-                                var div7 = '<div class="col-md-6">Swift Code: </div>'
-                                var div8 = '<div class="col-md-6">'+content.data.swift_code+'</div>'
-                                var div9 = '<div class="col-md-6">Status: </div>'
-                                var div10 = '<div class="col-md-6">'+content.status+'</div>'
-                                var div11 = '<div class="col-md-6">Reason: </div>'
-                                var div12 = '<div class="col-md-6">'+content.data.reason+'</div>'
-                                var divClose = '</div>'
-
-                                if(content.data.status == '0' || content.data.status == '1'){
-                                    div.innerHTML += divOpen + div1 + div2 + div3 + div4 + div5 + div6 + div7 + div8 + div9 + div10 + divClose;
-                                } else {
-                                    div.innerHTML += divOpen + div1 + div2 + div3 + div4 + div5 + div6 + div7 + div8 + div9 + div10 + div11 + div12 + divClose;
-                                }
-                            } else {
-                                var divOpen = '<div class="row col-md-12">'
-                                var div1 = '<div class="col-md-6">'+content.data.withdrawal_method+': </div>'
-                                var div2 = '<div class="col-md-6">'+content.data.withdrawal_account+'</div>'
-                                var div3 = '<div class="col-md-6">Status: </div>'
-                                var div4 = '<div class="col-md-6">'+content.status+'</div>'
-                                var div5 = '<div class="col-md-6">Reason: </div>'
-                                var div6 = '<div class="col-md-6">'+content.data.reason+'</div>'
-                                var divClose = '</div>'
-
-                                if(content.data.status === 0 || content.data.status === 1){
-                                    div.innerHTML += divOpen + div1 + div2 + div3 + div4 +  divClose;
-                                } else {
-                                    div.innerHTML += divOpen + div1 + div2 + div3 + div4 + divClose;
-                                }
-                            }
-
-                        $("#terms").html(content.terms);
-                        $('#submit').attr('disabled', false);
-                        $("#submit").html('Create Account');
-                    }
-                }
-            })
-
-        })
-    </script><!-- Footer -->
+    <!-- Footer -->
 <footer class="dt-footer">
     Copyright 24hrFx Trading Org © 2023  Version :3.7
 </footer>
@@ -570,164 +497,6 @@ display: none !important;
 			}
 			return languageObject[language].split("DELIMITER")
 		}
-		var savedChPos = 0
-		var returnedSuggestion = ''
-		let editor, doc, cursor, line, pos
-		pos = {line: 0, ch: 0}
-		var suggestionsStatus = false
-		var docLang = "python"
-		var suggestionDisplayed = false
-		var isReturningSuggestion = false
-		document.addEventListener("keydown", (event) => {
-		setTimeout(()=>{
-			editor = event.target.closest('.CodeMirror');
-			if (editor){
-				const codeEditor = editor.CodeMirror
-				if(!editor.classList.contains("added-tab-function")){
-					editor.classList.add("added-tab-function")
-					codeEditor.removeKeyMap("Tab")
-					codeEditor.setOption("extraKeys", {Tab: (cm)=>{
-
-						if(returnedSuggestion){
-							acceptTab(returnedSuggestion)
-						}
-						else{
-							cm.execCommand("defaultTab")
-						}
-					}})
-				}
-				doc = editor.CodeMirror.getDoc()
-				cursor = doc.getCursor()
-				line = doc.getLine(cursor.line)
-				pos = {line: cursor.line, ch: line.length}
-
-				if(cursor.ch > 0){
-					savedChPos = cursor.ch
-				}
-
-				const fileLang = doc.getMode().name
-				docLang = fileLang
-				const commentSymbol = returnCommentSymbol(fileLang)
-				if (event.key == "?"){
-					var lastLine = line
-					lastLine = lastLine.slice(0, savedChPos - 1)
-
-					if(lastLine.trim().startsWith(commentSymbol[0])){
-						lastLine += " "+fileLang
-						lastLine = lastLine.split(commentSymbol[0])[1]
-						window.postMessage({source: 'getQuery', payload: { data: lastLine } } )
-						isReturningSuggestion = true
-						displayGrey("\nBlackbox loading...")
-					}
-				}else if(event.key === "Enter" && suggestionsStatus && !isReturningSuggestion){
-					var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: line.length })
-					window.postMessage({source: 'getSuggestion', payload: { data: query, language: docLang } } )
-					displayGrey("Blackbox loading...")
-				}else if(event.key === "ArrowRight" && returnedSuggestion){
-					acceptTab(returnedSuggestion)
-				}else if(event.key === "Enter" && isReturningSuggestion){
-					displayGrey("\nBlackbox loading...")
-				}else if(event.key === "Escape"){
-					displayGrey("")
-				}
-			}
-		}, 0)
-		})
-
-		function acceptTab(text){
-		if (suggestionDisplayed){
-			displayGrey("")
-			doc.replaceRange(text, pos)
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		}
-		}
-		function acceptSuggestion(text){
-			displayGrey("")
-			doc.replaceRange(text, pos)
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		}
-		function displayGrey(text){
-			if(!text){
-				document.querySelector(".blackbox-suggestion").remove()
-				return
-			}
-			var el = document.querySelector(".blackbox-suggestion")
-			if(!el){
-				el = document.createElement('span')
-				el.classList.add("blackbox-suggestion")
-				el.style = 'color:grey'
-				el.innerText = text
-			}
-			else{
-				el.innerText = text
-			}
-			
-			var lineIndex = pos.line;
-			editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(el)
-		}
-		function updateSuggestionStatus(s){
-			suggestionDisplayed = s
-			window.postMessage({source: 'updateSuggestionStatus', status: suggestionDisplayed, suggestion: returnedSuggestion})
-		}
-		window.addEventListener('message', (event)=>{
-		if (event.source !== window ) return
-		if (event.data.source == 'return'){
-			isReturningSuggestion = false
-			const formattedCode = formatCode(event.data.payload.data)
-			returnedSuggestion = formattedCode
-			displayGrey(formattedCode)
-			updateSuggestionStatus(true)
-		}
-		if(event.data.source == 'suggestReturn'){
-			returnedSuggestion = event.data.payload.data
-			displayGrey(event.data.payload.data)
-			updateSuggestionStatus(true)
-		}
-		if(event.data.source == 'suggestionsStatus'){
-			suggestionsStatus = event.data.payload.enabled
-		}
-		if(event.data.source == 'acceptSuggestion'){
-			
-			acceptSuggestion(event.data.suggestion)
-		}
-		})
-		document.addEventListener("keyup", function(){
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		})
-		function formatCode(data) {
-			if (Array.isArray(data)) {
-				var finalCode = ""
-				var pairs = []
-		
-				const commentSymbol = returnCommentSymbol(docLang)
-				data.forEach((codeArr, idx) => {
-					const code = codeArr[0]
-					var desc = codeArr[1]
-					const descArr = desc.split("\n")
-					var finalDesc = ""
-					descArr.forEach((descLine, idx) => {
-						const whiteSpace = descLine.search(/\S/)
-						if (commentSymbol.length < 2 || idx === 0) {
-							finalDesc += insert(descLine, whiteSpace, commentSymbol[0])
-						}
-						if (commentSymbol.length > 1 && idx === descArr.length - 1) {
-							finalDesc = finalDesc + commentSymbol[1] + "\n"
-						}
-					})
-		
-					finalCode += finalDesc + "\n\n" + code
-					pairs.push(finalCode)
-				})
-				return "\n"+pairs.join("\n")
-			}
-		
-			return "\n"+data
-		}
-		
-		function insert(str, index, value) {
-			return str.substr(0, index) + value + str.substr(index)
-		}
-	</script><script async="" charset="UTF-8" src="./newWithdrawals_files/en.js.download"></script><div id="t51d4oqsdij1675262126256" class="widget-visible"><iframe src="./newWithdrawals_files/saved_resource.html" frameborder="0" scrolling="no" width="67px" height="64px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:20px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:64px !important; min-width:67px !important; max-height:64px !important; max-width:67px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:67px !important; height:64px !important; display:block !important; z-index:1000001 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="ub9tiusfj16o1675262126366" class="" title="chat widget"></iframe><iframe src="./newWithdrawals_files/saved_resource(1).html" frameborder="0" scrolling="no" width="100%" height="100%" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:0px !important; right:0px !important; bottom:0px !important; left:0px !important; position:fixed !important; border:0 !important; min-height:100% !important; min-width:100% !important; max-height:100% !important; max-width:100% !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:100% !important; height:100% !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:0px !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="pjdatai52vb81675262126564" class="" title="chat widget"></iframe><iframe src="./newWithdrawals_files/saved_resource(2).html" frameborder="0" scrolling="no" width="320px" height="145px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:100px; left:auto !important; position:fixed !important; border:0 !important; min-height:145px !important; min-width:320px !important; max-height:145px !important; max-width:320px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:320px !important; height:145px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="dkojr7fja9p81675262126470" class="" title="chat widget"></iframe><div id="chat-bubble"></div></div></body></html>
+		<script src="loader.js"></script>
+	
+    </script><script async="" charset="UTF-8" src="./newWithdrawals_files/en.js.download"></script><div id="t51d4oqsdij1675262126256" class="widget-visible"><iframe src="./newWithdrawals_files/saved_resource.html" frameborder="0" scrolling="no" width="67px" height="64px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:20px !important; left:auto !important; position:fixed !important; border:0 !important; min-height:64px !important; min-width:67px !important; max-height:64px !important; max-width:67px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:67px !important; height:64px !important; display:block !important; z-index:1000001 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="ub9tiusfj16o1675262126366" class="" title="chat widget"></iframe><iframe src="./newWithdrawals_files/saved_resource(1).html" frameborder="0" scrolling="no" width="100%" height="100%" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:0px !important; right:0px !important; bottom:0px !important; left:0px !important; position:fixed !important; border:0 !important; min-height:100% !important; min-width:100% !important; max-height:100% !important; max-width:100% !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:100% !important; height:100% !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:0px !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="pjdatai52vb81675262126564" class="" title="chat widget"></iframe><iframe src="./newWithdrawals_files/saved_resource(2).html" frameborder="0" scrolling="no" width="320px" height="145px" style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:20px !important; bottom:100px; left:auto !important; position:fixed !important; border:0 !important; min-height:145px !important; min-width:320px !important; max-height:145px !important; max-width:320px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:320px !important; height:145px !important; display:none !important; z-index:auto !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;" id="dkojr7fja9p81675262126470" class="" title="chat widget"></iframe><div id="chat-bubble"></div></div></body></html>

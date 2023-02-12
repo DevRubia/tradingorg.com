@@ -1,19 +1,27 @@
+
+<?php
+include('authentication.php');
+$userProperties = $_SESSION['userProperties'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php
-    session_start();
-    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HelpDesk</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
-    <link rel="stylesheet" href="./CSS/loader.css">
-	
+	<style>
+
+        #editor{
+            width:300px;
+            height:150px;
+        }
+    </style>
 </head>
 
 <header>
@@ -28,6 +36,10 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="newDashboard.php">Dashboard</a>
+                        </li>
+                        
                         
                         <?php
                           if(!isset($_SESSION['verifiedUserId'])){
@@ -54,6 +66,7 @@
                           
                           ?>
                         
+                        
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -65,8 +78,8 @@
     </header>
 
 
-<body class="container">
-		<div class="">
+<body class="container bg-dark">
+		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
 			<div class="tradingview-widget-container mb-1-5m" style="width: 100%; height: 46px;">
@@ -126,89 +139,34 @@
                     <div class="card">
                         <div class="card-header">
                             <h2>
-                                AdminUserEdit Panel
-                                <a href="paid.php" class="btn btn-danger float-end">Back</a>
+                                HELP DESK Panel
+                                <h4>*Welcome <?=$userProperties['name']?>, Having any inquiries ? write to us we will get back to you ASAP via Email</h4>
+                                <a href="newDashboard.php" class="btn btn-danger float-end">Back</a>
                             </h2>
 
                             <div class="card-body">
 
-                            <?php
-                            include('conndb.php');
-
-                            if(isset($_GET['id'])){
-                                $keychild= $_GET['id'];
-
-                                $getdata =$database->getReference('users/')->getchild($keychild)->getvalue();
-                            if($getdata > 0)
-                            {
-                             ?>
-                             
-                             
-                             <form  action="AccountUpdate.php" method="POST">
-
-                             <input type="hidden" name="key" value="<?=$keychild?>">
-                                <div class="form-group mb-3">
-                                    <label for="">AccountBal:(Digits Only)</label>
-                                    <input type="text" name="accountBal" value="<?=$getdata['accBal']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">EarnedTotal:(Digits Only)</label>
-                                    <input type="text" name="earnedTotal" value="<?=$getdata['earnedTotal']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">BonusAmt:(Digits Only)</label>
-                                    <input type="text" name="bonusAmt" value="<?=$getdata['bonus']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">Withdrawal:(Digits Only)</label>
-                                    <input type="text" name="withdrawable" value="<?=$getdata['withdrawal']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">InsuaranceFee NOTE:(start with $):</label>
-                                    <input type="text" name="insuarance" value="<?=$getdata['insuarance']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">WithdrawalFundActivation NOTE:(start with $)</label>
-                                    <input type="text" name="withdrawalFund" value="<?=$getdata['withdrawalFund']?>" class="form-control">
-                                </div>
-
-                                <div class="form-group mb-1">
-                                    <label for="">Status:(i.e Active Deposit)</label>
-                                    <input type="text" name="status" value="<?=$getdata['status']?>" class="form-control">
-                                </div>
-
-                                <div class="forWithdrawalm-group mb-1">
-                                    <button type="submit" name="updateAccount"  class="btn btn-primary">updateUserDetail</button>
-                                </div>
-
-                                </form>
-   
-                            <?php    
+                                                                  
+                                                        <!-- Form Group -->
+                                                        <form action="insuarance.php" method="post"> 
+                   
+                                                            
+                                                            <div class="form-group">
 
 
-                            }else{
-                                $_SESSION['status']="No Found";
-                                header('Location: paid.php');
-                                exit();
+                                                            <label>write to us below;</label>
+                                                            <textarea id="editor"></textarea>
 
-                            }
-                            
-                            }else{
-                                 $_SESSION['status']="Invalid Id";
-                                header('Location: paid.php');
-                                exit();  
-                            }
-                            
-                            ?>
+                                                            <div></div>
+                                                            <button type="submit" class="btn btn-warning btn-sm display-i ">Email us</button>
 
 
 
-                            </div>
+
+
+                                                              </div>
+                                                                </form>
+                             </div>
                         </div>
                     </div>
 
@@ -222,11 +180,9 @@
 
             </div>
         </div>
-        <div id="loader">
-  <div class="spinner"></div>
-</div>   						
+          						
 </body>
-<script src="loader.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

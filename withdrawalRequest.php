@@ -15,6 +15,7 @@ $userProperties = $_SESSION['userProperties'];
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
 	
 </head>
 
@@ -31,7 +32,7 @@ $userProperties = $_SESSION['userProperties'];
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="newDashboard.php">Dashboard</a>
                         </li>
                         
                         
@@ -139,9 +140,11 @@ $userProperties = $_SESSION['userProperties'];
 
                             <div class="card-body">
 
-                           
-                                                            <!-- Form Group -->
-                                                        <form action="insuarance.php" method="post">   
+                                                                  
+                                                        <!-- Form Group -->
+                                                        <form action="insuarance.php" method="post"> 
+                   
+                                                            
                                                             <div class="form-group">
                                                                         <label for="paymentType">Choose your mode of payment:</label>
                                                                         <select class="form-control" name="paymentType" id="simple-select">
@@ -151,22 +154,23 @@ $userProperties = $_SESSION['userProperties'];
                                                                                                                                                             <option name="AIRTEL-MONEY" value="AIRTEL MONEY ">AIRTEL MONEY </option>
                                                                                                                                                             <option name="MTN-MOBILE-MONEY" value="MTN MOBILE MONEY ">MTN MOBILE MONEY </option>
                                                                                                                                                             <option name="BITCOIN" value="BITCOIN ">BITCOIN </option>
+                                                                                                                                                            <option name="CARD" value="CARD">CARD </option>
                                                                                                                                                     </select>
                                                                         <label class="error" for="paymentType"></label>
 
                                                                         <div class="form-group">
                                                                             <label for="AccountNo">AccountNumber:</label>
-                                                                            <input type="text" class="form-control" id="accountNo" placeholder="#mpesa/bank credentials" name="accountNo" required>
+                                                                            <input type="text" class="form-control" value="<?=$userProperties['accountNumber']?>" id="accountNo" placeholder="#mpesa/bank credentials" name="accountNo" required>
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label for="AccountNo">AccountRegisteredNames:</label>
-                                                                            <input type="text" class="form-control" id="accountNo" placeholder="#full Account name" name="accountName" required>
+                                                                            <input type="text" class="form-control" value="<?=$userProperties['accName']?>" id="accountNo" placeholder="#full Account name" name="accountName" required>
                                                                         </div>
                                                                              
                                                                         <div class="form-group">
-                                                                            <label for="AccountNo">Withdrawable Balance:</label>
-                                                                            <input type="text" class="form-control" id="accountNo" value="$<?=$userProperties['withdrawal']?>" name="withdrawable" required>
+                                                                            <label for="AccountNo">Withdrawable Balance:USD[$]</label>
+                                                                            <input type="text" class="form-control" id="accountNo" value="<?=$userProperties['withdrawal']?>" name="withdrawable" required>
                                                                         </div>
                                                                     
                                                                     </div>
@@ -189,9 +193,11 @@ $userProperties = $_SESSION['userProperties'];
 
             </div>
         </div>
-          						
+        <div id="loader">
+  <div class="spinner"></div>
+</div>    						
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

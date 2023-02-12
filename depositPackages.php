@@ -96,7 +96,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $30</p>
                         <p>Income: $120</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -111,7 +111,7 @@ session_start();
                         <p>3,700.00 KES</p>
                         <p>113,560.00 UGX</p>
                         <p>490.00 ZMW</p>
-                        
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
             
                     <div class="income">
@@ -137,7 +137,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $40</p>
                         <p>Income: $160</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -149,6 +149,7 @@ session_start();
                         <p href="">4,860.00 KES</p>
                         <p href="">152,410.00 UGX</p>
                         <p href="">590.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -171,7 +172,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $50</p>
                         <p>Income: $200</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -183,6 +184,7 @@ session_start();
                         <p href="">6,070.00 KES</p>
                         <p href="">189,300.00 UGX</p>
                         <p href="">809.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -205,7 +207,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $60</p>
                         <p>Income: $240</p>
-                        
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -217,6 +219,7 @@ session_start();
                         <p href="">7,293.00 KES</p>
                         <p href="">224,050.00 UGX</p>
                         <p href="">970.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -239,7 +242,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $80</p>
                         <p>Income: $320</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -251,6 +254,7 @@ session_start();
                         <p href="">9,724.00 KES</p>
                         <p href="">298,740.00 UGX</p>
                         <p href="">1,284.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -273,7 +277,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $90</p>
                         <p>Income: $360</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -285,6 +289,7 @@ session_start();
                         <p href="">10,940.00 KES</p>
                         <p href="">336,080.00 UGX</p>
                         <p href="">1,444.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -307,7 +312,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $100</p>
                         <p>Income: $300</p>
-                        
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -319,6 +324,7 @@ session_start();
                         <p href="">12,135.00 KES</p>
                         <p href="">379,000.00 UGX</p>
                         <p href="">1,620.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -341,7 +347,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $150</p>
                         <p>Income: $400</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -353,6 +359,7 @@ session_start();
                         <p href="">18,210.00 KES</p>
                         <p href="">567,760.00 UGX</p>
                         <p href="">2,430.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">
@@ -375,7 +382,7 @@ session_start();
                     <div class="front">
                         <p>Deposit: $200</p>
                         <p>Income: $500</p>
-                       
+                        <p class=""><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                 </div>
@@ -387,6 +394,7 @@ session_start();
                         <p href="">24,270.00 KES</p>
                         <p href="">567,760.00 UGX</p>
                         <p href="">3,235.00 ZMW</p>
+                        <p><a href="deposit.php" class="btn btn-warning btn-sm">Deposit</a></p>
                     </div>
 
                     <div class="income">

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    image: php:8.0-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+  db:
+    image: firebase/firebase-tools
+    environment:
+      - FIREBASE_PROJECT= clientdb
+      - FIREBASE_TOKEN= clientdb-e7462-firebase-adminsdk-iqoz7-45cb0788ed.json
+    command: firebase emulators:start --only database

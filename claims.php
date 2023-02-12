@@ -14,6 +14,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/claims.css">
+	<link rel="stylesheet" href="./CSS/loader.css">
 	
 </head>
 
@@ -30,7 +31,7 @@
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
 						<li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="newDasboard.php">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="newDashboard.php">Dashboard</a>
                         </li>
                         
                       
@@ -136,7 +137,7 @@ if(isset($_SESSION['status']))
 						<div class="card-header hold">
 							<h2>
 								Admin Claims Panel: 24HRFXTRADINGORG Registerd users claims information
-								<a href="dashboard.php" class="btn btn-primary float-end">dashboard</a>
+								<a href="newdashboard.php" class="btn btn-primary float-end">dashboard</a>
 							</h2>
 						</div>
 						<div class="card-body container hold">
@@ -209,10 +210,12 @@ if(isset($_SESSION['status']))
 
 	</div>
 
-
+	<div id="loader">
+  <div class="spinner"></div>
+</div>  
 								
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

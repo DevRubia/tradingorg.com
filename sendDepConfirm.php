@@ -1,9 +1,36 @@
 
 <?php
 include('authentication.php');
+  
+if(isset($_POST['proceed'])){
+    
+    $depoAmt=$_POST['depoAmt'];
+  
+    if($depoAmt < 10){
+        $_SESSION['status']="Minimum deposit is $10 Add funds to proceed";
+        header('Location: deposit.php');
+        exit();
+    }else{
+    
 
+$accName=$_POST['accName'];
+$accNumber=$_POST['accNumber'];
+$depoAmt=$_POST['depoAmt'];
+$transactionId=$_POST['transactionId'];
+$paymentMeans=$_POST['selectPaymentType'];
+
+$_SESSION['accname']=$accName;
+$_SESSION['accnumber']=$accNumber;
+$_SESSION['depoAmt']=$depoAmt;
+$_SESSION['transactionId']=$transactionId;
+$_SESSION['paymentMeans']=$paymentMeans;
+    }
+}
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +42,7 @@ include('authentication.php');
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
 	
 </head>
 
@@ -128,15 +156,7 @@ include('authentication.php');
 
 <form action="depositEmail.php" method="post">
 
- <?php
-            
-    
-$accName=$_POST['accName'];
-$accNumber=$_POST['accNumber'];
-$depoAmt=$_POST['depoAmt'];
-$transactionId=$_POST['transactionId'];
 
-?>
 
 
 
@@ -155,7 +175,10 @@ $transactionId=$_POST['transactionId'];
 
                            </h1>
                                
-                         
+                           <div class="form-group">
+                               <label for="depAccname">Deposited via:</label>
+                               <h4 for="depAccname"><?=$paymentMeans?></h4>
+                                </div>
                            <div class="form-group">
                                <label for="depAccname">Deposit Account Name:</label>
                                <h4 for="depAccname"><?=$accName?></h4>
@@ -174,7 +197,7 @@ $transactionId=$_POST['transactionId'];
                                <h4 for="depAccname"><?=$transactionId?></h4>
                                 </div>
 
-                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right">SEND</button>
+                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right " name="confirmDeposit" >DEPOSIT</button>
                     </form>
                              </div>
                         </div>
@@ -190,9 +213,11 @@ $transactionId=$_POST['transactionId'];
 
             </div>
         </div>
-          						
+        <div id="loader">
+  <div class="spinner"></div>
+</div>  					
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>
