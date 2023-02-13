@@ -5,21 +5,20 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src:/var/www/html
-  db:
-    image: firebase/firebase-tools
+      - .:/var/www/html
     environment:
-      FIREBASE_TOKEN: <clientdb-e7462-firebase-adminsdk-iqoz7-45cb0788ed.json>
-    volumes:
-      - ./firebase:/app/firebase
-    command: "firebase serve --only hosting"
+      - FIREBASE_TOKEN=<clientdb-e7462-firebase-adminsdk-iqoz7-45cb0788ed.json>
+    command: tail -f /dev/null
 
 # version: '3'
 # services:
 #   web:
-#     image: php:apache
+#     build: .
 #     ports:
-#       - "80:80"
+#       - 80:80
 #     volumes:
-#       - ./:/var/www/html/
-   
+#       - .:/var/www/html
+#   firebase:
+#     image: fernandoacorreia/firebase-tools
+#     volumes:
+#       - .:/app

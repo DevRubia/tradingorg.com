@@ -1,8 +1,8 @@
 
 <?php
-include('authentication.php');
-$userProperties = $_SESSION['userProperties'];
-$getdata =$database->getReference('paidTable/')->getChild('Table/')->getValue();
+ include('authentication.php');
+ $userProperties = $_SESSION['userProperties'];
+ $getdata =$database->getReference('paidTable/')->getChild('Table/')->getValue();
 
 ?>
 <!DOCTYPE html>
