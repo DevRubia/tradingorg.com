@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "clientdb-e7462"
-  }
+  },
+  "targets": {
+    "clientdb-e7462": {
+      "hosting": {
+        "app": [
+          "client-e7462"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

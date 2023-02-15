@@ -3,22 +3,7 @@ services:
   web:
     image: php:apache
     ports:
-      - "80:80"
+      - 80:80
     volumes:
-      - .:/var/www/html
-    environment:
-      - FIREBASE_TOKEN=<clientdb-e7462-firebase-adminsdk-iqoz7-45cb0788ed.json>
-    command: tail -f /dev/null
+      - ./:/var/www/html/
 
-# version: '3'
-# services:
-#   web:
-#     build: .
-#     ports:
-#       - 80:80
-#     volumes:
-#       - .:/var/www/html
-#   firebase:
-#     image: fernandoacorreia/firebase-tools
-#     volumes:
-#       - .:/app
