@@ -1,19 +1,17 @@
-   <?php
-
+<?php
+session_start();
 include('conndb.php');
-
-
 if(isset($_POST['loginbtn'])){
     $email = $_POST['logemailres'];
     $clearTextPassword = $_POST['logpassres'];
-
-    try {
+try {
        
         $user = $auth->getUserByEmail("$email");
 
  
         try{
                     $signInResult = $auth->signInWithEmailAndPassword($email, $clearTextPassword);
+                    $idTokenString = $signInResult->idToken();
                          try {
                             $verifiedIdToken = $auth->verifyIdToken($idTokenString);
                             $uid = $verifiedIdToken->claims()->get('sub');
@@ -40,7 +38,7 @@ if(isset($_POST['loginbtn'])){
                                  $_SESSION['verifiedUserId'] = $uid;
                                  $_SESSION['idTokenString'] = $idTokenString;
                              }
-
+                                    
                                 $_SESSION['status']="welcome to your Dashboard";
                                 header('Location: newDashboard.php');
                                 exit();
@@ -57,7 +55,7 @@ if(isset($_POST['loginbtn'])){
                             
                              {
                          $_SESSION['status']="Invalid password";
-                         header('Location: landingpage.php');
+                        //  header('Location: landingpage.php');
                          exit();
                      }
              } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
@@ -73,5 +71,4 @@ if(isset($_POST['loginbtn'])){
      header('Location: landingpage.php');
      exit();
  }
-
 ?>

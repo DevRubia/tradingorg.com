@@ -133,10 +133,15 @@ try{
 	$mail->addAddress('rubialincon8@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
-		echo "Email Sent..!";
+		$_SESSION['status']=":";
+		header('Location: newDashboard.php');
+    exit();
+
 	}else{
 		
-		echo "Message could not be sent. Mailer Error: ";
+		$_SESSION['status']="Admin wount review";
+		header('Location: newDashboard.php');
+    exit();
 	}
 }catch(Exception $e){
 	echo "failed to create email body";

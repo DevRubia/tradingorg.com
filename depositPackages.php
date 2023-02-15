@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +7,7 @@ session_start();
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/packagestyle.css">
-    <title>Document</title>
+    <title>packages</title>
 </head>
 
 <body class="container">

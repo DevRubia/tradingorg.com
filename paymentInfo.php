@@ -1,4 +1,3 @@
-
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];

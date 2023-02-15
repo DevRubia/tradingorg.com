@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
@@ -63,7 +59,9 @@ if ($length >= 10) {
     } 
               
 ?>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

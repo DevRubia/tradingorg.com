@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
  include('conndb.php');
 
   if(isset($_SESSION['verifiedUserId']))
@@ -23,7 +23,7 @@
   }
   else{
      $_SESSION['status']="login to access this page";
-     header('Location: landingpage .php');
+     header('Location: landingpage.php');
      exit();
   }
 
