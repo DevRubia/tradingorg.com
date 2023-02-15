@@ -3,4 +3,5 @@
 # RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 # RUN apt-get install -y nodejs
 # RUN npm install -g firebase-tools@latest
+# RUN curl -sL https://firebase.tools | bash
 # WORKDIR /var/www/html
