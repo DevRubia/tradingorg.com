@@ -1,26 +1,3 @@
-<?php
-include('authentication.php');
-$userProperties = $_SESSION['userProperties'];
-
-
-
-//setwithdrawalTransactionId
-$_SESSION['insuaranceTransactionIdW']=isset($_POST['insuaranceTransactionIdW']);
-
-//setwithdrawalRequestDetail
-$paymentType=$_SESSION['paymentType'];
-$accountNo=$_SESSION['accountNo'];
-$accountName=$_SESSION['accountName'];
-$withdrawable=$_SESSION['withdrawable'];
-
-//insuranceTransactionId
-$insuaranceTransactionId=$_SESSION['insuaranceTransactionId'];
-
-//withdrawalTransactionId
-$insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
-
-
-?>
 <!DOCTYPE html>.
 <html lang="en">
 <head>
