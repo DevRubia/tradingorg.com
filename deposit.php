@@ -1,4 +1,3 @@
-
 <?php
  include('authentication.php');
  $userProperties = $_SESSION['userProperties'];
@@ -137,9 +136,7 @@
 
                            <h5>
 
-                           M-PESA KENYA & TANZANIA Account
-
-SEND YOUR DEPOSIT TO OUR M-PESA  AGENT NUMBER BELOW
+                         DEPOSIT TO YOUR ESTEEMED AGENT  
 <h5>
 M-PESA ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
 M-PESA NUMBER/PAYBILL: <?=$getdata['PayBill'] ?>
