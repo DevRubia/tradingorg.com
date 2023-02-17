@@ -4,8 +4,6 @@ $userProperties = $_SESSION['userProperties'];
 
 ?>
 
-
-
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -536,6 +534,7 @@ display: none !important;
                                 <!-- Card Heading -->
                                 <div class="dt-card__heading">
                                     <h3 class="dt-card__title">Overall portfolio</h3>
+					<P></P>
                                 </div>
                                 <!-- /card heading -->
                             </div>
