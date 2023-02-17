@@ -140,9 +140,7 @@ if(isset($_SESSION['status']))
                        
 
                          <div class="clearfix">
-                                 <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
-
-                                    <h1 class="mb-4">Decenteralized <span class="text-primary fw-medium">24hrfx</span> Trading Plartform</h1>
+                                <h1 class="mb-4">Decenteralized <span class="text-primary fw-medium">24hrfx</span> Trading Plartform</h1>
                                     <p class="text-muted lead mb-4 text-black">With 24hrfx Trades, you can be sure their trading skills are matched with excellent service Explore.
                                         Comes with additional nitches and bonuses after investing
                                     </p>
