@@ -3,7 +3,6 @@ include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
 ?>
-
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,7 +29,7 @@ $userProperties = $_SESSION['userProperties'];
     <!-- include summernote css/js -->
     <link href="./newDashboard_files/summernote-bs4.css" rel="stylesheet">
     <link rel="stylesheet" href="./newDashboard_files/intlTelInput.css">
-    <link rel="stylesheet" href="./CSS/newdash.css">
+    <link rel="stylesheet" href="./css/newdash.css">
   
     <script src="loader.js"></script>
     <script src="./newDashboard_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./newDashboard_files/default" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/jquery.min.js.download"></script>
@@ -221,25 +220,25 @@ display: none !important;
                             <ul class="dt-side-nav">
                                                                 <li class="dt-side-nav__item selected">
                                     <a href="newDashboard.php" class="dt-side-nav__link dt-active" title="Dashboard">
-                                        <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                                    <i><img src="dashboard.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Dashboard</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
                                     <a href="index.php" class="dt-side-nav__link" title="Home">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="home.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">HOME</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
                                     <a href="depositPackages.php" class="dt-side-nav__link" title="Deposits">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="deposit.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Deposits</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
                                     <a href="NewWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="withdraw.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Withdrawable Funds</span>
                                     </a>
                                 </li>
@@ -252,27 +251,27 @@ display: none !important;
                                     ?>
                                     <li class="dt-side-nav__item ">
                                     <a href="claims.php" class="dt-side-nav__link" title="Revoke claims">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="claims.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Claims</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
                                     <a href="paid.php" class="dt-side-nav__link" title="Admin Operations">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="admin.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Admin</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
                                     <a href="adminpaidReview.php" class="dt-side-nav__link" title="Paid users list">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="paidlist.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">PaidUsersList</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
                                     <a href="userPayinfo.php" class="dt-side-nav__link" title="userPay Information">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i><img src="payinfo.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">UserPayInfo</span>
                                     </a>
                                 </li>
@@ -285,21 +284,21 @@ display: none !important;
                                     ?>
                                 <li class="dt-side-nav__item ">
                                     <a href="paid.php" class="dt-side-nav__link" title="Admin">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="admin.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Admin</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
                                     <a href="adminpaidReview.php" class="dt-side-nav__link" title="PaidUsersList">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i><img src="paidlist.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">PaidUsersList</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
                                     <a href="userPayinfo.php" class="dt-side-nav__link" title="user payment Information">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="payinfo.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">UserPayInfo</span>
                                     </a>
                                 </li>
@@ -311,7 +310,7 @@ display: none !important;
                                     ?>
                                     <li class="dt-side-nav__item ">
                                     <a href="profile.php" class="dt-side-nav__link" title="UserProfile">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="user.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">User</span>
                                     </a>
                                 </li>
@@ -327,20 +326,20 @@ display: none !important;
                                
                                 <li class="dt-side-nav__item ">
                                     <a href="changepassword.php" class="dt-side-nav__link " title="Security">
-                                        <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                                    <i ><img src="security.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Security</span>
                                     </a>
                                 </li>
 
                                 <li class="dt-side-nav__item ">
                                     <a href="helpDesk.php" class="dt-side-nav__link" title="help desk">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i ><img src="helpdesk.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Help Desk</span>
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
                                     <a href="logout.php" class="dt-side-nav__link" title="Logout">
-                                        <i class="icon icon-mail icon-fw icon-lg"></i>
+                                    <i><img src="logout.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Logout</span>
                                     </a>
                                 </li>
@@ -436,8 +435,9 @@ display: none !important;
                             <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4 dt-card bg-dark text-white">
                                 <span class="badge badge-secondary badge-top-right">Earnings</span>
                                 <!-- Media -->
-                                <div class="media iso">
-                                    <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
+                                <div class="media iso" id="medbod">
+                                    
+                                    <i ><img src="totalearned.png" width="40" height="50" alt=""></i>
                                     <!-- Media Body -->
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
@@ -460,8 +460,8 @@ display: none !important;
                             <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4 dt-card bg-dark text-white">
                                 <span class="badge badge-secondary badge-top-right">Active deposits</span>
                                 <!-- Media -->
-                                <div class="media iso">
-                                    <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
+                                <div class="media iso" id="medbod">
+                                <i ><img src="accountbalance.png" width="40" height="50" alt=""></i>
                                     <!-- Media Body -->
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
@@ -484,8 +484,8 @@ display: none !important;
                             <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4 dt-card bg-dark text-white">
                                 <span class="badge badge-secondary badge-top-right">Active Bonus</span>
                                 <!-- Media -->
-                                <div class="media iso">
-                                    <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
+                                <div class="media iso" id="medbod">
+                                <i ><img src="bonus.png" width="30" height="35" alt=""></i>
                                     <!-- Media Body -->
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
@@ -508,10 +508,10 @@ display: none !important;
                             <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4 dt-card bg-dark text-white">
                                 <span class="badge badge-secondary badge-top-right">Active Withdrawal</span>
                                 <!-- Media -->
-                                <div class="media iso">
-                                    <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
+                                <div class="media iso" id="medbod">
+                                <i ><img src="totalearned.png" width="40" height="50" alt=""></i>
                                     <!-- Media Body -->
-                                    <div class="media-body">
+                                    <div class="media-body" >
                                         <p class="mb-1 h1 text-white">
                                             USD <?=$userProperties['withdrawal']?>                                        </p>
                                         <span class="d-block">Withdrawable</span>
@@ -534,7 +534,7 @@ display: none !important;
                                 <!-- Card Heading -->
                                 <div class="dt-card__heading">
                                     <h3 class="dt-card__title">Overall portfolio</h3>
-					<P></P>
+                                <P></P>
                                 </div>
                                 <!-- /card heading -->
                             </div>
