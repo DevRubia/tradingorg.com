@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-
-?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -158,14 +155,16 @@ if(isset($_SESSION['status']))
 
                                     </p>
                                     
-                                      <img src="https://i.pinimg.com/originals/b0/fc/5e/b0fc5e14d73963c2e21f4ad7443bc3fd.gif">
+                                    
 
 
                                       
                         </div>
-                            
-                        
-                        <!--end row-->
+                            <div>
+                          <img width="400" height="400" src="https://i.pinimg.com/originals/b0/fc/5e/b0fc5e14d73963c2e21f4ad7443bc3fd.gif">
+                        </div>
+                    
+                    <!--end row-->
                         <!-- START MARKET -->
                    
                 <section class="section">
