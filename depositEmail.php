@@ -150,13 +150,13 @@ try{
 	$mail->addAddress('rubialincon8@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
-		echo "Request added to Queue!";
+		$_SESSION['status']="Admin will review";
 	}else{
 		
-		echo "Message could not be sent. Mailer Error: ";
+		$_SESSION['status']="Admin will not review:";
 	}
 }catch(Exception $e){
-	echo "failed to create email body";
+	$_SESSION['status']="failed to create email body:";
 }
 //Closing smtp connection
 	$mail->smtpClose();
