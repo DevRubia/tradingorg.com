@@ -237,7 +237,7 @@ display: none !important;
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="NewWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
+                                    <a href="newWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
                                     <i ><img src="withdraw.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Withdrawable Funds</span>
                                     </a>
