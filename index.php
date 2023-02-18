@@ -89,9 +89,7 @@ if(isset($_SESSION['status']))
                            <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
                          
-                            <li class="nav-item">
-                          <a class="nav-link active  "ccc aria-current="page" href="newDashboard.php">Dashboard</a>
-                        </li>                                   
+                                                              
                         <li class="nav-item">
                           <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
