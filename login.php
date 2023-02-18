@@ -55,11 +55,11 @@ try {
                             
                              {
                          $_SESSION['status']="Invalid password";
-                        //  header('Location: landingpage.php');
+                         header('Location: landingpage.php');
                          exit();
                      }
              } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
-                     //echo $e->getMessage();
+                     
                      $_SESSION['status']="Invalid Email address";
                      header('Location: landingpage.php');
                      exit();
