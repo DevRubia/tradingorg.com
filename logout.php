@@ -9,8 +9,8 @@ unset($_SESSION['paymentType']);
 unset($_SESSION['accountNo']);
 unset($_SESSION['accountName']);
 unset($_SESSION['withdrawable']);
-unset($_SESSION['insuaranceTransactionId']);
-unset($_SESSION['insuaranceTransactionIdW']);
+unset($_SESSION['insuaranceId']);
+unset($_SESSION['activationTransaction']);
 
 //deposit
 unset($_SESSION['accname']);

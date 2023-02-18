@@ -2,23 +2,18 @@
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
- 
 $_SESSION['paymentType']=$_POST['paymentType'];
 $accountNo=$_POST['accountNo'];
 $_SESSION['accountName']=$_POST['accountName'];
 $withdrawable=$_POST['withdrawable'];
 // Input is valid - not less than 10 words
 
-
-
-
-
 $length=strlen($accountNo);
 if ($length >= 10) {
         if($withdrawable >= 10){
 //navigate user
 
-           //5000       2000
+       
         if($withdrawable <= $userProperties['withdrawal']){
 
             if($userProperties['insuarance']=='$150'){
@@ -57,7 +52,6 @@ if ($length >= 10) {
     exit();
 
     } 
-              
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +65,7 @@ if ($length >= 10) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
     <link rel="stylesheet" href="./CSS/loader.css">
-	
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
 </head>
 
 <header>
@@ -197,31 +191,16 @@ if ($length >= 10) {
                                     <div class="col-md-12">
                                     <div class="notice">
                                         <h3>*Pay $150 to cover your tradings account insuarance cover Fee<label>#This pop-up will never show once fee is cleared, you will be fowarded directly to the withdrawalPage</label></h3>
-                                        <h4>Note:Select/Use Accounts saved in profile </h4>
+                                        <h4>NOTE: Please enter correct ISURANCE tansaction code below to quickly process your withdrawal:</h4>
                                     </div>
-                                        <div class="form-group">
-                                            <label for="amount">Click Payment method:</label>
-                                            <div class="row" required>
-                                                                                                                <div class="cnt_min col-md-2">
-                                                    <input type="checkbox" name="mpesa" value="mpesa"><img src="./mpesa_files/2560px-M-PESA_LOGO-01_svg.png" alt="Select payment method" class="selected_img">
-                                                </div>
-                                                                                                                <div class="cnt_min col-md-2">
-                                                    <input type="checkbox" name="airtel" value="Airtel"><img src="./mpesa_files/airtel-money.png" alt="Select payment method" class="selected_img">
-                                                </div>
-                                                                                                                <div class="cnt_min col-md-2">
-                                                    <input type="checkbox" name="mtn" value="MtnMoney"><img src="./mpesa_files/69-691715_mtn-mm-logo-generic-mtn-mobile-money-logo.png" alt="Select payment method" class="selected_img">
-                                                </div>
-                                                                                                                <div class="cnt_min col-md-2">
-                                                    <input type="checkbox" name="bitcoin" value="Bitcoin"><img src="./mpesa_files/IMG_20230201_152931_(2000_x_1050_pixel)7.jpg" alt="Select payment method" class="selected_img">
-                                                </div>
-                                            
-                                            </div>
+                                        
+                                           
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label for="AccountNo">Transaction Code/Info:</label>
-                                            <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="insuaranceTransactionId" required>
+                                        <label for="AccountNo">insurance Transaction Code/Info:</label>
+                                            <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="insuaranceId" required>
                                     </div>
 
                                     <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name>Next</button>

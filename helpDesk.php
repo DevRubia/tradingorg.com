@@ -1,4 +1,3 @@
-
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
@@ -12,7 +11,7 @@ $userProperties = $_SESSION['userProperties'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HelpDesk</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
 	<style>
@@ -140,7 +139,7 @@ $userProperties = $_SESSION['userProperties'];
                         <div class="card-header">
                             <h2>
                                 HELP DESK Panel
-                                <h4>*Welcome <?=$userProperties['name']?>, Having any inquiries ? write to us we will get back to you ASAP via Email</h4>
+                                <h4>*Welcome <?=$userProperties['name']?>, Having any inquiries ? write to us we will get back to you via Email</h4>
                                 <a href="newDashboard.php" class="btn btn-danger float-end">Back</a>
                             </h2>
 
@@ -148,17 +147,17 @@ $userProperties = $_SESSION['userProperties'];
 
                                                                   
                                                         <!-- Form Group -->
-                                                        <form action="insuarance.php" method="post"> 
+                                                        <form action="sendHelp.php" method="post"> 
                    
                                                             
                                                             <div class="form-group">
 
 
                                                             <label>write to us below;</label>
-                                                            <textarea id="editor"></textarea>
+                                                            <textarea id="editor" name="message"></textarea>
 
                                                             <div></div>
-                                                            <button type="submit" class="btn btn-warning btn-sm display-i ">Email us</button>
+                                                            <button type="submit" class="btn btn-warning btn-sm display-i " name="sendhelp">Email us</button>
 
 
 

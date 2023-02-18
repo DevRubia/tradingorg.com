@@ -1,6 +1,4 @@
 <?php
-
-
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
@@ -52,7 +50,7 @@ $mail->Username = "rubialincon8@gmail.com";
 //Set gmail password
 $mail->Password = "wjopfhynspwgvrnh";
 //Email subject
-$mail->Subject = "Deposit statement Received";
+$mail->Subject = "DEPOSIT STATEMENT VERIFICATION";
 //Set sender email
 $mail->setFrom('rubialincon8@gmail.com');
 //Enable HTML
@@ -61,19 +59,39 @@ $mail->isHTML(true);
 //$mail->addAttachment('img/attachment.png');
 //Email body
 $mail->Body = "<h3>
-Hello, $name
+<h3>Hello $name,</h3>
+<br/>
 
-We have received your Deposit statements for $ $depoAmt USD.
-<h4>Deposited made by: Account Number: $accNumber</h4>
-<h4>Deposited made by: Account Name: $accName</h4>
-<h4>Deposited via, Account Type: $paymentMeans </h4>
-Deposit request is being validated... 
-We aim to process all deposits within 2 hours. Refresh your sessions and login later for Account update.
-However, Repeated deposit statements with wrong transaction id's multiple times may lead upto bieng discontinued from the team.
+ We have received your Deposit statements for $$depoAmt USD. 
+<h3>
+Deposited made by: Account Number: $accNumber
+Deposited made by: Account Name: $accName
+Deposited via, Account Type: $paymentMeans
+</h3>
+
+ Your deposit request is being validated... We aim to process all deposits immediately after deposits are made to our Agents all around the world.
+ 
+ Refresh your sessions and login later for Account update. STRICTLY MAKE YOUR WITHDRAW AFTER 24hrs 
+
+ However, Repeated deposit statements with wrong transaction ID's may lead to account DEACTIVATION.
+ 
+ As a member of our platform, you manage your own account by making deposits and withdrawals. 
 
 
 
 If you have any questions, contact us via help desk on our website.
+
+<h3> 
+    Our Official Pages.
+    Telegram : https://t.me/tg24HrFxTradingOrg
+    </h3>
+    
+    <h3> 
+    Instagram : http://www.instagram.com/24hrfx_tradingorg 
+    </h3>
+
+<h5>Kind regards, </h5>
+<h5>Best Certified Investment Platform, </h5>
 <h5>The 24hrfx Trading Org Team.</h5>
 </h3> ";
 //Add recipient
@@ -82,6 +100,8 @@ If you have any questions, contact us via help desk on our website.
 $mail->addAddress($userProperties['userEmail']);
 //Finally send email
 if ( $mail->send() ) {
+
+
 
 $mail = new PHPMailer(true);
 //Set mailer to use smtp
@@ -143,13 +163,13 @@ try{
 
 
     $_SESSION['status']="Deposit statement has been processed..Check your Email:";
-    header('Location: newDashboard.php');
+    header('Location: depositPopup.php');
     exit();
 }else{
-    $_SESSION['status']=" Mailer Error:";
-    header('Location: newDashboard.php');
+    $_SESSION['status']=" Admin request failed to deploy: Send your deposit details below";
+    header('Location: helpdesk.php');
     exit();
-    echo " ";
+    
 }
 }catch(Exception $e){
 echo "failed to create email one body";

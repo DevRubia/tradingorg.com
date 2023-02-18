@@ -79,7 +79,7 @@ try{
 //Set gmail password
 	$mail->Password = "wjopfhynspwgvrnh";
 //Email subject
-	$mail->Subject = "24hrfx Registration welcome Mail";
+	$mail->Subject = "ACCOUNT REGISTRATION";
 //Set sender email
 	$mail->setFrom('rubialincon8@gmail.com');
 //Enable HTML
@@ -87,17 +87,32 @@ try{
 //Attachment
 	//$mail->addAttachment('img/attachment.png');
 //Email body
-	$mail->Body = "<h1>24hrfx Trading Org </h1></br><h3>Congragulations user $userName for creating an account</h3>
-	,<h3>We're thrilled to welcome you to 24hrfx Trading Org! Your account has been successfully created, and you're now part of a community of people who are passionate about current market trading trends.
-    At 24hrfx Trading Org, we believe that trading should be accessible to everyone, and our goal is to make your experience as smooth and enjoyable as possible. Whether you're a seasoned trader enthusiast or just starting out, you'll find a wealth of information and resources here to help you reach your goals.
+	$mail->Body = "<h1>CONGRAGULATION User $userName !</h1></br><h2>WELCOME to 24HRFX TRADING ORG! 
+    </h2>
+	,<h3 You are almost ready to start interacting with our investment services.
+    Your account has been successfully created, and you're now part of a community of people who are passionate about current market trading trends. 
+    Here at 24HRFX TRADING ORG, we believe that trading should be accessible to everyone, and our goal is to make your experience as smooth and enjoyable as possible.
+    Whether you're a seasoned trader enthusiast or just starting out, you'll get PROFIT from our services.
+    To get started, we encourage you to start investmenting immmediately.
+    We can't wait to see what adventures await you on 24HRFX TRADING ORG.
 	
-	To get started, we encourage you to start investments immmediately.
-	
-	We can't wait to see what adventures await you on 24hrfx Trading Org. If you have any questions or need help along the way, don't hesitate to reach out to our support team.
-	
-	Wishing you all the best.
-	
-	<h5>The 24hrfx Trading Org Team.</h5><h3>";
+    <h3> If you have any questions or need help along the way, don't hesitate to reach out to our support team.
+
+    </h3>
+
+    <h3> 
+    Our Official Pages.
+    Telegram : https://t.me/tg24HrFxTradingOrg
+    </h3>
+    
+    <h3> 
+    Instagram : http://www.instagram.com/24hrfx_tradingorg 
+    </h3>
+
+	<h5>Kind regards, </h5>
+    <h5>Best Certified Investment Platform, </h5>
+    <h5>The 24hrfx Trading Org Team. </h5>
+    <h3>";
 //Add recipient
 	$mail->addAddress($email);
 //Finally send email

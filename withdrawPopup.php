@@ -1,18 +1,18 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WithdrawPopup</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
-	<link rel="shortcut icon" type="image/x-icon" href="./svg.png">
+    <link rel="stylesheet" href="./CSS/popup.css">
+    <link rel="stylesheet" href="./CSS/loader.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
+	
 </head>
 
 <header>
@@ -28,19 +28,9 @@ session_start();
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">FAQ</a>
+                            <a class="nav-link active" aria-current="page" href="newDashboard.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="packages.php">PACKAGES</a>
-                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
-                          </li> 
-                        
-						  <?php
+                        <?php
                           if(!isset($_SESSION['verifiedUserId'])){
 
                           
@@ -76,7 +66,7 @@ session_start();
     </header>
 
 
-<body class="container">
+<body class="container bg-dark">
 		<div class="col-xl-12 col-12 col-md-12">
 											<!-- Grid Item -->
 											<!-- TradingView Widget BEGIN -->
@@ -121,118 +111,77 @@ session_start();
 						</style>
 				</div>
 							<!-- TradingView Widget END -->
+                            <?php
+                                if(isset($_SESSION['status']))
+                                {
+                                    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                                    unset($_SESSION['status']);
+                                }
+
+                                ?>
 			</div>
+            
+           
 
-			<?php
-if(isset($_SESSION['status']))
-{
-    echo"<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
-    unset($_SESSION['status']);
-}
-
-?>
-   
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					
-					<div class="card hold">
-						<div class="card-header hold">
-							<h2>
-								Top 5 24HRFXTRADINGORG paid users information
-							</h2>
-						</div>
-						<div class="card-body container hold">
-							<table class=" table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>S1.no</th>
-										<th>UserName</th>
-										<th>Date</th>
-										<th>Amount</th>
-					
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									include('conndb.php');
-									
-									
-									$users=$auth->listUsers();
-									$result=$database->getReference('paidTable/')->getValue();
-									
-									if($result > 0)
-									
-									{
-										$i=1;
-										foreach($result as $key => $row){
-								?>
-											<tr>
-											<td><?=$i++;?></td>
-											<td><?=$row['username']?></td>
-											<td><?=$row['date']?></td>
-											<td><?=$row['Amount']?></td>
-										
-											</tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username1']?></td>
-											<td><?=$row['date1']?></td>
-											<td><?=$row['Amount1']?></td>  
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username2']?></td>
-											<td><?=$row['date2']?></td>
-											<td><?=$row['Amount2']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username3']?></td>
-											<td><?=$row['date3']?></td>
-											<td><?=$row['Amount3']?></td>
-                                            </tr>
-                                            <tr>
-                                            <td><?=$i++;?></td>
-											<td><?=$row['username4']?></td>
-											<td><?=$row['date4']?></td>
-											<td><?=$row['Amount4']?></td>
-                                            </tr>
-								<?php
-										}
-									 } else{
-								?>
-											<tr>
-											<td colspan="?">No Record Found</td>
-										</tr>
-
-								<?php
-
-									 }
-
-									?>
-
-								</tbody>
-									
+<form action="newDashboard.php" method="post" >
 
 
 
 
-							</table>
 
-						</div>
-					</div>
+		<div class="container p-2 bd-highlight body2">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                           
 
-				</div>
-		</div>
+                            <div class="card-body">
 
-	</div>
+                            <div class="myflex">
+                                        <h1>
+
+                                        <i><img src="ok.png" width="35" height="35" alt=""></i>
+
+                                        </h1>
 
 
-								
+                                       
+                               </div>
+                           <div class="form-group">
+
+                                <div class="form-group">
+                                            <h4>
+                                                CONGRAGULATIONS BISHAR OMAR !!! Your withdrawals
+                                                of $1200 has been processed you'll receive an sms 
+                                                confirmation once the funds reach your M-PESA WALLET. Thank you.
+                                            </h4>
+                                        </div>
+                            </div>  
+                           
+                                <div class="form-group myflex">
+                                <button type="submit" class="btn btn-warning btn-sm display-i ft-right " name="confirmDeposit" >OK</button>
+                                </div>
+                            </form>
+                             </div>
+                        </div>
+                    </div>
+
+
+                       
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <div id="loader">
+  <div class="spinner"></div>
+</div>  					
 </body>
-
+<script src="loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </html>

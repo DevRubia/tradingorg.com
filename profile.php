@@ -3,21 +3,19 @@ include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
 ?>
-
-
 <!DOCTYPE html>
-<!-- saved from url=(0048)https://fortunateforexinvestors.exchange/profile -->
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Required meta tags -->
     
     <meta name="description" content="Fortunate Forex investors is an investment company that aggregates funds for investment in bitcoin and forex trading.                                                                                                                                                                                                                                                                                                                                                                                               ">
     <meta name="keywords" content="proinvest, bitcoin trading, forex, investment, trading                                                                                                                                                                                                                                                                                                                                                                                                                                                              ">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--<base href="https://fortunateforexinvestors.exchange/">--><base href=".">
+    
     <title>My profile</title>
     <!-- Bootstrap CSS -->
     
-    <!-- <link rel="shortcut icon" href="https://fortunateforexinvestors.exchange/uploads/IMG_20230201_133446_(150_x_150_pixel).jpg"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
     
     <!-- Font Icon Styles -->
     <link rel="stylesheet" href="./profile_files/icons.css">
@@ -131,11 +129,12 @@ display: none !important;
 
                                     </li>
                                 </ul>
+                                <!-- class="flag-icon flag-icon-rounded flag-icon-lg mr-1m" -->
                                 <!-- /header menu -->
                                 <!-- Header Menu -->
                                 <ul class="dt-nav">
                                     <li class="dt-nav__item dropdow" class="dt-nav__link dropdown-toggle" id="currentLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="flag-icon flag-icon-rounded flag-icon-lg mr-1m" src="./profile_files/gb-eng.png">
+                                        <img  width="20" height="20" src="./profile_files/gb-eng.png">
                                         <span class="text-white">EN</span> </a>
                                         <!-- /dropdown link -->
 

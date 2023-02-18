@@ -3,8 +3,6 @@ include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
 ?>
-
-
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +15,7 @@ $userProperties = $_SESSION['userProperties'];
     <title>My profile</title>
     <!-- Bootstrap CSS -->
     
-    
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
     
     <!-- Font Icon Styles -->
     <link rel="stylesheet" href="./profile_files/icons.css">
@@ -135,7 +133,7 @@ display: none !important;
                                 <!-- Header Menu -->
                                 <ul class="dt-nav">
                                     <li class="dt-nav__item dropdow" class="dt-nav__link dropdown-toggle" id="currentLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="flag-icon flag-icon-rounded flag-icon-lg mr-1m" src="./profile_files/gb-eng.png">
+                                    <img  width="20" height="20" src="./profile_files/gb-eng.png">
                                         <span class="text-white">EN</span> </a>
                                         <!-- /dropdown link -->
 
@@ -453,8 +451,7 @@ display: none !important;
                                                                                                                                                             <option value="CARD ">Card</option>
                                                                                                                                                     </select>
                                                                                                                                                     <p></p>
-                                                                        <label class="" for="">Account Insurance Paid:<?=$userProperties['insuarance']?></label><p></p>
-                                                                        <label class="" for="">Account Withdrawal Activation:<?=$userProperties['withdrawalFund']?></label>
+                                                                       
                                                                     </div>
                                                                     <!-- /form group -->
                                                                 </div>

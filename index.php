@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./CSS/mystyle.css">
     <title>MainPage</title>
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
 
     <!-- Swiper Css -->
     <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css">
@@ -22,7 +22,18 @@
     <!-- App Css-->
     <link href="assets/css/app-blue.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-    
+    <style>
+a{
+    text-decoration: none;
+    font-weight:300;
+    color: black;
+}
+a:hover{
+    color: blue;
+    font-weight:600;
+}
+
+    </style>
 
 
 
@@ -137,7 +148,9 @@ if(isset($_SESSION['status']))
                        
 
                          <div class="clearfix">
-                                <h1 class="mb-4">Decenteralized <span class="text-primary fw-medium">24hrfx</span> Trading Plartform</h1>
+                                 
+
+                                    <h1 class="mb-4">Decenteralized <span class="text-primary fw-medium">24hrfx</span> Trading Plartform</h1>
                                     <p class="text-muted lead mb-4 text-black">With 24hrfx Trades, you can be sure their trading skills are matched with excellent service Explore.
                                         Comes with additional nitches and bonuses after investing
                                     </p>
@@ -154,18 +167,18 @@ if(isset($_SESSION['status']))
                                     <p>
 
                                     </p>
-                                    
-                                    
-
 
                                       
                         </div>
-                            <div>
-                          <img width="400" height="400" src="https://i.pinimg.com/originals/b0/fc/5e/b0fc5e14d73963c2e21f4ad7443bc3fd.gif">
-                        </div>
-                    
-                    <!--end row-->
+                            
+                        
+                        <!--end row-->
                         <!-- START MARKET -->
+                                                 
+                                    <div >
+                                      <img width="400" height="400"  src="https://i.pinimg.com/originals/b0/fc/5e/b0fc5e14d73963c2e21f4ad7443bc3fd.gif">
+                                    </div>
+
                    
                 <section class="section">
                                 <div class="container">
@@ -620,7 +633,7 @@ if(isset($_SESSION['status']))
                   - Nairobi,KE
                  - Kampala, UG
                - Lusaka,ZM
-               -Malawi, MWIsouth Africa</p>
+           -Malawi,south Africa</p>
                                 </div>
                             </div>
                         </div>
@@ -646,7 +659,16 @@ if(isset($_SESSION['status']))
                                 <div class="mt-4 pt-1">
                                     <h5 class="mb-3">Call Us</h5>
                                     <p class="text-muted mb-1">Mon-Fri (working hrs 7a.m-10pm)</p>
-                                    <p class="text-muted fw-medium mb-0">+254 5748641027/+254 798741595</p>
+                                    <p class="text-muted fw-medium mb-0">+254 75748641027/+254 798741595</p>
+                                    <p></p>
+                                    <div class="form-group">
+                                        <a href="http://www.instagram.com/24hrfx_tradingorg">Instagram</span>
+                                        <span><i><img src="./instagram.png" width="40" height="40" alt=""></i></span>
+                                        <a href="https://wa.me/+255748641027">Whatsapp</span>
+                                        <span><i><img src="./whatsapp.png" width="40" height="40" alt=""></i></span>
+                                        <a href="https://t.me/tg24HrFxTradingOrg">Telegram</span>
+                                        <span><i><img src="./telegram.png" width="40" height="40" alt=""></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -684,24 +706,11 @@ if(isset($_SESSION['status']))
                                 <img src="assets/images/dark-logo.png" alt="" class="footer-dark-logo" />
                                 <img src="assets/images/light-logo.png" alt="" class="footer-light-logo" />
                             </div>
-                            <p class="footer-content">Welcome to the website of 24hrfxtradingOrg LTD! If you find yourself here, you are definitely in search of reliable and profitable investment.
-                                 Yes, you are just at the right place! Our company offers trust assets management of the highest quality on the basis of foreign exchange and profitable trade through Funds exchanges.</p>
-                            <ul class="footer-social-menu list-inline mb-0">
+                           <ul class="footer-social-menu list-inline mb-0">
                                 <li class="list-inline-item"><a href="javascript:void(0)"><i class="uil uil-facebook-f"></i></a></li>
                                 <li class="list-inline-item"><a href="javascript:void(0)"><i class="uil uil-linkedin-alt"></i></a></li>
                                 <li class="list-inline-item"><a href="javascript:void(0)"><i class="uil uil-google"></i></a></li>
                                 <li class="list-inline-item"><a href="javascript:void(0)"><i class="uil uil-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                   
-                    <div class="col-lg-2 col-6">
-                        <div class="footer-item mt-4 mt-lg-0">
-                            <h6 class="footer-header mb-3">Legal</h6>
-                            <ul class="list-unstyled footer-list mb-0">
-                                <li><a href="javascript:void(0)">Documentation</a></li>
-                                <li><a href="faqs.html">Faq's</a></li>
-                                <li><a href="privacy-policy.html">Privacy & Policy</a></li>
                             </ul>
                         </div>
                     </div>

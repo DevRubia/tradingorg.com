@@ -8,14 +8,14 @@ $userProperties = $_SESSION['userProperties'];
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Required meta tags -->
     
-    <meta name="description" content="Fortunate Forex investors is an investment company that aggregates funds for investment in bitcoin and forex trading.                                                                                                                                                                                                                                                                                                                                                                                               ">
+    <meta name="description" content="24hrTradingOrg is an investment company that aggregates funds for investment in bitcoin and forex trading.                                                                                                                                                                                                                                                                                                                                                                                               ">
     <meta name="keywords" content="proinvest, bitcoin trading, forex, investment, trading                                                                                                                                                                                                                                                                                                                                                                                                                                                              ">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <base href=".">
+    <base href="">
     <title>Dashboard</title>
     <!-- Bootstrap CSS -->
-    
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
+
     
     <!-- Font Icon Styles -->
     <link rel="stylesheet" href="./newDashboard_files/icons.css">

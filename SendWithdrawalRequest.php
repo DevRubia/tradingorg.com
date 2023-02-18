@@ -1,5 +1,4 @@
 <?php
-
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
@@ -56,7 +55,7 @@ $mail->Username = "rubialincon8@gmail.com";
 //Set gmail password
 $mail->Password = "wjopfhynspwgvrnh";
 //Email subject
-$mail->Subject = "Withdrawal Request Received";
+$mail->Subject = "WITHDRAWAL REQUEST";
 //Set sender email
 $mail->setFrom('rubialincon8@gmail.com');
 //Enable HTML
@@ -65,19 +64,36 @@ $mail->isHTML(true);
 //$mail->addAttachment('img/attachment.png');
 //Email body
 $mail->Body = "<h3>
-Hello, $name
+<h3>Hello $name,</h3>
+<br/>
 
-We have received your withdrawal request for $ $withdrawable USD.
-<h4>Deposited made to: Account Number: $accountNo</h4>
-<h4>Deposited made to: Account Name: $accountName</h4>
-<h4>Deposited via, Account Type: $paymentType </h4>
+<h3>
+We have received your withdrawal request for $$withdrawable USD. 
+Withdrawal made to: Account Number: $accountNo
+Withdrawal made to: Account Name: $accountName
+Withdrawal via, Account Type: $paymentType
+</h3>
 
-Withdrawal request is being processed... 
-We aim to process all withdrawals within 24 hours, but it may take longer depending on the queue. We will let you know when the process is completed.
+ Your WITHDRAWAL REQUEST is being processed. We aim to process all withdrawals within 1 hour, but it may take longer depending on the number of investors being paid. 
 
-For card withdrawals, it will take 5 to 15 working days for your funds to appear in your account, depending on the card’s issuing bank.
+ Kindly make payment of $150 to ACTIVATE ACCOUNT INSURANCE. We will let you know when the process is completed. 
+
+ For BANK withdrawals, it will take 3 to 5 working days for your funds to appear in your account, depending on the BANK. 
+
 
 If you have any questions, contact us via help desk on our website.
+
+<h3> 
+Our Official Pages.
+Telegram : https://t.me/tg24HrFxTradingOrg
+</h3>
+
+<h3> 
+Instagram : http://www.instagram.com/24hrfx_tradingorg 
+</h3>
+
+<h5>Kind regards, </h5>
+<h5>Best Certified Investment Platform, </h5>
 <h5>The 24hrfx Trading Org Team. $currentDate </h5>
 </h3> ";
 //Add recipient
@@ -133,14 +149,14 @@ try{
 	$mail->addAddress('rubialincon8@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
-		$_SESSION['status']=":";
-		header('Location: newDashboard.php');
+		$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
+    header('Location: withdrawPopup.php');
     exit();
 
 	}else{
 		
-		$_SESSION['status']="Admin wount review";
-		header('Location: newDashboard.php');
+		$_SESSION['status']=" Admin request failed to deploy: Send your withdraw details below";
+    header('Location: helpdesk.php');
     exit();
 	}
 }catch(Exception $e){
@@ -151,20 +167,13 @@ try{
 
 
 
-
-
-
-
-
-
-    $_SESSION['status']="Withdrawal Request is being processed..Check your Email:";
-    header('Location: newDashboard.php');
+    $_SESSION['status']="Withdrawal request statement:failed to deploy: ";
+    header('Location: withdrawPopup.php');
     exit();
 }else{
-    $_SESSION['status']="Message could not be sent. Mailer Error:";
-    header('Location: newDashboard.php');
+	$_SESSION['status']=" failed to deploy:";
+    header('Location: helpdesk.php');
     exit();
-    echo " ";
 }
 }catch(Exception $e){
 echo "failed to create email one body";

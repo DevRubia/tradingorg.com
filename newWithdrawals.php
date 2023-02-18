@@ -16,7 +16,7 @@ $userProperties = $_SESSION['userProperties'];
     <title>Withdrawals</title>
     <!-- Bootstrap CSS -->
     
-    
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
     
     <!-- Font Icon Styles -->
     <link rel="stylesheet" href="./newWithdrawals_files/icons.css">
@@ -337,7 +337,7 @@ display: none !important;
                                         <!-- Media -->
                                         <div class="media">
 
-                                            <i class="icon icon-revenue icon-6x mr-6 align-self-center"></i>
+                                        <i><img src="withdraw.png" width="40" height="50" alt=""></i>
 
                                             <!-- Media Body -->
                                             <div class="media-body">
@@ -372,7 +372,7 @@ display: none !important;
                                         <!-- Media -->
                                         <div class="media">
 
-                                            <i class="icon icon-revenue-new icon-6x mr-6 align-self-center"></i>
+                                        <i><img src="totalearned.png" width="40" height="50" alt=""></i>
 
                                             <!-- Media Body -->
                                             <div class="media-body">

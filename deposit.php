@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="./CSS/stylepaid.css">
     <link rel="stylesheet" href="./CSS/loader.css">
-	
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
 </head>
 
 <header>
@@ -135,9 +135,9 @@
                             <div class="card-body">
 
                            <h5>
-
-                         DEPOSIT TO YOUR ESTEEMED AGENT  
-<h5>
+                            DEPOSIT TO YOUR ESTEEMED AGENT    
+                        
+                            <h5>
 M-PESA ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
 M-PESA NUMBER/PAYBILL: <?=$getdata['PayBill'] ?>
 </h5>
@@ -171,7 +171,7 @@ Sending money to any other NUMBER other than our M-PESA AGENT NUMBER may result 
                                 </div>
 
                                 <div class="form-group">
-                               <label for="deptrans">Amount Deposit:[$USD].Convert i.e {126ksh->1usd}</label>
+                               <label for="deptrans">Package Amount Deposit:[$USD]</label>
                             <input type="text" class="form-control"  value="" name="depoAmt" required>
                                 </div>
                                 <div class="form-group">

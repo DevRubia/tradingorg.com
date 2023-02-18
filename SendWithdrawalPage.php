@@ -2,10 +2,8 @@
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
-
-
 //setwithdrawalTransactionId
-$_SESSION['insuaranceTransactionIdW']=isset($_POST['insuaranceTransactionIdW']);
+$_SESSION['activationTransaction']=isset($_POST['activationTransaction']);
 
 //setwithdrawalRequestDetail
 $paymentType=$_SESSION['paymentType'];
@@ -14,12 +12,10 @@ $accountName=$_SESSION['accountName'];
 $withdrawable=$_SESSION['withdrawable'];
 
 //insuranceTransactionId
-$insuaranceTransactionId=$_SESSION['insuaranceTransactionId'];
+$insuaranceId=$_SESSION['insuaranceId'];
 
 //withdrawalTransactionId
-$insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
-
-
+$insuaranceTransactionIdW=$_SESSION['activationTransaction'];
 ?>
 <!DOCTYPE html>.
 <html lang="en">
@@ -31,8 +27,9 @@ $insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
-    <link rel="stylesheet" href="./CSS/loader.css">
+	<link rel="stylesheet" href="./css/stylepaid.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
 	
 </head>
 
@@ -137,12 +134,6 @@ $insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
 			</div>
 <form action="SendWithdrawalRequest.php" method="post">
    
-<?php
-            
-    
-           
-            ?>
-
 		<div class="container p-2 bd-highlight">
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -178,7 +169,7 @@ $insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
                                         <div class="form-group">
                                          <label for="">InsuranceFee TransactionId:</label>
                                     <p for="">Deposited from: <?=$userProperties['accountType']?></p>
-                                    <h4 for=""><?=$insuaranceTransactionId?></h4>
+                                    <h4 for=""><?=$insuaranceId?></h4>
                                     </div>
 
                                         <div class="form-group">
