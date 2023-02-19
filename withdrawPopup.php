@@ -1,3 +1,8 @@
+<?php
+include('authentication.php');
+$userProperties = $_SESSION['userProperties'];
+$withdrawable=$_SESSION['withdrawable'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,8 +157,8 @@
 
                                 <div class="form-group">
                                             <h4>
-                                                CONGRAGULATIONS BISHAR OMAR !!! Your withdrawals
-                                                of $1200 has been processed you'll receive an sms 
+                                                CONGRAGULATIONS <?=$userProperties['name']?> !!! Your withdrawals
+                                                of $<?=$withdrawable?> has been processed you'll receive an sms 
                                                 confirmation once the funds reach your M-PESA WALLET. Thank you.
                                             </h4>
                                         </div>

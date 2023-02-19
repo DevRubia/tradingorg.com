@@ -1,6 +1,7 @@
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
+$depoAmt=$_SESSION['depoAmt']; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,9 +157,9 @@ $userProperties = $_SESSION['userProperties'];
 
                                 <div class="form-group">
                                             <h4>
-                                                CONGRAGULATIONS BISHAR OMAR !!! Your Deposit
-                                                of package $1200 is being processed you'll receive an sms 
-                                                confirmation once the funds reach your M-PESA WALLET. Thank you.
+                                                CONGRAGULATIONS <?=$userProperties['name']?> !!! Your Deposit
+                                                of package $<?=$depoAmt?> is being processed.. your dashboard 
+                                       will be updated shortly. Thank you.
                                             </h4>
                                         </div>
                             </div>  
