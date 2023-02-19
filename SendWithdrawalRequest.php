@@ -160,7 +160,9 @@ try{
     exit();
 	}
 }catch(Exception $e){
-	echo "failed to create email body";
+	$_SESSION['status']="failed!!!";
+    header('Location: newDashboard.php');
+    exit();
 }
 //Closing smtp connection
 	$mail->smtpClose();
@@ -176,7 +178,9 @@ try{
     exit();
 }
 }catch(Exception $e){
-echo "failed to create email one body";
+	$_SESSION['status']="failed!!!";
+    header('Location: newDashboard.php');
+    exit();
 }
 //Closing smtp connection
 $mail->smtpClose();

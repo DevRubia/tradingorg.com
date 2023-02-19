@@ -74,7 +74,9 @@ if ( $mail->send() ) {
     
 }
 }catch(Exception $e){
-echo "failed to create email body";
+    $_SESSION['status']="failed!!!";
+    header('Location: newDashboard.php');
+    exit();
 }
 //Closing smtp connection
 $mail->smtpClose();

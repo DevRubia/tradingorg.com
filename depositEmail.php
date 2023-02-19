@@ -120,13 +120,13 @@ try{
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "rubialincon8@gmail.com";
+	$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-	$mail->Password = "wjopfhynspwgvrnh";
+	$mail->Password = "opnytybzkqaymojo";
 //Email subject
 	$mail->Subject = "DEPOSIT VALIDATION";
 //Set sender email
-	$mail->setFrom('rubialincon8@gmail.com');
+	$mail->setFrom('helpdesk.24hrfxtradingorg@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment
@@ -151,16 +151,22 @@ try{
 
     ";
 //Add recipient
-	$mail->addAddress('rubialincon8@gmail.com');
+	$mail->addAddress('helpdesk.24hrfxtradingorg@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
-		echo "Request added to Queue!";
+		$_SESSION['status']="processed!!!";
+    header('Location: newDashboard.php');
+    exit();
 	}else{
 		
-		echo "Message could not be sent. Mailer Error: ";
+		$_SESSION['status']="failed!!!";
+    header('Location: newDashboard.php');
+    exit();;
 	}
 }catch(Exception $e){
-	echo "failed to create email body";
+    $_SESSION['status']="failed!!!";
+    header('Location: newDashboard.php');
+    exit();
 }
 //Closing smtp connection
 	$mail->smtpClose();
