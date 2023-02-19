@@ -32,6 +32,31 @@ $userProperties = $_SESSION['userProperties'];
     <link rel="stylesheet" href="./css/newdash.css">
   
     <script src="loader.js"></script>
+    <script>
+         // Get a reference to the chart container element
+         function hide(){
+                                                        // Get a reference to the chart container element
+                                                     const chartContainer = document.getElementById('chart2');
+                                                     const chart3Container = document.getElementById('pie-chart');
+                                                        // Add an event listener for the 'resize' event
+                                                        window.addEventListener('resize', function() {
+                                                        // Check the screen width
+                                                        if (window.innerWidth <= 760) {
+                                                            // If the screen is smaller than 760px, hide the chart container
+                                                            chartContainer.style.display = 'none';
+                                                            chart3Container.style.display = 'none';
+                                                        } else {
+                                                            // If the screen is larger than 760px, show the chart container
+                                                            // chartContainer.style.vi = 'block';
+                                                        }
+                                                       
+                                                        })}
+
+                                                        window.onload = hide;
+                                                        window.onresize = hide;
+                                                  
+
+    </script>
     <script src="./newDashboard_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./newDashboard_files/default" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/jquery.min.js.download"></script>
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style><style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style><script charset="utf-8" src="./newDashboard_files/twk-chunk-2c78ba82.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-696bc286.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f1596d96.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-48f46bef.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-4fe9d5dd.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-2d0b9454.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f163fcd0.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-32507910.js.download"></script><style type="text/css">#mulaecv547eg1675262278346 {outline:none !important;
@@ -97,14 +122,7 @@ display: none !important;
                             </div>
                             <!-- /brand tool -->
 
-                            <!-- Brand logo 
-                            <span class="dt-brand__logo">
-                                <a class="dt-brand__logo-link" href="">
-                                <img class="d-none d-sm-inline-block w-100" src="./newDashboard_files/IMG_20230201_134626_(2000_x_1050_pixel)7.jpg" alt="logo">
-                                <img class="dt-brand__logo-symbol d-sm-none" src="./newDashboard_files/IMG_20230201_134626_(2000_x_1050_pixel)7.jpg" alt="logo">
-                                </a>
-                            </span>
-                           /brand logo -->
+                           
 
                         </div>
                         <!-- /brand -->
@@ -178,7 +196,7 @@ display: none !important;
 
                                         <!-- Dropdown Link -->
                                         <a href="" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img class="dt-avatar size-30" src="./newDashboard_files/avatar.png" alt="fadhili rubia">
+                                            <img class="dt-avatar size-30" src="./newDashboard_files/avatar.png" alt="">
                                             <span class="dt-avatar-info d-none d-sm-block">
                                                 <span class="dt-avatar-name"><?=$userProperties['name']?></span>
                                                                                                         <span>Verified</span>
@@ -237,7 +255,7 @@ display: none !important;
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="newWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
+                                    <a href="NewWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
                                     <i ><img src="withdraw.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Withdrawable Funds</span>
                                     </a>
@@ -548,7 +566,7 @@ display: none !important;
                             <!-- /card body -->
                         </div>
                         <script src="./newDashboard_files/Chart.min.js.download"></script>
-                        <script>
+                        <script id="pie-chart">
                         var activedeposits = <?=$userProperties['accBal']?>;
                         var inactivedeposits = <?=$userProperties['earnedTotal']?>;
                         var withdrawals = <?=$userProperties['withdrawal']?>;
@@ -581,40 +599,41 @@ display: none !important;
                             <div class="bg-overlay__inner mt-auto">
 
                                 <!-- Card Body -->
-                                <div class="dt-card__body chart">
+                                <div class="dt-card__body ">
 
 
                                    <!-- TradingView Widget BEGIN -->
-                                            <div class="tradingview-widget-container">
-                                            <div id="tradingview_ac9b0"></div>
-                                            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">Bitcoin chart</span></a> by TradingView</div>
-                                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                                            <script type="text/javascript">
-                                            new TradingView.widget(
-                                            {
-                                            "width":400,
-                                            "height": 600,
-                                            "symbol": "BITSTAMP:BTCUSD",
-                                            "interval": "D",
-                                            "timezone": "Africa/Nairobi",
-                                            "theme": "Dark",
-                                            "style": "1",
-                                            "locale": "en",
-                                            "toolbar_bg": "#f1f3f6",
-                                            "enable_publishing": false,
-                                            "withdateranges": true,
-                                            "hide_side_toolbar": false,
-                                            "allow_symbol_change": true,
-                                            "calendar": true,
-                                            "studies": [
-                                                "LinearRegression@tv-basicstudies",
-                                                "RSI@tv-basicstudies",
-                                                "Stochastic@tv-basicstudies"
-                                            ],
-                                            "container_id": "tradingview_ac9b0"
-                                            }
-                                            );
-                                            </script>
+                                            <div class="tradingview-widget-container" id="chart2">
+                                                    <div id="tradingview_ac9b0"></div>
+                                                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">Bitcoin chart</span></a> by TradingView</div>
+                                                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                                    <script type="text/javascript">
+                                                        
+                                                    new TradingView.widget(
+                                                    {
+                                                    "width":400,
+                                                    "height": 600,
+                                                    "symbol": "BITSTAMP:BTCUSD",
+                                                    "interval": "D",
+                                                    "timezone": "Africa/Nairobi",
+                                                    "theme": "Dark",
+                                                    "style": "1",
+                                                    "locale": "en",
+                                                    "toolbar_bg": "#f1f3f6",
+                                                    "enable_publishing": false,
+                                                    "withdateranges": true,
+                                                    "hide_side_toolbar": false,
+                                                    "allow_symbol_change": true,
+                                                    "calendar": true,
+                                                    "studies": [
+                                                        "LinearRegression@tv-basicstudies",
+                                                        "RSI@tv-basicstudies",
+                                                        "Stochastic@tv-basicstudies"
+                                                    ],
+                                                    "container_id": "tradingview_ac9b0"
+                                                    }
+                                                    );
+                                                    </script>
                                             </div>
                                     <!-- TradingView Widget END -->
 

@@ -1,7 +1,6 @@
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,7 +149,7 @@ $userProperties = $_SESSION['userProperties'];
                                                         <form action="sendHelp.php" method="post"> 
                    
                                                             
-                                                            <div class="form-group">
+                                                            <div class="form-group container">
 
 
                                                             <label>write to us below;</label>
