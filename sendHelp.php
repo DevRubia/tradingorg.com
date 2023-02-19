@@ -33,9 +33,9 @@ $mail->SMTPSecure = "tls";
 //Port to connect smtp
 $mail->Port = "587";
 //Set gmail username
-$mail->Username = "rubialincon8@gmail.com";
+$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-$mail->Password = "wjopfhynspwgvrnh";
+$mail->Password = "opnytybzkqaymojo";
 //Email subject
 $mail->Subject = "Deposit statement Received";
 //Set sender email
@@ -60,7 +60,7 @@ Kindly review my issue on : $message
 //Add recipient
 
 
-$mail->addAddress('rubialincon8@gmail.com');
+$mail->addAddress('helpdesk.24hrfxtradingorg@gmail.com');
 if ( $mail->send() ) {
     $_SESSION['status']=" Successfully contacted help desk, stay connected with us. reviewing your issue ";
     header('Location: newDashboard.php');
