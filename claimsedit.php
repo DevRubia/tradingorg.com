@@ -1,5 +1,5 @@
 <?php
-include('adminAuth.php');
+include('authentication.php');
 include('adminclaimAuth.php');
 
 ?>
