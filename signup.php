@@ -75,13 +75,13 @@ try{
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "rubialincon8@gmail.com";
+	$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-	$mail->Password = "wjopfhynspwgvrnh";
+	$mail->Password = "opnytybzkqaymojo";
 //Email subject
 	$mail->Subject = "ACCOUNT REGISTRATION";
 //Set sender email
-	$mail->setFrom('rubialincon8@gmail.com');
+	$mail->setFrom('helpdesk.24hrfxtradingorg@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment
@@ -89,6 +89,7 @@ try{
 //Email body
 	$mail->Body = "<h1>CONGRAGULATION User $userName !</h1></br><h2>WELCOME to 24HRFX TRADING ORG! 
     </h2>
+
 	<h3> You are almost ready to start interacting with our investment services.
     Your account has been successfully created, and you're now part of a community of people who are passionate about current market trading trends. 
     Here at 24HRFX TRADING ORG, we believe that trading should be accessible to everyone, and our goal is to make your experience as smooth and enjoyable as possible.
@@ -96,6 +97,7 @@ try{
     To get started, we encourage you to start investmenting immmediately.
     We can't wait to see what adventures await you on 24HRFX TRADING ORG.
 	</h3>
+
     <h3> If you have any questions or need help along the way, don't hesitate to reach out to our support team.
 
     </h3>
@@ -127,7 +129,10 @@ try{
 		
 	}
 }catch(Exception $e){
-	echo "failed to create email body";
+	        $_SESSION['status']="sign in Email not sent ..sign in was successful";
+            header('Location:landingpage.php');
+            exit();
+		;
 }
 //Closing smtp connection
 	$mail->smtpClose();
