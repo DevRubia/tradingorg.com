@@ -46,13 +46,13 @@ $mail->SMTPSecure = "tls";
 //Port to connect smtp
 $mail->Port = "587";
 //Set gmail username
-$mail->Username = "rubialincon8@gmail.com";
+$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-$mail->Password = "wjopfhynspwgvrnh";
+$mail->Password = "opnytybzkqaymojo";
 //Email subject
 $mail->Subject = "DEPOSIT STATEMENT VERIFICATION";
 //Set sender email
-$mail->setFrom('rubialincon8@gmail.com');
+$mail->setFrom('helpdesk.24hrfxtradingorg@gmail.com');
 //Enable HTML
 $mail->isHTML(true);
 //Attachment
@@ -65,7 +65,11 @@ $mail->Body = "<h3>
  We have received your Deposit statements for $$depoAmt USD. 
 <h3>
 Deposited made by: Account Number: $accNumber
+</h3>
+<h3>
 Deposited made by: Account Name: $accName
+</h3>
+<h3>
 Deposited via, Account Type: $paymentMeans
 </h3>
 
@@ -150,13 +154,13 @@ try{
 	$mail->addAddress('rubialincon8@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
-		$_SESSION['status']="Admin will review";
+		echo "Request added to Queue!";
 	}else{
 		
-		$_SESSION['status']="Admin will not review:";
+		echo "Message could not be sent. Mailer Error: ";
 	}
 }catch(Exception $e){
-	$_SESSION['status']="failed to create email body:";
+	echo "failed to create email body";
 }
 //Closing smtp connection
 	$mail->smtpClose();
