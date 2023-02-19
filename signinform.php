@@ -154,14 +154,14 @@ if(isset($_SESSION['verifiedUserId'])){
         <div class="form-group">
           <label for="phone">CountryCode:</label>
           <select class="form-control" id="country_code" name="countryCode" required>
-            <option value="+61">+61 Australia</option>
+            <option value="+61">+61 Chad</option>
             <option value="+254">+254 Kenya</option>
-            <option value="+81">+81 Jersey</option>
-            <option value="+31">+31 Netherlands</option>
+            <option value="+265">+265 Malawi</option>
+            <option value="+60">+60 malaysia</option>
             <option value="+234">+234 Nigeria</option>
-            <option value="+44">+44 UK</option>
-            <option value="+1">+1 US</option>
-            <option value="+2">+27 South Africa</option>
+            <option value="+961">+961 Lebanon</option>
+            <option value="+256">+256 Uganda</option>
+            <option value="+27">+27 South Africa</option>
            <!-- Add more country codes as needed -->
           </select>
           <label for="phone">Phone:</label>
