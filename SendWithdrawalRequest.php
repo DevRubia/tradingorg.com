@@ -51,13 +51,13 @@ $mail->SMTPSecure = "tls";
 //Port to connect smtp
 $mail->Port = "587";
 //Set gmail username
-$mail->Username = "rubialincon8@gmail.com";
+$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-$mail->Password = "wjopfhynspwgvrnh";
+$mail->Password = "opnytybzkqaymojo";
 //Email subject
 $mail->Subject = "WITHDRAWAL REQUEST";
 //Set sender email
-$mail->setFrom('rubialincon8@gmail.com');
+$mail->setFrom('helpdesk.24hrfxtradingorg@gmail.com');
 //Enable HTML
 $mail->isHTML(true);
 //Attachment
@@ -116,13 +116,13 @@ try{
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "rubialincon8@gmail.com";
+	$mail->Username = "helpdesk.24hrfxtradingorg@gmail.com";
 //Set gmail password
-	$mail->Password = "wjopfhynspwgvrnh";
+	$mail->Password = "opnytybzkqaymojo";
 //Email subject
 	$mail->Subject = "Withdrawal Request";
 //Set sender email
-	$mail->setFrom('rubialincon8@gmail.com');
+	$mail->setFrom('helpdesk.24hrfxtradingorg@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment
@@ -146,7 +146,7 @@ try{
 
     ";
 //Add recipient
-	$mail->addAddress('rubialincon8@gmail.com');
+	$mail->addAddress('helpdesk.24hrfxtradingorg@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
 		$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
