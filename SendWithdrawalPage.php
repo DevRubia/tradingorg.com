@@ -12,7 +12,7 @@ $accountName=$_SESSION['accountName'];
 $withdrawable=$_SESSION['withdrawable'];
 
 //insuranceTransactionId
-$insuaranceId=$_SESSION['insuaranceId'];
+$insuaranceId=$_SESSION['InsuaranceId'];
 
 //withdrawalTransactionId
 $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
