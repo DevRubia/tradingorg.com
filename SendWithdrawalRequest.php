@@ -151,7 +151,7 @@ try{
 	if ( $mail->send() ) {
 		$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
     header('Location: withdrawPopup.php');
-    exit();
+   
 
 	}else{
 		
