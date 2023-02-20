@@ -67,12 +67,18 @@ $mail->Body = "<h3>
 <h3>Hello $name,</h3>
 <br/>
 
-<h3>
+<h4>
 We have received your withdrawal request for $$withdrawable USD. 
+</h4>
+<h4>
 Withdrawal made to: Account Number: $accountNo
+</h4>
+<h4>
 Withdrawal made to: Account Name: $accountName
+</h4>
+<h4>
 Withdrawal via, Account Type: $paymentType
-</h3>
+</h4>
 
  Your WITHDRAWAL REQUEST is being processed. We aim to process all withdrawals within 1 hour, but it may take longer depending on the number of investors being paid. 
 
@@ -96,6 +102,51 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 <h5>Best Certified Investment Platform, </h5>
 <h5>The 24hrfx Trading Org Team. $currentDate </h5>
 </h3> ";
+
+if($userProperties['withdrawalFund']!='$100'){
+
+    $mail->Body = "<h3>
+<h3>Hello $name,</h3>
+<br/>
+
+<h4>
+We have received your withdrawal request for $$withdrawable USD. 
+</h4>
+<h4>
+Withdrawal made to: Account Number: $accountNo
+</h4>
+<h4>
+Withdrawal made to: Account Name: $accountName
+</h4>
+<h4>
+Withdrawal via, Account Type: $paymentType
+
+Withdrawal transaction id: $insuaranceTransactionIdW
+</h4>
+
+ Your WITHDRAWAL REQUEST is being processed. We aim to process all withdrawals within 1 hour, but it may take longer depending on the number of investors being paid. 
+
+ Kindly make payment of $150 to ACTIVATE ACCOUNT INSURANCE. We will let you know when the process is completed. 
+
+ For BANK withdrawals, it will take 3 to 5 working days for your funds to appear in your account, depending on the BANK. 
+
+
+If you have any questions, contact us via help desk on our website.
+
+<h3> 
+Our Official Pages.
+Telegram : https://t.me/tg24HrFxTradingOrg
+</h3>
+
+<h3> 
+Instagram : http://www.instagram.com/24hrfx_tradingorg 
+</h3>
+
+<h5>Kind regards, </h5>
+<h5>Best Certified Investment Platform, </h5>
+<h5>The 24hrfx Trading Org Team. $currentDate </h5>
+</h3> ";
+}
 //Add recipient
 
 
@@ -135,7 +186,7 @@ try{
     <h4>User withdrawal amount Request: $ $withdrawable</h4>
     <h4>User Request Name(Account Name): $accountName</h4>
     <h4>User Account number wire Request: $accountNo</h4>
-	<h4>user emai: $usermail  </h4>
+	<h4>user email: $usermail  </h4>
     <h4>User payment-type by: $paymentType</h4>
     <p></p>
     <h4>user Request sent on:Date sent $currentDate . Time: $time</h4>
@@ -169,7 +220,7 @@ try{
 
 
 
-    $_SESSION['status']="Withdrawal request statement:failed to deploy: ";
+    $_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
     header('Location: withdrawPopup.php');
     exit();
 }else{
