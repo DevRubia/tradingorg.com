@@ -160,6 +160,9 @@ if(isset($_SESSION['verifiedUserId'])){
             <option value="+60">+60 malaysia</option>
             <option value="+234">+234 Nigeria</option>
             <option value="+961">+961 Lebanon</option>
+            <option value="+255">+255 Tanzania</option>
+            <option value="+260">+260 Zambia</option>
+            <option value="+250">+250 Rwanda</option>
             <option value="+256">+256 Uganda</option>
             <option value="+27">+27 South Africa</option>
            <!-- Add more country codes as needed -->
