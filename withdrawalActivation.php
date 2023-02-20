@@ -4,12 +4,12 @@ $userProperties = $_SESSION['userProperties'];
 
 if($userProperties['withdrawalFund']=='$100'){
     $_SESSION['status']="Withdrawal Activation set Paid";
-    $_SESSION['InsuaranceId']=isset($_POST['insuaranceId']);
+    $_SESSION['insuaranceId']=isset($_POST['insuaranceId']);
     header('Location: SendWithdrawalPage.php');
     
 }else{
   
-     $_SESSION['insuaranceId']=isset($_POST['insuaranceId']);
+     $_SESSION['InsuaranceId']=isset($_POST['insuaranceId']);
     
 }
 ?>

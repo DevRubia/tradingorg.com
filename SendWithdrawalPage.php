@@ -241,7 +241,7 @@ $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
                                                     <div class="form-group">
                                                     <label for="">Withdrawal Activation TransactionId:</label>
                                                 <label for="">Deposited from: <?=$bitcoinW?><?=$mtnW?><?=$airtelW?><?=$mpesaW?></label>
-                                                <h4 for=""><?=$insuaranceTransactionIdW?></h4>
+                                                <h4 for=""><?=$insuaranceId?></h4>
                                                 </div>
 
                                                 <div class="form-group">
