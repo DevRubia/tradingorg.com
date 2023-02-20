@@ -17,10 +17,10 @@ $accountName=$_SESSION['accountName'];
 $withdrawable=$_SESSION['withdrawable'];
 
 //insuranceTransactionId
-$insuaranceTransactionId=$_SESSION['insuaranceTransactionId'];
+$insuaranceTransactionId=$_SESSION['InsuaranceId'];
 
 //withdrawalTransactionId
-$insuaranceTransactionIdW=$_SESSION['insuaranceTransactionIdW'];
+$insuaranceTransactionIdW=$_SESSION['activationTransaction'];
     
     //Begin Email Send
 }
