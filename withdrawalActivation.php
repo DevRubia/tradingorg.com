@@ -2,15 +2,19 @@
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
-if($userProperties['withdrawalFund']=='$100'){
-    $_SESSION['status']="Withdrawal Activation set Paid";
-    $_SESSION['insuaranceId']=isset($_POST['insuaranceId']);
-    header('Location: SendWithdrawalPage.php');
+if(isset($_POST['nextInsurance'])){
+    if($userProperties['withdrawalFund']=='$100'){
+
+        $_SESSION['status']="Withdrawal Activation set Paid";
+        header('Location: SendWithdrawalPage.php');
+        
+    }else{
     
-}else{
-  
-     $_SESSION['InsuaranceId']=isset($_POST['insuaranceId']);
+        $insuranceFee =$_POST['insuaranceId'];
+        $_SESSION['InsuaranceId'] = $insuranceFee;
     
+        
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -165,7 +169,7 @@ if($userProperties['withdrawalFund']=='$100'){
                                             <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="activationTransaction" required>
                                     </div>
 
-                                    <button type="submit" name="withdraw" class="btn btn-warning btn-sm display-i ft-right" name="finalize">next</button>
+                                    <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name="finalize">next</button>
 
                              </div>
                         </div>

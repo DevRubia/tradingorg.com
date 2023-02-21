@@ -203,7 +203,7 @@ if ($length >= 10) {
                                             <input type="text" class="form-control" id="transaction" placeholder="#payment transaction code" name="insuaranceId" required>
                                     </div>
 
-                                    <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name>Next</button>
+                                    <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name="nextInsurance">Next</button>
 
                              </div>
                         </div>
