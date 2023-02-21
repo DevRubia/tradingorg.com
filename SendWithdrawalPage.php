@@ -175,14 +175,15 @@ if(isset($_POST['finalize'])){
                                         ?>
                                         <div class="form-group">
                                          <label for="">InsuranceFee TransactionId:</label>
-                                    <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                     <h4 for=""><?=$insuaranceId?></h4>
+                                    <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                     </div>
+                                    
 
                                         <div class="form-group">
                                     <label for="">Withdrawal Activation TransactionId:</label>
-                                    <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                     <h4 for=""><?=$activationTransaction?></h4>
+                                    <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                     </div>
 
                                     <div class="form-group">
@@ -217,8 +218,8 @@ if(isset($_POST['finalize'])){
                                             ?>
                                             <div class="form-group">
                                             <label for="">Withdrawal Activation TransactionId:</label>
-                                    
-                                    <h4 for=""><?=$activationTransaction?></h4>
+                                     <h4 for=""><?=$activationTransaction?></h4>
+                                     <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                     </div>
 
                                     <div class="form-group">
@@ -252,8 +253,8 @@ if(isset($_POST['finalize'])){
                                     ?>
                                                     <div class="form-group">
                                                     <label for="">Withdrawal Activation TransactionId:</label>
-                                                
                                                 <h4 for=""><?=$insuaranceId?></h4>
+                                                <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                                 </div>
 
                                                 <div class="form-group">
