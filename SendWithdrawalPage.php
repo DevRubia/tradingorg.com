@@ -1,21 +1,24 @@
 <?php
-include('authentication.php');
-$userProperties = $_SESSION['userProperties'];
 session_start();
+$userProperties = $_SESSION['userProperties'];
+
 //setwithdrawalTransactionId
-$_SESSION['activationTransaction']=isset($_POST['activationTransaction']);
+if(isset($_POST['finalize'])){
+    $withdrawalFee = $_POST['activationTransaction'];
+    $_SESSION['activationTransaction']= $withdrawalFee;
+}
+    //setwithdrawalRequestDetail
+     $paymentType=$_SESSION['paymentType'];
+     $accountNo=$_SESSION['accountNo'];
+     $accountName=$_SESSION['accountName'];
+     $withdrawable=$_SESSION['withdrawable'];
+ 
+     //insuranceTransactionId
+     $insuaranceId=isset($_SESSION['InsuaranceId']);
+ 
+     //withdrawalTransactionId
+     $activationTransaction=isset($_SESSION['activationTransaction']);
 
-//setwithdrawalRequestDetail
-$paymentType=$_SESSION['paymentType'];
-$accountNo=$_SESSION['accountNo'];
-$accountName=$_SESSION['accountName'];
-$withdrawable=$_SESSION['withdrawable'];
-
-//insuranceTransactionId
-$insuaranceId=$_SESSION['InsuaranceId'];
-
-//withdrawalTransactionId
-$insuaranceTransactionIdW=$_SESSION['activationTransaction'];
 ?>
 <!DOCTYPE html>.
 <html lang="en">
@@ -165,6 +168,10 @@ $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
 
                                     <?php
                                     if($userProperties['insuarance']!='$150' && $userProperties['withdrawalFund']!='$100'){
+                                        $insuaranceId=$_SESSION['InsuaranceId'];
+
+                                        //withdrawalTransactionId
+                                        $activationTransaction=$_SESSION['activationTransaction'];
                                         ?>
                                         <div class="form-group">
                                          <label for="">InsuranceFee TransactionId:</label>
@@ -175,7 +182,7 @@ $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
                                         <div class="form-group">
                                     <label for="">Withdrawal Activation TransactionId:</label>
                                     <p for="">Deposited from: <?=$userProperties['accountType']?></p>
-                                    <h4 for=""><?=$insuaranceTransactionIdW?></h4>
+                                    <h4 for=""><?=$activationTransaction?></h4>
                                     </div>
 
                                     <div class="form-group">
@@ -203,12 +210,15 @@ $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
                                         <?php
 
                                         }elseif($userProperties['withdrawalFund']!='$100'){
+                                          
+                                            //withdrawalTransactionId
+                                            $activationTransaction=$_SESSION['activationTransaction'];
 
                                             ?>
                                             <div class="form-group">
                                             <label for="">Withdrawal Activation TransactionId:</label>
                                     
-                                    <h4 for=""><?=$insuaranceTransactionIdW?></h4>
+                                    <h4 for=""><?=$activationTransaction?></h4>
                                     </div>
 
                                     <div class="form-group">
@@ -237,7 +247,9 @@ $insuaranceTransactionIdW=$_SESSION['activationTransaction'];
 
                                                 }elseif($userProperties['insuarance']!='$150'){
 
-                                                    ?>
+
+                                                    $insuaranceId=$_SESSION['InsuaranceId'];
+                                    ?>
                                                     <div class="form-group">
                                                     <label for="">Withdrawal Activation TransactionId:</label>
                                                 
