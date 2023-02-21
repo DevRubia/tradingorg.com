@@ -255,7 +255,7 @@ display: none !important;
                                     </a>
                                 </li>
                                 <li class="dt-side-nav__item ">
-                                    <a href="newWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
+                                    <a href="NewWithdrawals.php" class="dt-side-nav__link" title="withdrawable Requests">
                                     <i ><img src="withdraw.png" width="20" height="20" alt=""></i>
                                         <span class="dt-side-nav__text">Withdrawable Funds</span>
                                     </a>
@@ -464,7 +464,7 @@ display: none !important;
                         <div class="dt-card">
                             <!-- Card Body -->
                             <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4 dt-card bg-dark text-white">
-                                <span class="badge badge-secondary badge-top-right">Earnings</span>
+                                <span class="badge badge-secondary badge-top-right">Account Balance</span>
                                 <!-- Media -->
                                 <div class="media iso" id="medbod">
                                     
@@ -473,7 +473,7 @@ display: none !important;
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
                                             USD <?=$userProperties['earnedTotal']?>                                        </p>
-                                        <span class="d-block">Total Earned</span>
+                                       
                                     </div>
                                     <!-- /media body -->
                                 </div>
@@ -497,7 +497,7 @@ display: none !important;
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
                                             USD <?=$userProperties['accBal']?>                                        </p>
-                                        <span class="d-block">Account Balance</span>
+                                        
                                     </div>
                                     <!-- /media body -->
                                 </div>
@@ -521,7 +521,7 @@ display: none !important;
                                     <div class="media-body">
                                         <p class="mb-1 h1 text-white">
                                             USD <?=$userProperties['bonus']?>                                        </p>
-                                        <span class="d-block">Bonus Amount</span>
+                                       
                                     </div>
                                     <!-- /media body -->
                                 </div>
@@ -545,7 +545,7 @@ display: none !important;
                                     <div class="media-body" >
                                         <p class="mb-1 h1 text-white">
                                             USD <?=$userProperties['withdrawal']?>                                        </p>
-                                        <span class="d-block">Withdrawable</span>
+                                   
                                     </div>
                                     <!-- /media body -->
                                 </div>
