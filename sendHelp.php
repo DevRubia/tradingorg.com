@@ -52,8 +52,10 @@ Hello, Admin .I am $requestName
 My Email: $Requestemail
 </h3>
 <h3>
-Kindly review my issue on : $message
-
+Kindly review my issue on :
+<h4>
+$message
+</h4>
 <h4>contacted you via help desk on your website.</h4>
 <h5>The 24hrfx Trading Org Team.</h5>
 </h3> ";
