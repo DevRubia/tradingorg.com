@@ -1,0 +1,10 @@
+* {
+    background: black;
+    color: white!important;
+}
+
+.chart2 {
+    border: 2px solid red;
+    overflow: auto;
+    margin: 0;
+}
