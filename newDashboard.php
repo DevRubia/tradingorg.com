@@ -419,56 +419,6 @@ $userProperties = $_SESSION['userProperties'];
 
 
 
-                    <div class="col-md-12">
-                        <!-- Card -->
-                        <div class="dt-card dt-card__full-height">
-                            <!-- Card Header -->
-                            <div class="dt-card__header">
-                                <!-- Card Heading -->
-                                <div class="dt-card__heading">
-                                    <h3 class="dt-card__title">Overall portfolio</h3>
-                                    <P></P>
-                                </div>
-                                <!-- /card heading -->
-                            </div>
-                            <!-- /card header -->
-                            <!-- Card Body -->
-                            <div class="dt-card__body d-flex justify-content-center align-items-center">
-                                <div class="chartjs-size-monitor">
-                                    <div class="chartjs-size-monitor-expand">
-                                        <div class=""></div>
-                                    </div>
-                                    <div class="chartjs-size-monitor-shrink">
-                                        <div class=""></div>
-                                    </div>
-                                </div>
-                                <!-- Chart -->
-                                <canvas id="pie-chart" class="m--30p display-b chartjs-render-monitor" data-fill="27" height="458" width="458" style="display: block; width: 458px; height: 458px; z-index: 9999;"></canvas>
-                                <!-- /chart -->
-                            </div>
-                            <!-- /card body -->
-                        </div>
-                        <script src="./newDashboard_files/Chart.min.js.download"></script>
-                        <script id="pie-chart">
-                            var activedeposits = <?=$userProperties['accBal']?>;
-                            var inactivedeposits = <?=$userProperties['earnedTotal']?>;
-                            var withdrawals = <?=$userProperties['withdrawal']?>;
-                            new Chart(document.getElementById("pie-chart"), {
-                                type: 'pie',
-                                data: {
-                                    labels: ["Active-deposits", "Total-Earnings", "Total-withdrawal"],
-                                    datasets: [{
-                                        label: "Transactions",
-                                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
-                                        data: [activedeposits, inactivedeposits, withdrawals]
-                                    }]
-                                }
-                            });
-                        </script>
-                        <!-- /card -->
-                    </div>
-
-
 
 
                     <div class="col-md-5 col-sm-6 col-12">
