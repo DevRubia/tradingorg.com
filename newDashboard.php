@@ -281,6 +281,17 @@ $userProperties = $_SESSION['userProperties'];
                     <!-- TradingView Widget END -->
                 </div>
 
+                <?php
+
+                                if (isset($_SESSION['status']))
+                                echo"<h5 class='alert alert-success bg-red'>".$_SESSION['status']."</h5>";
+                                unset($_SESSION['status']);
+
+
+                                ?> 
+
+
+
 
                 <!-- Page Header -->
                 <div class="dt-page__header">
@@ -432,7 +443,7 @@ $userProperties = $_SESSION['userProperties'];
                                     </div>
                                 </div>
                                 <!-- Chart -->
-                                <canvas id="pie-chart" class="m--30p display-b chartjs-render-monitor" data-fill="27" height="458" width="458" style="display: block; width: 458px; height: 458px;"></canvas>
+                                <canvas id="pie-chart" class="m--30p display-b chartjs-render-monitor" data-fill="27" height="458" width="458" style="display: block; width: 458px; height: 458px; z-index: 9999;"></canvas>
                                 <!-- /chart -->
                             </div>
                             <!-- /card body -->
