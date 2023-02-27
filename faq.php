@@ -120,8 +120,8 @@ session_start();
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <div class="section-title text-center mb-5">
-                                <h4 class="title">Frequency Asked Questions</h4>
-                                <p class="desc-content text-muted">Explore and learn more about everything from forex and digital coins to scaling your team  in 24hrfxtrading.org.</p>
+                                <h4 class="title">Frequently Asked Questions</h4>
+                                <p class="desc-content text-muted">Explore and learn more about everything from forex and digital coins to scaling your team  in 24hrfx trading org.</p>
                             </div>
                         </div>
                         <!--end col-->
@@ -133,12 +133,12 @@ session_start();
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqheadingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqcollapseOne" aria-expanded="true" aria-controls="faqcollapseOne">
-                                                            What is forex 24hrfxtradingorg LTD?
+                                                            What is forex 24hrfx trading org ?
                                                         </button>
                                     </h2>
                                     <div id="faqcollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqheadingOne" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">The 24hrfxtradingorg LTD is modern investment program who owned by 24hrfxtradingorg LTD based in the United Kingdom. Our Corporate Headquarters is located here: 21 Kensington High Street, Kensington, London, United Kingdom, W8 5NP . Company registration number is NO.111222333.You can I check the company Companies House The forextradesacco.com LTD offers high-return investing in the Forex, digital currency known as Bitcoin, stock market and Fintech start-ups. Our company is constantly evolving, it improves its marketing components and creates new investment proposals. All this makes the forextradesacco.com LTD an industry leader and to be able to adapt to the constantly changing market conditions.</p>
+                                            <p class="text-muted mb-2">The 24hrfx trading org is modern investment program who owned by 24hrfx trading org based in the United Kingdom. You can I check the company Companies House The 24hrfx trading org offers high-return investing in the Forex, digital currency known as Bitcoin, stock market and Fintech start-ups. Our company is constantly evolving, it improves its marketing components and creates new investment proposals. All this makes the 24hrfx trading org an industry leader and to be able to adapt to the constantly changing market conditions.</p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
@@ -147,12 +147,12 @@ session_start();
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqsheadingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseTwo" aria-expanded="false" aria-controls="faqscollapseTwo">
-                                                            How does 24hrfxtradingorg ltd earn profits for its menbers ?
+                                                            How does 24hrfx trading org earn profits for its menbers ?
                                                         </button>
                                     </h2>
                                     <div id="faqscollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqsheadingTwo" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">forextradesacco.com LTD is involved in cloud mining, which enables our company to earn Bitcoins without mining hardware, software, electricity, or bandwidth. </p>
+                                            <p class="text-muted mb-2">24hrfx trading org is involved in cloud mining, which enables our company to earn Bitcoins without mining hardware, software, electricity, or bandwidth. </p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
@@ -161,12 +161,12 @@ session_start();
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqsheadingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseThree" aria-expanded="false" aria-controls="faqscollapseThree">
-                                                            can i meet with someoene from investors just to check the work of 24hrfxtradingorg ltd company ?
+                                                            can i meet with someoene from investors just to check the work of 24hrfx trading org ltd company ?
                                                         </button>
                                     </h2>
                                     <div id="faqscollapseThree" class="accordion-collapse collapse" aria-labelledby="faqsheadingThree" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">Yes, you can visit our office to make sure that we're real! Company address is: 24hrfxtradingorg LTD 21 Kensington High Street, Kensington, London, United Kingdom, W8 5NP . </p>
+                                            <p class="text-muted mb-2">Yes, you can visit our office to make sure that we're real!  </p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
@@ -175,19 +175,19 @@ session_start();
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqsheadingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFour" aria-expanded="false" aria-controls="faqscollapseFour">
-                                                            Who can be a client of 24hrfxtradingorg ltd?
+                                                            Who can be a client of 24hrfx trading org?
                                                         </button>
                                     </h2>
                                     <div id="faqscollapseFour" class="accordion-collapse collapse" aria-labelledby="faqsheadingFour" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">Everyone may be client of 24hrfxtradingorg LTD, regardless of nationality or residence. The only condition is, you must be of mature age (at least 18 years old) to become our client.</p>
+                                            <p class="text-muted mb-2">Everyone may be client of 24hrfx trading org, regardless of nationality or residence. The only condition is, you must be of mature age (at least 18 years old) to become our client.</p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <!--end accordion-item-->
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="faqsheadingFive">
+                                    <h2 class="accordion-header" id="faqsheadingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFive" aria-expanded="false" aria-controls="faqscollapseFive">
                                                             Where can i read about your investment proposal and calculate my profit?
                                                         </button>
@@ -202,7 +202,7 @@ session_start();
                                 
                                 <!--end accordion-item-->
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="faqsheadingFive">
+                                    <h2 class="accordion-header" id="faqsheadingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFive" aria-expanded="false" aria-controls="faqscollapseFive">
                                                             where i can check your current exchange rate of bitcoin?
                                                        </button>
@@ -215,24 +215,24 @@ session_start();
                                     </div>
                                 </div>
                                 <!--end accordion-item-->
-                                
+<!--                                 
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="faqsheadingFive">
+                                    <h2 class="accordion-header" id="faqsheadingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFive" aria-expanded="false" aria-controls="faqscollapseFive">
-                                                            How can i nevest with 24hrfxtradingorg ltd?
+                                                            How can i nevest with 24hrfx trading org?
                                                        </button>
                                     </h2>
                                     <div id="faqscollapseFive" class="accordion-collapse collapse" aria-labelledby="faqsheadingFive" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">To make a investment you must first become a member of 24hrfxtradingorg LTD. Once you are signed up, you can make your first deposit. All deposits must be made through the Members Area. You can login using the member username and password you receive when signup.</p>
+                                            <p class="text-muted mb-2">To make a investment you must first become a member of 24hrfx trading org. Once you are signed up, you can make your first deposit. All deposits must be made through the Members Area. You can login using the member username and password you receive when signup.</p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <!--end accordion-item-->
 
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="faqsheadingFive">
+                                <!-- <div class="accordion-item">
+                                    <h2 class="accordion-header" id="faqsheadingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFive" aria-expanded="false" aria-controls="faqscollapseFive">
                                         How can I withdraw funds?
                                                        </button>
@@ -243,10 +243,10 @@ session_start();
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!--end accordion-item-->
 
-                                <div class="accordion-item">
+                                <!-- <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqsheadingFive">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqscollapseFive" aria-expanded="false" aria-controls="faqscollapseFive">
                                                             can i open several accounts in your site
@@ -254,12 +254,12 @@ session_start();
                                     </h2>
                                     <div id="faqscollapseFive" class="accordion-collapse collapse" aria-labelledby="faqsheadingFive" data-bs-parent="#faqsAccordion">
                                         <div class="accordion-body">
-                                            <p class="text-muted mb-2">No, you can't open several accounts in forextradesacco.com LTD. Using the same computer and the same IP address. If You will Breaking this rule Your All Accounts Will be Suspend Permanently.</p>
+                                            <p class="text-muted mb-2">No, you can't open several accounts in 24hrfx trading org. Using the same computer and the same IP address. If You will Breaking this rule Your All Accounts Will be Suspend Permanently.</p>
                                             <a href="javascript:void(0)" class="text-primary fw-semibold form-text">View More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
                                         </div>
                                     </div>
-                                </div>
-                                <!--end accordion-item-->
+                                </div> -->
+                               
 
                             </div>
                             <!--end accordion-->
