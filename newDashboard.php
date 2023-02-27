@@ -84,13 +84,14 @@ $userProperties = $_SESSION['userProperties'];
                             <span class="dt-side-nav__text">Withdrawable Funds</span>
                         </a>
                     </li>
-
+<!--
                     <li class="dt-side-nav__item ">
                         <a href="Usage.php" class="dt-side-nav__link" title="withdrawable Requests">
                             <i><img src="expenditure.png" width="20" height="20" alt=""></i>
                             <span class="dt-side-nav__text">MyExpenditure</span>
                         </a>
                     </li>
+-->
                     <li class="dt-side-nav__item ">
                         <a href="tradingChart.php" class="dt-side-nav__link" title="withdrawable Requests">
                             <i><img src="chart.png" width="20" height="20" alt=""></i>
