@@ -62,7 +62,7 @@ if(isset($_SESSION['status']))
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-                <h3 class="Blue">24hrfx</h3> <h3 class="Red">Trading</h3> <h3 class="">Org</h3>
+                <h3 class="Blue">24hrfx</h3> <h3 class="Red">Trading</h3> <h3 class="text-dark">Org</h3>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
