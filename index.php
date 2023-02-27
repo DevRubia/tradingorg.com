@@ -40,7 +40,7 @@ a:hover{
 </head>
 
 
-<body class="container">
+<body class="container bg-dark text-white">
 
 <?php
 if(isset($_SESSION['status']))
@@ -88,11 +88,12 @@ if(isset($_SESSION['status']))
                         <li class="nav-item">
                            <a  class="nav-link active" aria-current="page" href="signinform.php" >Sign Up</a>
                         </li>
-                         
-                                                              
+                          
+                                                  
                         <li class="nav-item">
                           <a class="nav-link active btn btn- btn-sm btn-hover "id="btnlog"ccc aria-current="page" href="logout.php">RefreshSession</a>
                         </li>
+                        
                        
                         
                     </ul>
