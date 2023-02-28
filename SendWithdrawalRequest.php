@@ -16,11 +16,11 @@ $accountNo=$_SESSION['accountNo'];
 $accountName=$_SESSION['accountName'];
 $withdrawable=$_SESSION['withdrawable'];
 
-//insuranceTransactionId
-$insuaranceTransactionId=$_SESSION['InsuaranceId'];
+// // insuranceTransactionId
+// $insuaranceTransactionId=$GLOBALS['InsuaranceId'];
 
-//withdrawalTransactionId
-$insuaranceTransactionIdW=$_SESSION['activationTransaction'];
+// //withdrawalTransactionId
+// $insuaranceTransactionIdW=$GLOBALS['activationTransaction'];
     
     //Begin Email Send
 }
@@ -155,7 +155,7 @@ try{
 //Finally send email
 	if ( $mail->send() ) {
 		$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
-    header('Location: withdrawPopup.php');
+   
    
 
 	}else{
@@ -172,9 +172,7 @@ try{
 //Closing smtp connection
 	$mail->smtpClose();
 
-
-
-    $_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
+	$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
     header('Location: withdrawPopup.php');
     exit();
 }else{
