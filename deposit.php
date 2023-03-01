@@ -134,13 +134,25 @@
 
                             <div class="card-body">
 
-                           <h5>
+                           <h3>
                             DEPOSIT TO YOUR ESTEEMED AGENT    
-                        
+                            </h3>
+                            <hr/>
                             <h5>
-M-PESA ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
-M-PESA NUMBER/PAYBILL: <?=$getdata['PayBill'] ?>
+M-PESA-KE ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
+PAYBILL: <?=$getdata['PayBill'] ?>
 </h5>
+<hr/>
+<h5>
+M-PESA-TZ ACCOUNT NAME: <?=$getdata['PayBillname1'] ?><h5>
+PAYBILL: <?=$getdata['PayBill1'] ?>
+</h5>
+<hr/>
+<h5>
+AIRTEL ACCOUNT NAME: <?=$getdata['PayBillname2'] ?><h5>
+PAYBILL: <?=$getdata['PayBill2'] ?>
+</h5>
+
 Your Forex/BTC investment trading will begin once we've verified your M-PESA Deposit Payments from our Agent
 
 NOTE:All payments should be made directly here on our website

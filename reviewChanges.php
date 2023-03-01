@@ -147,6 +147,7 @@
                              <form  action="AccountpaidUpdate.php" method="POST">
 
                              <!-- <input type="hidden" name="key" value="<?=$keychild?>"> -->
+                             <hr/>
                                 <div class="form-group mb-3">
                                     <label for="">UserName:</label>
                                     <input type="text" name="username" value="<?=$getdata['username']?>" class="form-control">
@@ -161,6 +162,8 @@
                                     <label for="">Amount:</label>
                                     <input type="text" name="Amount" value="<?=$getdata['Amount']?>" class="form-control">
                                 </div>
+
+                                <hr/>
 
                                 <div class="form-group mb-3">
                                     <label for="">UserName1:</label>
@@ -177,6 +180,8 @@
                                     <input type="text" name="Amount1" value="<?=$getdata['Amount1']?>" class="form-control">
                                 </div>
 
+                                <hr/>
+
                                 <div class="form-group mb-3">
                                     <label for="">UserName2:</label>
                                     <input type="text" name="username2" value="<?=$getdata['username2']?>" class="form-control">
@@ -191,6 +196,8 @@
                                     <label for="">Amount2:</label>
                                     <input type="text" name="Amount2" value="<?=$getdata['Amount2']?>" class="form-control">
                                 </div>
+
+                                <hr/>
 
                                 <div class="form-group mb-3">
                                     <label for="">UserName3:</label>
@@ -207,6 +214,8 @@
                                     <input type="text" name="Amount3" value="<?=$getdata['Amount3']?>" class="form-control">
                                 </div>
 
+                                <hr/>
+
                                 <div class="form-group mb-3">
                                     <label for="">UserName4:</label>
                                     <input type="text" name="username4" value="<?=$getdata['username4']?>" class="form-control">
@@ -222,21 +231,41 @@
                                     <input type="text" name="Amount4" value="<?=$getdata['Amount4']?>" class="form-control">
                                 </div>
       
-
+                                <hr/>
                                 <div class="form-group mb-3">
-                                    <label for="">24HRFX PAYBILL:</label>
+                                    <label for="">24HRFX M-PESA-KE PAYBILL:</label>
                                     <input type="text" name="paybill" value="<?=$getdata['PayBill']?>" class="form-control">
                                 </div>
-
+                                
                                 <div class="form-group mb-3">
-                                    <label for="">24HRFX PAYBILL NAME:</label>
+                                    <label for="">24HRFX M-PESA-KE ACCOUNT NAME:</label>
                                     <input type="text" name="paybillname" value="<?=$getdata['PayBillname']?>" class="form-control">
                                 </div>
-
+                                <hr/>
+                                <div class="form-group mb-3">
+                                    <label for="">24HRFX M-PESA-TZ PAYBILL:</label>
+                                    <input type="text" name="paybill1" value="<?=$getdata['PayBill1']?>" class="form-control">
+                                </div>
+                                
+                                <div class="form-group mb-3">
+                                    <label for="">24HRFX M-PESA-TZ ACCOUNT NAME:</label>
+                                    <input type="text" name="paybillname1" value="<?=$getdata['PayBillname1']?>" class="form-control">
+                                </div>
+                                <hr/>
+                                <div class="form-group mb-3">
+                                    <label for="">24HRFX AIRTEL PAYBILL:</label>
+                                    <input type="text" name="paybill2" value="<?=$getdata['PayBill2']?>" class="form-control">
+                                </div>
+                                
+                                <div class="form-group mb-3">
+                                    <label for="">24HRFX AIRTEL ACCOUNT NAME:</label>
+                                    <input type="text" name="paybillname2" value="<?=$getdata['PayBillname2']?>" class="form-control">
+                                </div>
+                                <hr/>
                                
 
                                 <div class="forWithdrawalm-group mb-3">
-                                    <button type="submit" name="updateAccount"  class="btn btn-primary">updateUserDetail</button>
+                                    <button type="submit" name="updateAccount"  class="btn btn-primary">updateInfo</button>
                                 </div> 
 
                                 </form>

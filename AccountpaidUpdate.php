@@ -30,6 +30,12 @@ if(isset($_POST['updateAccount']))
     $paybill=$_POST['paybill'];
     $paybillName=$_POST['paybillname'];
     
+    $paybill1=$_POST['paybill1'];
+    $paybillName1=$_POST['paybillname1'];
+
+    $paybill2=$_POST['paybill2'];
+    $paybillName2=$_POST['paybillname2'];
+
     $newData = [
         'username' => $username,
         'Amount' => $Amount,
@@ -53,6 +59,12 @@ if(isset($_POST['updateAccount']))
         
         'PayBillname'=>$paybillName,
         'PayBill'=>$paybill,
+
+        'PayBillname1'=>$paybillName1,
+        'PayBill1'=>$paybill1,
+
+        'PayBillname2'=>$paybillName2,
+        'PayBill2'=>$paybill2,
 
     ];   
 
