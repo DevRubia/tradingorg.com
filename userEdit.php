@@ -146,7 +146,7 @@
 
                              <input type="hidden" name="key" value="<?=$keychild?>">
                                 <div class="form-group mb-3">
-                                    <label for="">AccountBal:(Digits Only)</label>
+                                    <label for="">ActiveDeposits:(Digits Only)</label>
                                     <input type="text" name="accountBal" value="<?=$getdata['accBal']?>" class="form-control">
                                 </div>
 
