@@ -85,14 +85,18 @@ Deposited via, Account Type: $paymentMeans
 
 If you have any questions, contact us via help desk on our website.
 
-<h3> 
-    Our Official Pages.
-    Telegram : https://t.me/tg24HrFxTradingOrg
-    </h3>
-    
-    <h3> 
-    Instagram : http://www.instagram.com/24hrfx_tradingorg 
-    </h3>
+
+<h3>
+Our Official Pages.
+</h3>
+
+<h4>
+Telegram : https://t.me/tg24HrFxTradingOrg
+</h4>
+
+<h4> 
+Instagram : http://www.instagram.com/24hrfx_tradingorg 
+</h4>
 
 <h5>Kind regards, </h5>
 <h5>Best Certified Investment Platform, </h5>

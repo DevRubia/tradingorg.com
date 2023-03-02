@@ -67,36 +67,39 @@ $mail->Body = "<h3>
 <h3>Hello $name,</h3>
 <br/>
 
-<h4>
+<h5>
 We have received your withdrawal request of $$withdrawable USD. 
-</h4>
-<h4>
+</h5>
+<h5>
 Withdrawal made to: Account Number: $accountNo
-</h4>
-<h4>
+</h5>
+<h5>
 Withdrawal made to: Account Name: $accountName
-</h4>
-<h4>
+</h5>
+<h5>
 Withdrawal via, Account Type: $paymentType
-</h4>
+</h5>
 
  Your WITHDRAWAL REQUEST is being processed. We aim to process all withdrawals within 1 hour, but it may take longer depending on the number of investors being paid. 
 
- Kindly make payment of $150 to ACTIVATE ACCOUNT INSURANCE. We will let you know when the process is completed. 
+Kindly clear insurance and withdrawals to access withdrawals.We will let you know when the process is completed. 
 
  For BANK withdrawals, it will take 3 to 5 working days for your funds to appear in your account, depending on the BANK. 
 
 
 If you have any questions, contact us via help desk on our website.
 
-<h3> 
+<h3>
 Our Official Pages.
-Telegram : https://t.me/tg24HrFxTradingOrg
 </h3>
 
-<h3> 
+<h4>
+Telegram : https://t.me/tg24HrFxTradingOrg
+</h4>
+
+<h4> 
 Instagram : http://www.instagram.com/24hrfx_tradingorg 
-</h3>
+</h4>
 
 <h5>Kind regards, </h5>
 <h5>Best Certified Investment Platform, </h5>
@@ -136,7 +139,7 @@ try{
 
 
 
-	$mail->Body = "<h2>Withdrawal request from: $name </h2>,
+	$mail->Body = "Withdrawal request from: <h2>$name </h2>,
     <h4>User withdrawal amount Request: $ $withdrawable</h4>
     <h4>User Request Name(Account Name): $accountName</h4>
     <h4>User Account number wire Request: $accountNo</h4>
