@@ -159,8 +159,7 @@ try{
 //Finally send email
 	if ( $mail->send() ) {
 		$_SESSION['status']="processed!!!";
-    header('Location: newDashboard.php');
-    exit();
+    
 	}else{
 		
 		$_SESSION['status']="failed!!!";
