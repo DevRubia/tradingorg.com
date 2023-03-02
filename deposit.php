@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="./CSS/stylepaid.css">
+	<!-- <link rel="stylesheet" href="./CSS/stylepaid.css"> -->
     <link rel="stylesheet" href="./CSS/loader.css">
     <link rel="shortcut icon" type="image/x-icon" href="./svg.png">
 </head>
@@ -135,31 +135,31 @@
                             <div class="card-body">
 
                            <h3>
-                            DEPOSIT TO YOUR ESTEEMED AGENT    
+                            MAKE DEPOSIT TO YOUR ESTEEMED AGENT    
                             </h3>
                             <hr/>
                             <h5>
-M-PESA-KE ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
-PAYBILL: <?=$getdata['PayBill'] ?>
+ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
+Number: <?=$getdata['PayBill'] ?>
 </h5>
 <hr/>
 <h5>
-M-PESA-TZ ACCOUNT NAME: <?=$getdata['PayBillname1'] ?><h5>
-PAYBILL: <?=$getdata['PayBill1'] ?>
+ACCOUNT NAME: <?=$getdata['PayBillname1'] ?><h5>
+Number: <?=$getdata['PayBill1'] ?>
 </h5>
 <hr/>
 <h5>
-AIRTEL ACCOUNT NAME: <?=$getdata['PayBillname2'] ?><h5>
-PAYBILL: <?=$getdata['PayBill2'] ?>
+ACCOUNT NAME: <?=$getdata['PayBillname2'] ?><h5>
+Number: <?=$getdata['PayBill2'] ?>
 </h5>
+<hr/>
+Your investment will be initiated once your payment is verified by our payment agent using the PAYMENT TRANSACTION CODE 
 
-Your Forex/BTC investment trading will begin once we've verified your M-PESA Deposit Payments from our Agent
 
-NOTE:All payments should be made directly here on our website
-
-Sending money to any other NUMBER other than our M-PESA AGENT NUMBER may result in the loss of your deposit.
+Note: All payments to be made to above agents ONLY
                            </h5>
                                
+                           
                            <label for="">Deposit information:</label>
                            <div class="form-group">
                                <label for="depAccname">Deposit Account Name:</label>
