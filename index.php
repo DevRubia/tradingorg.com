@@ -62,7 +62,7 @@ if(isset($_SESSION['status']))
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-                <h3 class="Blue">24hrfx</h3> <h3 class="Red">Trading</h3> <h3 class="text-dark">Org</h3>
+                <h3 class="Blue">24hrfx</h3> <h3 class="Red">Trading</h3> <h3 class="text-darktext-dark">Org</h3>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -649,12 +649,12 @@ if(isset($_SESSION['status']))
                                     <p class="text-muted mb-1">Mon-Fri (working hrs 7a.m-10pm)</p>
                                     <p class="text-muted fw-medium mb-0">+254 75748641027/+254 798741595</p>
                                     <p></p>
-                                    <div class="form-group">
-                                        <a href="http://www.instagram.com/24hrfx_tradingorg">Instagram</span>
+                                    <div class="form-group text">
+                                        <a class="text-white" href="http://www.instagram.com/24hrfx_tradingorg">Instagram</a>
                                         <span><i><img src="./instagram.png" width="40" height="40" alt=""></i></span>
-                                        <a href="https://wa.me/+255748641027">Whatsapp</span>
+                                        <a class="text-white" href="https://wa.me/+255748641027">Whatsapp</a>
                                         <span><i><img src="./whatsapp.png" width="40" height="40" alt=""></i></span>
-                                        <a href="https://t.me/tg24HrFxTradingOrg">Telegram</span>
+                                        <a class="text-white" href="https://t.me/tg24HrFxTradingOrg">Telegram</a>
                                         <span><i><img src="./telegram.png" width="40" height="40" alt=""></i></span>
                                     </div>
                                 </div>
@@ -717,7 +717,7 @@ if(isset($_SESSION['status']))
                         <p class="text-center fw-medium fs-16 mb-0">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> &copy; 24hrfxtradingOrg -@rubialimited
+                            </script> &copy; 24hrfxtradingOrg @DevRubia
                         </p>
                     </div>
                     <!--end col-->
