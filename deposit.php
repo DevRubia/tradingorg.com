@@ -138,20 +138,20 @@
                             MAKE DEPOSIT TO YOUR ESTEEMED AGENT    
                             </h3>
                             <hr/>
-                            <h5>
-ACCOUNT NAME: <?=$getdata['PayBillname'] ?><h5>
+                            <p>
+ACCOUNT NAME: <?=$getdata['PayBillname'] ?></p><p>
 Number: <?=$getdata['PayBill'] ?>
-</h5>
+</p>
 <hr/>
-<h5>
-ACCOUNT NAME: <?=$getdata['PayBillname1'] ?><h5>
+<p>
+ACCOUNT NAME: <?=$getdata['PayBillname1'] ?></p><p>
 Number: <?=$getdata['PayBill1'] ?>
-</h5>
+</p>
 <hr/>
-<h5>
-ACCOUNT NAME: <?=$getdata['PayBillname2'] ?><h5>
+<p>
+ACCOUNT NAME: <?=$getdata['PayBillname2'] ?></p><p>
 Number: <?=$getdata['PayBill2'] ?>
-</h5>
+</p>
 <hr/>
 Your investment will be initiated once your payment is verified by our payment agent using the PAYMENT TRANSACTION CODE 
 
