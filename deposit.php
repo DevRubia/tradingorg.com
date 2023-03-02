@@ -189,6 +189,7 @@ Note: All payments to be made to above agents ONLY
                                 <div class="form-group">
                                <label for="deptrans">Deposit Transaction code:</label>
                             <input type="text" class="form-control" value="" name="transactionId" required>
+					<p></p>
                                 </div>
 
                                 <button type="submit" class="btn btn-warning btn-sm display-i ft-right" name="proceed">Confirm Deposit</button>
