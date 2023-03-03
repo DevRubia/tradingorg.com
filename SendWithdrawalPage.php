@@ -2,20 +2,26 @@
 session_start();
 $userProperties = $_SESSION['userProperties'];
 
-//setwithdrawalTransactionId
-if(isset($_POST['finalize'])){
-    $withdrawalFee = $_POST['activationTransaction'];
-    $_SESSION['activationTransaction']= $withdrawalFee;
-}
-    //setwithdrawalRequestDetail
+ //setwithdrawalRequestDetail
      $paymentType=$_SESSION['paymentType'];
      $accountNo=$_SESSION['accountNo'];
      $accountName=$_SESSION['accountName'];
      $withdrawable=$_SESSION['withdrawable'];
  
-     //insuranceTransactionId
-     $insuaranceId=isset($_SESSION['InsuaranceId']);
- 
+   
+//setwithdrawalTransactionId
+if(isset($_POST['finalize'])){
+    
+    $withdrawalFee = $_POST['activationTransaction'];
+    // $globalInsuranceid = $_POST['globalInsuranceid'];
+
+    $_SESSION['activationTransaction']= $withdrawalFee;
+    // $_SESSION['globalInsuranceid']= $globalInsuranceid;
+}
+   
+  //insuranceTransactionId
+    //  $insuaranceId=isset($_SESSION['globalInsuranceid']);
+    $insuaranceId = $_SESSION['InsuaranceId'];  
      //withdrawalTransactionId
      $activationTransaction=isset($_SESSION['activationTransaction']);
 
@@ -160,6 +166,9 @@ if(isset($_POST['finalize'])){
                                     <div class="col-md-12">
                                     <div class="notice">
                                         <h3>*Reveiw your information details<label>*You will receive an email on send..Verify </label></h3>
+<?php 
+// $insuaranceId=isset($_SESSION['globalInsuranceid']);
+echo $insuaranceId?>
                                     </div>
                                         
 
@@ -168,10 +177,10 @@ if(isset($_POST['finalize'])){
 
                                     <?php
                                     if($userProperties['insuarance']!='$150' && $userProperties['withdrawalFund']!='$100'){
-                                        $insuaranceId=$_SESSION['InsuaranceId'];
-
+                                        // $insuaranceId=isset($_SESSION['globalInsuranceid']);
                                         //withdrawalTransactionId
                                         $activationTransaction=$_SESSION['activationTransaction'];
+                                    
                                         ?>
                                         <div class="form-group">
                                          <label for="">InsuranceFee TransactionId:</label>
@@ -212,7 +221,6 @@ if(isset($_POST['finalize'])){
 
                                         }elseif($userProperties['withdrawalFund']!='$100'){
                                           
-                                            //withdrawalTransactionId
                                             $activationTransaction=$_SESSION['activationTransaction'];
 
                                             ?>
@@ -246,13 +254,12 @@ if(isset($_POST['finalize'])){
 
                                     <?php
 
-                                                }elseif($userProperties['insuarance']!='$150'){
-
-
-                                                    $insuaranceId=$_SESSION['InsuaranceId'];
+                                    }elseif($userProperties['insuarance']!='$150'){
+                                                    
+                                        // $insuaranceId=isset($_SESSION['globalInsuranceid']); 
                                     ?>
                                                     <div class="form-group">
-                                                    <label for="">Withdrawal Activation TransactionId:</label>
+                                                    <label for="">Insurance Fee TransactionId:</label>
                                                 <h4 for=""><?=$insuaranceId?></h4>
                                                 <p for="">Deposited from: <?=$userProperties['accountType']?></p>
                                                 </div>

